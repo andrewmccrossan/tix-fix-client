@@ -1,0 +1,10 @@
+{
+  "firstName": "Andrew",
+  "lastName": "McCrossan",
+  "handle": "amccrossan",
+  "profilePicture": "../../../images/profile_pic_webdev.jpg",
+  "bannerPicture": "../../../images/banner_pic.jpg",
+  "role": "user",
+  "location": "Boston, MA",
+  "dateJoined": "2021-09-20"
+}
