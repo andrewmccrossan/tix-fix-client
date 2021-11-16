@@ -13,8 +13,7 @@ import TopNavBar from "./components/TopNavBar";
 const reducer = combineReducers({profile});
 const store = createStore(reducer);
 
-// comment commit
-
+// test
 function App() {
     return (
         <Provider store={store}>
