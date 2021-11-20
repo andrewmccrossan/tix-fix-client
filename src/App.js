@@ -6,7 +6,7 @@ import {Provider} from "react-redux";
 import Home from "./components/Home";
 import Search from "./components/Search";
 import Details from "./components/Details";
-import Login from "./components/Login";
+import LoginRegister from "./components/Login-Register";
 import Profile from "./components/Profile";
 import TopNavBar from "./components/TopNavBar";
 
@@ -29,7 +29,7 @@ function App() {
                         <Details/>
                     </Route>
                     <Route path="/login">
-                        <Login/>
+                        <LoginRegister/>
                     </Route>
                     <Route path="/profile">
                         <Profile/>
