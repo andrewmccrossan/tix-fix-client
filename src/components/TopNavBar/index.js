@@ -5,8 +5,8 @@ const TopNavBar = () => {
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-                <div className="container-fluid">
-                    <Link className="navbar-brand" to="/home">Tix-Fix</Link>
+                <div className="container">
+                    <Link className="navbar-brand mb-0 h1" to="/home">Tix-Fix <i className="fas fa-ticket-alt"></i></Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarColor01" aria-controls="navbarColor01"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -16,16 +16,13 @@ const TopNavBar = () => {
                     <div className="collapse navbar-collapse" id="navbarColor01">
                         <ul className="navbar-nav me-auto">
                             <li className="nav-item">
-                                <Link className="nav-link active" to="/home" >Home</Link>
+                                <Link className="nav-link" to="/home" >Home</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/profile">Profile</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/login">Login</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/about">About</Link>
+                                <Link className="nav-link" to="/login">Login/Register</Link>
                             </li>
                         </ul>
                         <div className="d-flex">
