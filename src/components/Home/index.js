@@ -1,9 +1,14 @@
 import React from "react";
+import Description from "./Description";
+import SearchFromHome from "./SearchFromHome";
 
 const Home = () => {
     return (
         <>
-            <h1>Tix-Fix is a platform that allows you to buy and selling tickets to events</h1>
+            <div className="container">
+                <Description/>
+                <SearchFromHome/>
+            </div>
         </>
     )
 }
