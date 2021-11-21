@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const Register = () => {
     return(
@@ -31,12 +32,12 @@ const Register = () => {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="registerRole" className="form-label">Role:</label><br/>
-                    <input type="radio" value="BUYER" name="user-role" id="user-buyer" className="ms-3 form-check-input"/> <label htmlFor="user-buyer" className="form-check-label">I want to buy tickets</label><br/>
-                    <input type="radio" value="SELLER" name="user-role" id="user-seller" className="ms-3 form-check-input"/> <label htmlFor="user-seller" className="form-check-label">I want to sell tickets</label><br/>
-                    <input type="radio" value="REVIEWER" name="user-role" id="user-reviewer" className="ms-3 form-check-input"/> <label htmlFor="user-reviewer" className="form-check-label">I want to review events</label><br/>
+                    <input type="radio" value="BUYER" name="user-role" id="user-buyer" className="ms-1 form-check-input"/> <label htmlFor="user-buyer" className="form-check-label">I am a ticket buyer</label><br/>
+                    <input type="radio" value="SELLER" name="user-role" id="user-seller" className="ms-1 form-check-input"/> <label htmlFor="user-seller" className="form-check-label">I am a ticket seller</label><br/>
+                    <input type="radio" value="REVIEWER" name="user-role" id="user-reviewer" className="ms-1 form-check-input"/> <label htmlFor="user-reviewer" className="form-check-label">I am a reviewer</label><br/>
                 </div>
                 <button type="submit" className="btn btn-primary mb-2">Register new account</button>
-                <div id="privacy" className="form-text">By creating an account, you agree to and understand our privacy policy.</div>
+                <div id="privacy" className="form-text">By creating an account, you agree to and understand our <Link className="text-info" to="/privacy" >privacy policy</Link>.</div>
             </div>
         </>
     );
