@@ -10,8 +10,8 @@ const SearchFromHome = () => {
                            placeholder="Search for your next event"/>
                 </div>
             </div>
-            <div className="row mt-2 d-flex justify-content-center">
-                <button className="btn btn-primary w-25">Find your next event</button>
+            <div className="row mt-2 mb-5 d-flex justify-content-center">
+                <button className="btn btn-primary w-25">Find your event</button>
             </div>
         </>
     )
