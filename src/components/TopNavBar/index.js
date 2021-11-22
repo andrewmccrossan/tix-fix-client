@@ -14,7 +14,7 @@ const TopNavBar = () => {
                     </button>
 
                     <div className="collapse navbar-collapse" id="navbarColor01">
-                        <ul className="navbar-nav me-auto">
+                        <ul className="navbar-nav me-auto ms-5">
                             <li className="nav-item">
                                 <Link className="nav-link" to="/home" >Home</Link>
                             </li>
