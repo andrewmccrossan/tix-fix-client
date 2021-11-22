@@ -1,4 +1,6 @@
 import React, {useEffect} from "react";
+import BuyerProfile from "./BuyerProfile";
+import './profile.css';
 // import {useSelector, useDispatch} from "react-redux";
 // import {getCurrentProfile} from "../../../../services/profileService";
 // import Search from "../Search";
@@ -10,7 +12,7 @@ const Profile = () => {
 
     return (
         <>
-            <h1>Profile Page</h1>
+            <BuyerProfile/>
         </>
     )
 }
