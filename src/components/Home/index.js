@@ -5,10 +5,12 @@ import Footer from "./Footer";
 import GenericHomeContent from "./GenericHomeContent/index.js";
 import LoggedInHomeContent from "./LoggedInHomeContent";
 import './home.css';
+import TopNavBar from "../TopNavBar";
 
 const Home = () => {
     return (
         <>
+            <TopNavBar page={"home"}/>
             <div className="container">
                 <Description/>
                 <SearchFromHome/>

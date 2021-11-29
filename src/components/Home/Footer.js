@@ -8,6 +8,7 @@ const Footer = () => {
                 <li className="me-2"><Link to="/home" >Home</Link></li>
                 <li className="me-2"><Link to="/profile">Profile</Link></li>
                 <li className="me-2"><Link to="/search">Search</Link></li>
+                <li className="me-2"><Link to="/login">Login</Link></li>
                 <li className="me-2"><Link to="/privacy">Privacy</Link></li>
             </ul>
         </>
