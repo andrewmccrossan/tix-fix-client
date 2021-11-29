@@ -3,15 +3,20 @@ import React from "react";
 const SearchFromHome = () => {
     return (
         <>
-            <div className="row mt-5 d-flex justify-content-center">
-                <div className="w-50 input-group input-group-lg">
-                    <input className="form-control rounded-pill ps-5"
-                           type="text"
-                           placeholder="Search for your next event"/>
+            <div className="row mt-3 mb-5">
+                <div className="col-lg-1"/>
+                <div className="col-9 col-lg-8">
+                    <div className="row">
+                        <div className="col-7 input-group input-group-lg">
+                            <input className="form-control rounded-pill ps-5"
+                                   type="text"
+                                   placeholder="Search for an event, artist, team"/>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div className="row mt-2 mb-5 d-flex justify-content-center">
-                <button className="btn btn-primary w-25">Find your event</button>
+                <div className="col-3 col-lg-3">
+                    <button className="btn btn-primary btn-lg">Search</button>
+                </div>
             </div>
         </>
     )
