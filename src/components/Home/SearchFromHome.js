@@ -8,7 +8,7 @@ const SearchFromHome = () => {
                 <div className="col-9 col-lg-8">
                     <div className="row">
                         <div className="col-7 input-group input-group-lg">
-                            <input className="form-control rounded-pill ps-5"
+                            <input className="form-control rounded-pill ps-5 me-sm-2"
                                    type="text"
                                    placeholder="Search for an event, artist, team"/>
                         </div>

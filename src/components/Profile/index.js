@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import BuyerProfile from "./BuyerProfile";
 import './profile.css';
+import TopNavBar from "../TopNavBar";
 // import {useSelector, useDispatch} from "react-redux";
 // import {getCurrentProfile} from "../../../../services/profileService";
 // import Search from "../Search";
@@ -12,7 +13,10 @@ const Profile = () => {
 
     return (
         <>
-            <BuyerProfile/>
+            <TopNavBar page={"profile"}/>
+            <div className="container">
+                <BuyerProfile/>
+            </div>
         </>
     )
 }
