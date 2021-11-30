@@ -27,8 +27,12 @@ const Register = () => {
                     <input type="email" placeholder="jsmith@jsmith.com" className="form-control" id="registerEmail"/>
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="registerZipCode" className="form-label">Zip/Postal Code</label>
-                    <input type="text" placeholder="02101" className="form-control" id="registerZipCode"/>
+                    <label htmlFor="registerZipCode" className="form-label">US Zip/Postal Code</label>
+                    <input type="tel" pattern="[0-9]{5}" max="99999" placeholder="02101" className="form-control" id="registerZipCode"/>
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="registerInterests" className="form-label">Name an artist, team, or performer you REALLY want to see at an event?</label>
+                    <input type="text" placeholder="Ed Sheeren" className="form-control" id="registerInterests"/>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="registerRole" className="form-label">Role:</label><br/>

@@ -1,5 +1,5 @@
 import React from "react";
-import CardItem from "../CardItem";
+import EventCardItem from "../EventCardItem";
 
 const LoggedInHomeContent = () => {
     return(
@@ -8,13 +8,13 @@ const LoggedInHomeContent = () => {
                 <h3 className="mt-2">Events near you on Tix-Fix (IF LOGGED IN)</h3>
                 <div className="row mt-2">
                     <div className="col-4">
-                        <CardItem/>
+                        <EventCardItem/>
                     </div>
                     <div className="col-4">
-                        <CardItem/>
+                        <EventCardItem/>
                     </div>
                     <div className="col-4">
-                        <CardItem/>
+                        <EventCardItem/>
                     </div>
                 </div>
             </div>

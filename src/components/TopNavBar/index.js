@@ -1,8 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {getSearchResults} from "../../services/searchService";
 
 const TopNavBar = ({page = "home"}) => {
-    if (page === "home") {
+    let [searchQuery, setSearchQuery] = useState("");
+    const dispatch = useDispatch();
+    const searchClickHandler = () => {
+        getSearchResults(dispatch, {
+            searchQuery: searchQuery
+        });
+    }
+
+    if (page === "home" || page === "search") {
         return(
             <>
                 <nav className="navbar navbar-expand navbar-dark bg-primary">
@@ -31,8 +41,9 @@ const TopNavBar = ({page = "home"}) => {
                         <div className="ms-auto d-flex w-50">
                             <input className="form-control rounded-pill ps-5 me-sm-2"
                                    type="text"
-                                   placeholder="Search for an event, artist, team"/>
-                            <button className="btn btn-secondary">Search</button>
+                                   placeholder="Search for an event, artist, team"
+                                   onChange={(event) => setSearchQuery(event.target.value)}/>
+                            <button className="btn btn-secondary" onClick={searchClickHandler}>Search</button>
                         </div>
 
                         <ul className="navbar-nav ms-auto">
