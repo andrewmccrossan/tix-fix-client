@@ -1,21 +1,21 @@
 import React, {useEffect} from "react";
 import EventCardItem from "../EventCardItem";
 import {useDispatch, useSelector} from "react-redux";
-import {getConcertEvents} from "../../../services/eventsService";
+import {getSportsEvents} from "../../../services/eventsService";
 
-const GeneralConcerts = () => {
-    const concerts = useSelector((state) => state.events_concerts);
+const GeneralSports = () => {
+    const sports = useSelector((state) => state.events_sports);
     const dispatch = useDispatch();
-    useEffect(() => getConcertEvents(dispatch), []);
+    useEffect(() => getSportsEvents(dispatch), []);
     return(
         <>
             <div className="row">
-                <h3 className="mt-2">Popular Music Events</h3>
+                <h3 className="mt-2">Popular Sports Events</h3>
                 <div className="row mt-2">
                     {
-                        concerts.map(concert => {
+                        sports.map(sport => {
                             return (<div className="col-4">
-                                <EventCardItem event={concert} key={concert.id}/>
+                                <EventCardItem event={sport} key={sport.id}/>
                             </div>);
                         })
                     }
@@ -25,4 +25,4 @@ const GeneralConcerts = () => {
     );
 }
 
-export default GeneralConcerts;
+export default GeneralSports;

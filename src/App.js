@@ -10,8 +10,9 @@ import LoginRegister from "./components/Login-Register";
 import Profile from "./components/Profile";
 import Privacy from "./components/Privacy";
 import events_concerts from "./reducers/events-concerts";
+import events_sports from "./reducers/events-sports";
 
-const reducer = combineReducers({profile, events_concerts});
+const reducer = combineReducers({profile, events_concerts, events_sports});
 const store = createStore(reducer);
 
 function App() {

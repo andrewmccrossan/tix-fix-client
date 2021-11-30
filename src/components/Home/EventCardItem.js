@@ -37,7 +37,7 @@ const EventCardItem = ({event}) => {
         <>
             <div className="card mb-3">
                 <div className="card-body">
-                    <h5 className="card-title">{event.title}</h5>
+                    <h5 className="card-title">{event.short_title}</h5>
                 </div>
                 <div>
                     <img src={event.performers[0].image}

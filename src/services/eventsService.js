@@ -10,8 +10,11 @@ const EVENT_API = () => {
 export const getSportsEvents = (dispatch) =>
     fetch(`${EVENT_API()}/sports`)
         .then(response => response.json())
-        .then(searchResult => {
-            console.log(searchResult);
+        .then(sports => {
+            dispatch({
+                type: 'fetch-sports',
+                sports
+            })
         });
 
 export const getConcertEvents = (dispatch) =>

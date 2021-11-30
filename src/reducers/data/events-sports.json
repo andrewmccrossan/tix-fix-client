@@ -1,0 +1,790 @@
+[
+  {
+    "type": "ncaa_basketball",
+    "id": 5500920,
+    "datetime_utc": "2021-11-30T11:30:00",
+    "venue": {
+      "state": "CA",
+      "name_v2": "Viejas Arena",
+      "postal_code": "92182",
+      "name": "Viejas Arena",
+      "links": [],
+      "timezone": "America/Los_Angeles",
+      "url": "https://seatgeek.com/venues/viejas-arena/tickets",
+      "score": 0.77,
+      "location": {
+        "lat": 32.7745,
+        "lon": -117.075
+      },
+      "address": "5500 Canyon Crest Dr",
+      "country": "US",
+      "has_upcoming_events": true,
+      "num_upcoming_events": 34,
+      "city": "San Diego",
+      "slug": "viejas-arena",
+      "extended_address": "San Diego, CA 92182",
+      "id": 1328,
+      "popularity": 0,
+      "access_method": {
+        "method": "QRCODE_TM",
+        "created_at": "2015-08-04T00:00:00Z",
+        "employee_only": false
+      },
+      "metro_code": 825,
+      "capacity": 12210,
+      "last_full_index_at": "2021-11-30T00:22:19Z",
+      "display_location": "San Diego, CA"
+    },
+    "datetime_tbd": false,
+    "performers": [
+      {
+        "type": "ncaa_basketball",
+        "name": "San Diego State Aztecs Basketball",
+        "image": "https://seatgeek.com/images/performers-landscape/san-diego-state-aztecs-basketball-71fdaf/6390/huge.jpg",
+        "id": 6390,
+        "images": {
+          "huge": "https://seatgeek.com/images/performers-landscape/san-diego-state-aztecs-basketball-71fdaf/6390/huge.jpg"
+        },
+        "divisions": [
+          {
+            "taxonomy_id": 1030200,
+            "short_name": null,
+            "display_name": "Division I",
+            "display_type": "Division",
+            "division_level": 1,
+            "slug": null
+          },
+          {
+            "taxonomy_id": 1030200,
+            "short_name": "MWC",
+            "display_name": "Mountain West",
+            "display_type": "Conference",
+            "division_level": 2,
+            "slug": "mountain-west"
+          }
+        ],
+        "has_upcoming_events": true,
+        "primary": true,
+        "stats": {
+          "event_count": 23
+        },
+        "taxonomies": [
+          {
+            "id": 1000000,
+            "name": "sports",
+            "parent_id": null,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 0,
+            "last_full_index_at": "2021-11-29T16:22:06Z"
+          },
+          {
+            "id": 1030000,
+            "name": "basketball",
+            "parent_id": 1000000,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 0,
+            "last_full_index_at": "2021-11-29T00:22:09Z"
+          },
+          {
+            "id": 1030200,
+            "name": "ncaa_basketball",
+            "parent_id": 1030000,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 0,
+            "last_full_index_at": "2021-11-29T16:22:06Z"
+          }
+        ],
+        "image_attribution": null,
+        "url": "https://seatgeek.com/san-diego-state-aztecs-basketball-tickets",
+        "score": 0.59,
+        "slug": "san-diego-state-aztecs-basketball",
+        "home_venue_id": 1328,
+        "short_name": "San Diego State",
+        "num_upcoming_events": 23,
+        "colors": null,
+        "image_license": null,
+        "popularity": 0,
+        "home_team": true,
+        "location": {
+          "lat": 32.7745,
+          "lon": -117.075
+        },
+        "last_full_index_at": "2021-11-30T00:27:10Z"
+      },
+      {
+        "type": "ncaa_basketball",
+        "name": "Long Beach State Basketball",
+        "image": "https://seatgeek.com/images/performers-landscape/long-beach-state-basketball-175e3c/6570/huge.jpg",
+        "id": 6570,
+        "images": {
+          "huge": "https://seatgeek.com/images/performers-landscape/long-beach-state-basketball-175e3c/6570/huge.jpg"
+        },
+        "divisions": [
+          {
+            "taxonomy_id": 1030200,
+            "short_name": null,
+            "display_name": "Division I",
+            "display_type": "Division",
+            "division_level": 1,
+            "slug": null
+          },
+          {
+            "taxonomy_id": 1030200,
+            "short_name": "Big West",
+            "display_name": "Big West",
+            "display_type": "Conference",
+            "division_level": 2,
+            "slug": "big-west"
+          }
+        ],
+        "has_upcoming_events": true,
+        "stats": {
+          "event_count": 26
+        },
+        "taxonomies": [
+          {
+            "id": 1000000,
+            "name": "sports",
+            "parent_id": null,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 0,
+            "last_full_index_at": "2021-11-25T16:22:16Z"
+          },
+          {
+            "id": 1030000,
+            "name": "basketball",
+            "parent_id": 1000000,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 0,
+            "last_full_index_at": "2021-11-25T00:22:13Z"
+          },
+          {
+            "id": 1030200,
+            "name": "ncaa_basketball",
+            "parent_id": 1030000,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 0,
+            "last_full_index_at": "2021-11-25T16:22:16Z"
+          }
+        ],
+        "image_attribution": "http://nocoastbias.com/wp-content/uploads/2013/03/LongBeachSt.jpeg",
+        "url": "https://seatgeek.com/long-beach-state-basketball-tickets",
+        "score": 0.37,
+        "slug": "long-beach-state-basketball",
+        "home_venue_id": 4246,
+        "short_name": "Long",
+        "num_upcoming_events": 26,
+        "colors": null,
+        "image_license": null,
+        "popularity": 0,
+        "away_team": true,
+        "location": {
+          "lat": 33.7827,
+          "lon": -118.122
+        },
+        "last_full_index_at": "2021-11-26T16:08:56Z"
+      }
+    ],
+    "is_open": false,
+    "links": [],
+    "datetime_local": "2021-11-30T03:30:00",
+    "time_tbd": true,
+    "short_title": "Long at San Diego State",
+    "visible_until_utc": "2021-12-01T08:00:00",
+    "stats": {
+      "listing_count": 94,
+      "average_price": 52,
+      "lowest_price_good_deals": 12,
+      "lowest_price": 12,
+      "highest_price": 255,
+      "visible_listing_count": 93,
+      "dq_bucket_counts": [
+        24,
+        29,
+        30,
+        11,
+        13,
+        21,
+        12,
+        0
+      ],
+      "median_price": 37,
+      "lowest_sg_base_price": 3,
+      "lowest_sg_base_price_good_deals": 3
+    },
+    "taxonomies": [
+      {
+        "id": 1000000,
+        "name": "sports",
+        "parent_id": null,
+        "rank": 0,
+        "last_full_index_at": "2021-11-29T16:22:06Z"
+      },
+      {
+        "id": 1030000,
+        "name": "basketball",
+        "parent_id": 1000000,
+        "rank": 0,
+        "last_full_index_at": "2021-11-29T00:22:09Z"
+      },
+      {
+        "id": 1030200,
+        "name": "ncaa_basketball",
+        "parent_id": 1030000,
+        "rank": 0,
+        "last_full_index_at": "2021-11-29T16:22:06Z"
+      }
+    ],
+    "url": "https://seatgeek.com/long-beach-state-at-san-diego-state-aztecs-basketball-tickets/ncaa-basketball/2021-11-30-3-30-am/5500920",
+    "score": 0.418,
+    "announce_date": "2021-09-19T00:00:00",
+    "created_at": "2021-09-19T18:50:01",
+    "date_tbd": false,
+    "title": "Long Beach State at San Diego State Aztecs Basketball",
+    "popularity": 0.629,
+    "description": "",
+    "status": "normal",
+    "access_method": {
+      "method": "QRCODE_TM",
+      "created_at": "2015-08-04T00:00:00Z",
+      "employee_only": false
+    },
+    "event_promotion": null,
+    "announcements": {},
+    "conditional": false,
+    "enddatetime_utc": null,
+    "last_full_index_at": "2021-11-30T08:34:52Z",
+    "themes": [],
+    "domain_information": []
+  },
+  {
+    "type": "ncaa_womens_basketball",
+    "id": 5516241,
+    "datetime_utc": "2021-11-30T22:00:00",
+    "venue": {
+      "state": "DC",
+      "name_v2": "McDonough Arena",
+      "postal_code": "20057",
+      "name": "McDonough Arena",
+      "links": [],
+      "timezone": "America/New_York",
+      "url": "https://seatgeek.com/venues/mcdonough-arena/tickets",
+      "score": 0.61,
+      "location": {
+        "lat": 38.9077,
+        "lon": -77.0716
+      },
+      "address": "3700 O St.",
+      "country": "US",
+      "has_upcoming_events": true,
+      "num_upcoming_events": 13,
+      "city": "Washington",
+      "slug": "mcdonough-arena",
+      "extended_address": "Washington, DC 20057",
+      "id": 5379,
+      "popularity": 0,
+      "access_method": null,
+      "metro_code": 511,
+      "capacity": 0,
+      "last_full_index_at": "2021-11-28T12:24:55Z",
+      "display_location": "Washington, DC"
+    },
+    "datetime_tbd": false,
+    "performers": [
+      {
+        "type": "ncaa_womens_basketball",
+        "name": "Georgetown Hoyas Womens Basketball",
+        "image": "https://seatgeek.com/images/performers-landscape/georgetown-hoyas-womens-basketball-8162af/9608/huge.jpg",
+        "id": 9608,
+        "images": {
+          "huge": "https://seatgeek.com/images/performers-landscape/georgetown-hoyas-womens-basketball-8162af/9608/huge.jpg"
+        },
+        "divisions": [
+          {
+            "taxonomy_id": 1030300,
+            "short_name": null,
+            "display_name": "Division I",
+            "display_type": "Division",
+            "division_level": 1,
+            "slug": null
+          },
+          {
+            "taxonomy_id": 1030300,
+            "short_name": "Big East",
+            "display_name": "Big East",
+            "display_type": "Conference",
+            "division_level": 2,
+            "slug": "big-east"
+          }
+        ],
+        "has_upcoming_events": true,
+        "primary": true,
+        "stats": {
+          "event_count": 23
+        },
+        "taxonomies": [
+          {
+            "id": 1000000,
+            "name": "sports",
+            "parent_id": null,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 0,
+            "last_full_index_at": "2021-11-29T16:22:06Z"
+          },
+          {
+            "id": 1030000,
+            "name": "basketball",
+            "parent_id": 1000000,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 0,
+            "last_full_index_at": "2021-11-30T04:22:12Z"
+          },
+          {
+            "id": 1030300,
+            "name": "ncaa_womens_basketball",
+            "parent_id": 1030000,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 0,
+            "last_full_index_at": "2021-11-30T04:22:12Z"
+          }
+        ],
+        "image_attribution": "null",
+        "url": "https://seatgeek.com/georgetown-hoyas-womens-basketball-tickets",
+        "score": 0.48,
+        "slug": "georgetown-hoyas-womens-basketball",
+        "home_venue_id": 5379,
+        "short_name": "Georgetown (Women)",
+        "num_upcoming_events": 23,
+        "colors": null,
+        "image_license": "null",
+        "popularity": 0,
+        "home_team": true,
+        "location": {
+          "lat": 38.9077,
+          "lon": -77.0716
+        },
+        "last_full_index_at": "2021-11-30T12:28:18Z"
+      },
+      {
+        "type": "ncaa_womens_basketball",
+        "name": "Temple Owls Womens Basketball",
+        "image": "https://seatgeek.com/images/performers-landscape/temple-owls-womens-basketball-819666/11716/huge.jpg",
+        "id": 11716,
+        "images": {
+          "huge": "https://seatgeek.com/images/performers-landscape/temple-owls-womens-basketball-819666/11716/huge.jpg"
+        },
+        "divisions": [
+          {
+            "taxonomy_id": 1030300,
+            "short_name": null,
+            "display_name": "Division I",
+            "display_type": "Division",
+            "division_level": 1,
+            "slug": null
+          },
+          {
+            "taxonomy_id": 1030300,
+            "short_name": "American Athletic Conference",
+            "display_name": "American Athletic Conference",
+            "display_type": "Conference",
+            "division_level": 2,
+            "slug": "american-athletic-conference"
+          }
+        ],
+        "has_upcoming_events": true,
+        "stats": {
+          "event_count": 21
+        },
+        "taxonomies": [
+          {
+            "id": 1000000,
+            "name": "sports",
+            "parent_id": null,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 0,
+            "last_full_index_at": "2021-11-29T16:22:06Z"
+          },
+          {
+            "id": 1030000,
+            "name": "basketball",
+            "parent_id": 1000000,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 0,
+            "last_full_index_at": "2021-11-30T04:22:12Z"
+          },
+          {
+            "id": 1030300,
+            "name": "ncaa_womens_basketball",
+            "parent_id": 1030000,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 0,
+            "last_full_index_at": "2021-11-30T04:22:12Z"
+          }
+        ],
+        "image_attribution": "null",
+        "url": "https://seatgeek.com/temple-owls-womens-basketball-tickets",
+        "score": 0.34,
+        "slug": "temple-owls-womens-basketball",
+        "home_venue_id": 3430,
+        "short_name": "Temple (Women)",
+        "num_upcoming_events": 21,
+        "colors": null,
+        "image_license": "null",
+        "popularity": 0,
+        "away_team": true,
+        "location": {
+          "lat": 39.9799,
+          "lon": -75.1586
+        },
+        "last_full_index_at": "2021-11-30T12:22:19Z"
+      }
+    ],
+    "is_open": false,
+    "links": [],
+    "datetime_local": "2021-11-30T17:00:00",
+    "time_tbd": false,
+    "short_title": "Temple (Women) at Georgetown (Women)",
+    "visible_until_utc": "2021-12-01T02:00:00",
+    "stats": {
+      "listing_count": null,
+      "average_price": null,
+      "lowest_price_good_deals": null,
+      "lowest_price": null,
+      "highest_price": null,
+      "visible_listing_count": null,
+      "dq_bucket_counts": null,
+      "median_price": null,
+      "lowest_sg_base_price": null,
+      "lowest_sg_base_price_good_deals": null
+    },
+    "taxonomies": [
+      {
+        "id": 1000000,
+        "name": "sports",
+        "parent_id": null,
+        "rank": 0,
+        "last_full_index_at": "2021-11-29T16:22:06Z"
+      },
+      {
+        "id": 1030000,
+        "name": "basketball",
+        "parent_id": 1000000,
+        "rank": 0,
+        "last_full_index_at": "2021-11-30T04:22:12Z"
+      },
+      {
+        "id": 1030300,
+        "name": "ncaa_womens_basketball",
+        "parent_id": 1030000,
+        "rank": 0,
+        "last_full_index_at": "2021-11-30T04:22:12Z"
+      }
+    ],
+    "url": "https://seatgeek.com/temple-owls-at-georgetown-hoyas-womens-basketball-tickets/ncaa-womens-basketball/2021-11-30-5-pm/5516241",
+    "score": 0,
+    "announce_date": "2021-10-05T00:00:00",
+    "created_at": "2021-10-05T19:40:23",
+    "date_tbd": false,
+    "title": "Temple Owls at Georgetown Hoyas Womens Basketball",
+    "popularity": 0,
+    "description": "",
+    "status": "normal",
+    "access_method": null,
+    "event_promotion": null,
+    "announcements": {},
+    "conditional": false,
+    "enddatetime_utc": null,
+    "last_full_index_at": "2021-11-30T12:42:46Z",
+    "themes": [],
+    "domain_information": []
+  },
+  {
+    "type": "ncaa_womens_basketball",
+    "id": 5546652,
+    "datetime_utc": "2021-11-30T22:00:00",
+    "venue": {
+      "state": "SC",
+      "name_v2": "TD Arena",
+      "postal_code": "29401",
+      "name": "TD Arena",
+      "links": [],
+      "timezone": "America/New_York",
+      "url": "https://seatgeek.com/venues/td-arena/tickets",
+      "score": 0.57,
+      "location": {
+        "lat": 32.7854,
+        "lon": -79.9344
+      },
+      "address": "30 George Street",
+      "country": "US",
+      "has_upcoming_events": true,
+      "num_upcoming_events": 21,
+      "city": "Charleston",
+      "slug": "td-arena",
+      "extended_address": "Charleston, SC 29401",
+      "id": 3257,
+      "popularity": 0,
+      "access_method": null,
+      "metro_code": 519,
+      "capacity": 5100,
+      "last_full_index_at": "2021-11-30T12:22:46Z",
+      "display_location": "Charleston, SC"
+    },
+    "datetime_tbd": false,
+    "performers": [
+      {
+        "type": "ncaa_womens_basketball",
+        "name": "Charleston Cougars Womens Basketball",
+        "image": "https://seatgeek.com/images/performers-landscape/charleston-cougars-womens-basketball-e50b5f/57211/huge.jpg",
+        "id": 57211,
+        "images": {
+          "huge": "https://seatgeek.com/images/performers-landscape/charleston-cougars-womens-basketball-e50b5f/57211/huge.jpg"
+        },
+        "divisions": [
+          {
+            "taxonomy_id": 1030300,
+            "short_name": null,
+            "display_name": "Division I",
+            "display_type": "Division",
+            "division_level": 1,
+            "slug": null
+          },
+          {
+            "taxonomy_id": 1030300,
+            "short_name": "Colonial Athletic",
+            "display_name": "Colonial Athletic",
+            "display_type": "Conference",
+            "division_level": 2,
+            "slug": "colonial-athletic"
+          }
+        ],
+        "has_upcoming_events": true,
+        "primary": true,
+        "stats": {
+          "event_count": 20
+        },
+        "taxonomies": [
+          {
+            "id": 1000000,
+            "name": "sports",
+            "parent_id": null,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 0,
+            "last_full_index_at": "2021-11-29T16:22:06Z"
+          },
+          {
+            "id": 1030000,
+            "name": "basketball",
+            "parent_id": 1000000,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 0,
+            "last_full_index_at": "2021-11-30T04:22:12Z"
+          },
+          {
+            "id": 1030300,
+            "name": "ncaa_womens_basketball",
+            "parent_id": 1030000,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 0,
+            "last_full_index_at": "2021-11-30T04:22:12Z"
+          }
+        ],
+        "image_attribution": "null",
+        "url": "https://seatgeek.com/charleston-cougars-womens-basketball-tickets",
+        "score": 0.33,
+        "slug": "charleston-cougars-womens-basketball",
+        "home_venue_id": null,
+        "short_name": "Charleston (Women)",
+        "num_upcoming_events": 20,
+        "colors": null,
+        "image_license": "null",
+        "popularity": 0,
+        "home_team": true,
+        "location": null,
+        "last_full_index_at": "2021-11-30T12:26:00Z"
+      },
+      {
+        "type": "ncaa_womens_basketball",
+        "name": "Georgia Southern Eagles Womens Basketball",
+        "image": "https://seatgeek.com/images/performers-landscape/georgia-southern-eagles-womens-basketball-a8f463/63551/huge.jpg",
+        "id": 63551,
+        "images": {
+          "huge": "https://seatgeek.com/images/performers-landscape/georgia-southern-eagles-womens-basketball-a8f463/63551/huge.jpg"
+        },
+        "divisions": [
+          {
+            "taxonomy_id": 1030300,
+            "short_name": null,
+            "display_name": "Division I",
+            "display_type": "Division",
+            "division_level": 1,
+            "slug": null
+          },
+          {
+            "taxonomy_id": 1030300,
+            "short_name": "Sun Belt",
+            "display_name": "Sun Belt",
+            "display_type": "Conference",
+            "division_level": 2,
+            "slug": "sun-belt"
+          }
+        ],
+        "has_upcoming_events": true,
+        "stats": {
+          "event_count": 20
+        },
+        "taxonomies": [
+          {
+            "id": 1000000,
+            "name": "sports",
+            "parent_id": null,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 0,
+            "last_full_index_at": "2021-11-29T16:22:06Z"
+          },
+          {
+            "id": 1030000,
+            "name": "basketball",
+            "parent_id": 1000000,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 0,
+            "last_full_index_at": "2021-11-30T04:22:12Z"
+          },
+          {
+            "id": 1030300,
+            "name": "ncaa_womens_basketball",
+            "parent_id": 1030000,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 0,
+            "last_full_index_at": "2021-11-30T04:22:12Z"
+          }
+        ],
+        "image_attribution": "null",
+        "url": "https://seatgeek.com/georgia-southern-eagles-womens-basketball-tickets",
+        "score": 0.32,
+        "slug": "georgia-southern-eagles-womens-basketball",
+        "home_venue_id": null,
+        "short_name": "Georgia Southern (Women)",
+        "num_upcoming_events": 20,
+        "colors": null,
+        "image_license": "null",
+        "popularity": 0,
+        "away_team": true,
+        "location": null,
+        "last_full_index_at": "2021-11-30T12:26:29Z"
+      }
+    ],
+    "is_open": false,
+    "links": [],
+    "datetime_local": "2021-11-30T17:00:00",
+    "time_tbd": false,
+    "short_title": "Georgia Southern (Women) at Charleston (Women)",
+    "visible_until_utc": "2021-12-01T02:00:00",
+    "stats": {
+      "listing_count": null,
+      "average_price": null,
+      "lowest_price_good_deals": null,
+      "lowest_price": null,
+      "highest_price": null,
+      "visible_listing_count": null,
+      "dq_bucket_counts": null,
+      "median_price": null,
+      "lowest_sg_base_price": null,
+      "lowest_sg_base_price_good_deals": null
+    },
+    "taxonomies": [
+      {
+        "id": 1000000,
+        "name": "sports",
+        "parent_id": null,
+        "rank": 0,
+        "last_full_index_at": "2021-11-29T16:22:06Z"
+      },
+      {
+        "id": 1030000,
+        "name": "basketball",
+        "parent_id": 1000000,
+        "rank": 0,
+        "last_full_index_at": "2021-11-30T04:22:12Z"
+      },
+      {
+        "id": 1030300,
+        "name": "ncaa_womens_basketball",
+        "parent_id": 1030000,
+        "rank": 0,
+        "last_full_index_at": "2021-11-30T04:22:12Z"
+      }
+    ],
+    "url": "https://seatgeek.com/georgia-southern-eagles-at-charleston-cougars-womens-basketball-tickets/ncaa-womens-basketball/2021-11-30-5-pm/5546652",
+    "score": 0.303,
+    "announce_date": "2021-11-01T00:00:00",
+    "created_at": "2021-11-01T16:00:42",
+    "date_tbd": false,
+    "title": "Georgia Southern Eagles at Charleston Cougars Womens Basketball",
+    "popularity": 0.589,
+    "description": "",
+    "status": "normal",
+    "access_method": null,
+    "event_promotion": null,
+    "announcements": {},
+    "conditional": false,
+    "enddatetime_utc": null,
+    "last_full_index_at": "2021-11-30T13:05:59Z",
+    "themes": [],
+    "domain_information": []
+  }
+]

@@ -14,9 +14,7 @@ const Home = () => {
             <div className="container">
                 <Description/>
                 <SearchFromHome/>
-                <hr/>
                 {/*<LoggedInHomeContent/>*/}
-                <hr/>
                 <GeneralHomeContent/>
                 <hr/>
                 <Footer/>

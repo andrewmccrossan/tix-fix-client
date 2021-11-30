@@ -1,18 +1,18 @@
-import concertsData from './data/events-concerts.json';
+import sportsData from './data/events-sports.json';
 
 const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
-const events_concerts = (state = concertsData, action) => {
+const events_sports = (state = sportsData, action) => {
     const randomNum = random(0,2);
     switch (action.type) {
-        case 'fetch-concerts':
+        case 'fetch-sports':
             if (randomNum === 1) {
                 return(
-                    action.concerts.slice(0,3)
+                    action.sports.slice(0,3)
                 );
             } else {
                 return(
-                    action.concerts.slice(7)
+                    action.sports.slice(6,9)
                 );
             }
             break;
@@ -21,4 +21,4 @@ const events_concerts = (state = concertsData, action) => {
     }
 };
 
-export default events_concerts;
+export default events_sports;
