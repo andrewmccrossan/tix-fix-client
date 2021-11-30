@@ -1,6 +1,6 @@
 import React from "react";
 import Description from "./Description";
-import SearchFromHome from "./SearchFromHome";
+import MainSearchBar from "./MainSearchBar";
 import Footer from "./Footer";
 import GeneralHomeContent from "./GeneralHomeContent/index.js";
 import LoggedInHomeContent from "./LoggedInHomeContent";
@@ -13,7 +13,7 @@ const Home = () => {
             <TopNavBar page={"home"}/>
             <div className="container">
                 <Description/>
-                <SearchFromHome/>
+                <MainSearchBar/>
                 {/*<LoggedInHomeContent/>*/}
                 <GeneralHomeContent/>
                 <hr/>

@@ -6,8 +6,8 @@ import GeneralSports from "./GeneralSports";
 const GeneralHomeContent = () => {
     return(
         <>
-            <GeneralConcerts/>
             <GeneralSports/>
+            <GeneralConcerts/>
         </>
     );
 }

@@ -50,6 +50,9 @@ const EventCardItem = ({event}) => {
                     <li className="list-group-item">{event.venue.name}</li>
                     <li className="list-group-item">{event.venue.display_location}</li>
                 </ul>
+                <div className="card-body">
+                    <a href="#" className="card-link">More Details</a>
+                </div>
             </div>
         </>
     )

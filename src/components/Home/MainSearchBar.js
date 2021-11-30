@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {getSearchResults} from "../../services/searchService";
 import {Link} from "react-router-dom";
 
-const SearchFromHome = () => {
+const MainSearchBar = () => {
     let [searchQuery, setSearchQuery] = useState("");
     const searchClickHandler = () => {
         getSearchResults(searchQuery);
@@ -30,4 +30,4 @@ const SearchFromHome = () => {
         </>
     )
 }
-export default SearchFromHome;
+export default MainSearchBar;

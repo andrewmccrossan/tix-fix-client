@@ -1,4 +1,3 @@
-
 const SEARCH_API = () => {
     if (process.env.NODE_ENV === "development") {
         return 'http://localhost:4000/search';
@@ -7,9 +6,12 @@ const SEARCH_API = () => {
     }
 }
 
-export const getSearchResults = (searchQuery) =>
+export const getSearchResults = (dispatch, searchQuery) =>
     fetch(`${SEARCH_API()}/${searchQuery}`)
         .then(response => response.json())
         .then(searchResult => {
-            console.log(searchResult);
+            dispatch({
+                type: 'fetch-search-results',
+                searchResult
+            })
         });

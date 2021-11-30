@@ -1,14 +1,18 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
+import {useDispatch} from "react-redux";
 import {getSearchResults} from "../../services/searchService";
 
 const TopNavBar = ({page = "home"}) => {
     let [searchQuery, setSearchQuery] = useState("");
+    const dispatch = useDispatch();
     const searchClickHandler = () => {
-        getSearchResults(searchQuery);
+        getSearchResults(dispatch, {
+            searchQuery: searchQuery
+        });
     }
 
-    if (page === "home") {
+    if (page === "home" || page === "search") {
         return(
             <>
                 <nav className="navbar navbar-expand navbar-dark bg-primary">
