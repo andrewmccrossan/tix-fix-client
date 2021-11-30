@@ -1,8 +1,9 @@
 import React from "react";
 
-const SearchResultsItem = () => {
+const SearchResultsItem = ({searchResult}) => {
     return (
         <>
+            {searchResult}
             <div className="row mt-3">
                 <div className="col-lg-2"/>
                 <div className="col-12 col-lg-8">

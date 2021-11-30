@@ -2,7 +2,7 @@ import React from "react";
 import Description from "./Description";
 import SearchFromHome from "./SearchFromHome";
 import Footer from "./Footer";
-import GenericHomeContent from "./GenericHomeContent/index.js";
+import GeneralHomeContent from "./GeneralHomeContent/index.js";
 import LoggedInHomeContent from "./LoggedInHomeContent";
 import './home.css';
 import TopNavBar from "../TopNavBar";
@@ -15,9 +15,9 @@ const Home = () => {
                 <Description/>
                 <SearchFromHome/>
                 <hr/>
-                <LoggedInHomeContent/>
+                {/*<LoggedInHomeContent/>*/}
                 <hr/>
-                <GenericHomeContent/>
+                <GeneralHomeContent/>
                 <hr/>
                 <Footer/>
             </div>

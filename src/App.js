@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter, Link, Route} from "react-router-dom";
+import {BrowserRouter, Route} from "react-router-dom";
 import profile from "./reducers/profile";
 import {combineReducers, createStore} from "redux";
 import {Provider} from "react-redux";
@@ -9,8 +9,9 @@ import Details from "./components/Details";
 import LoginRegister from "./components/Login-Register";
 import Profile from "./components/Profile";
 import Privacy from "./components/Privacy";
+import events_concerts from "./reducers/events-concerts";
 
-const reducer = combineReducers({profile});
+const reducer = combineReducers({profile, events_concerts});
 const store = createStore(reducer);
 
 function App() {
