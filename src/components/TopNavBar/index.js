@@ -1,15 +1,15 @@
 import React, {useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {getSearchResults} from "../../services/searchService";
 
 const TopNavBar = ({page = "home"}) => {
     let [searchQuery, setSearchQuery] = useState("");
     const dispatch = useDispatch();
+    const history = useHistory();
     const searchClickHandler = () => {
-        getSearchResults(dispatch, {
-            searchQuery: searchQuery
-        });
+        history.push(`/search/results/${searchQuery}`);
+        getSearchResults(dispatch, searchQuery);
     }
 
     if (page === "home" || page === "search") {
@@ -43,7 +43,9 @@ const TopNavBar = ({page = "home"}) => {
                                    type="text"
                                    placeholder="Search for an event, artist, team"
                                    onChange={(event) => setSearchQuery(event.target.value)}/>
-                            <button className="btn btn-secondary" onClick={searchClickHandler}>Search</button>
+                            {/*<Link to={`/search/results/${searchQuery}`}>*/}
+                                <button className="btn btn-secondary" onClick={searchClickHandler}>Search</button>
+                            {/*</Link>*/}
                         </div>
 
                         <ul className="navbar-nav ms-auto">

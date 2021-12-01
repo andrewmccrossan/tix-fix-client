@@ -2,8 +2,7 @@ import React from "react";
 
 // referenced https://stackoverflow.com/questions/29206453/best-way-to-convert-military-time-to-standard-time-in-javascript
 const convertMilitaryTime = (inputDateTime) => {
-    const dateTime = inputDateTime;
-    const eventTime = dateTime.split('T')[1];
+    const eventTime = inputDateTime.split('T')[1];
     const time = eventTime.split(':');
 
     const hours = Number(time[0]);
@@ -46,7 +45,7 @@ const EventCardItem = ({event}) => {
                 </div>
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item">{formatDate(event.datetime_local)} </li>
-                    <li className="list-group-item">{convertMilitaryTime(event.datetime_local)} </li>
+                    <li className="list-group-item">{convertMilitaryTime(event.datetime_local)}</li>
                     <li className="list-group-item">{event.venue.name}</li>
                     <li className="list-group-item">{event.venue.display_location}</li>
                 </ul>

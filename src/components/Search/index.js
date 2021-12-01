@@ -1,5 +1,4 @@
 import React from "react";
-import SearchResultsItem from "./SearchResultsItem";
 import TopNavBar from "../TopNavBar";
 import MainSearchBar from "../Home/MainSearchBar";
 
@@ -14,13 +13,6 @@ const Search = () => {
                     </div>
                 </div>
                 <MainSearchBar/>
-                {/*<ul className="list-group">
-                    {
-                        searchAPIResults.map(searchResult => {
-                            return(<SearchResultsItem searchResult={searchResult} key={searchResult.id}/>);
-                        })
-                    }
-                </ul>*/}
             </div>
         </>
     )
