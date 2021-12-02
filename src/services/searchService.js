@@ -7,7 +7,6 @@ const SEARCH_API = () => {
 }
 
 export const getSearchResults = (dispatch, searchQuery) => {
-    console.log(searchQuery);
     fetch(`${SEARCH_API()}/${searchQuery}`)
         .then(response => response.json())
         .then(searchResult => {

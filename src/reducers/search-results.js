@@ -12,8 +12,4 @@ const search_results = (state = searchResultsData, action) => {
     }
 };
 
-/*const search_results = (state = searchResultsData) => {
-    return(state);
-};*/
-
 export default search_results;

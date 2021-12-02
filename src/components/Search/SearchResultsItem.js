@@ -32,7 +32,6 @@ const formatDate = (inputDateTime) => {
 }
 
 const SearchResultsItem = ({result}) => {
-    console.log(result);
     return (
         <>
             <div className="row mt-3">
