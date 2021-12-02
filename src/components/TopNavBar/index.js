@@ -1,15 +1,11 @@
 import React, {useState} from "react";
-import {Link} from "react-router-dom";
-import {useDispatch} from "react-redux";
-import {getSearchResults} from "../../services/searchService";
+import {Link, useHistory} from "react-router-dom";
 
 const TopNavBar = ({page = "home"}) => {
     let [searchQuery, setSearchQuery] = useState("");
-    const dispatch = useDispatch();
+    const history = useHistory();
     const searchClickHandler = () => {
-        getSearchResults(dispatch, {
-            searchQuery: searchQuery
-        });
+        history.push(`/search/results/${searchQuery}`);
     }
 
     if (page === "home" || page === "search") {

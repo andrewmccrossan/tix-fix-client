@@ -1,12 +1,13 @@
 import React, {useState} from "react";
-import {getSearchResults} from "../../services/searchService";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
 const MainSearchBar = () => {
     let [searchQuery, setSearchQuery] = useState("");
+    const history = useHistory();
     const searchClickHandler = () => {
-        getSearchResults(searchQuery);
+        history.push(`/search/results/${searchQuery}`);
     }
+
     return (
         <>
             <div className="row mt-3 mb-5">
@@ -22,9 +23,7 @@ const MainSearchBar = () => {
                     </div>
                 </div>
                 <div className="col-3 col-lg-3">
-                    <Link to="/search" className="wd-text-no-underline">
-                        <button className="btn btn-primary btn-lg" onClick={searchClickHandler}>Search</button>
-                    </Link>
+                    <button className="btn btn-primary btn-lg" onClick={searchClickHandler}>Search</button>
                 </div>
             </div>
         </>

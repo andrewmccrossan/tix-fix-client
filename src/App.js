@@ -12,6 +12,7 @@ import Privacy from "./components/Privacy";
 import events_concerts from "./reducers/events-concerts";
 import events_sports from "./reducers/events-sports";
 import search_results from "./reducers/search-results";
+import SearchResult from "./components/Search/SearchResult";
 
 const reducer = combineReducers({profile, events_concerts, events_sports, search_results});
 const store = createStore(reducer);
@@ -23,11 +24,11 @@ function App() {
                 <Route path={["/", "/home"]} exact={true}>
                     <Home/>
                 </Route>
-                <Route path="/search">
+                <Route path="/search" exact={true}>
                     <Search/>
                 </Route>
-                <Route path="/search/results/:searchQuery">
-                    <Search/>
+                <Route path="/search/results/:searchCriteria">
+                    <SearchResult/>
                 </Route>
                 <Route path="/details">
                     <Details/>
