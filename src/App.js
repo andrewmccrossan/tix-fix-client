@@ -30,7 +30,7 @@ function App() {
                 <Route path="/search/results/:searchCriteria">
                     <SearchResult/>
                 </Route>
-                <Route path="/details">
+                <Route path="/details/:uniqueIdentifier">
                     <Details/>
                 </Route>
                 <Route path="/login">
