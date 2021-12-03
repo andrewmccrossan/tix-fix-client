@@ -1,37 +1,14 @@
 import React from "react";
-
-// referenced https://stackoverflow.com/questions/29206453/best-way-to-convert-military-time-to-standard-time-in-javascript
-const convertMilitaryTime = (inputDateTime) => {
-    const eventTime = inputDateTime.split('T')[1];
-    const time = eventTime.split(':');
-
-    const hours = Number(time[0]);
-    const minutes = Number(time[1]);
-
-    let timeValue;
-    if (hours > 0 && hours <= 12) {
-        timeValue= "" + hours;
-    } else if (hours > 12) {
-        timeValue= "" + (hours - 12);
-    } else if (hours === 0) {
-        timeValue= "12";
-    }
-
-    timeValue += (minutes < 10) ? ":0" + minutes : ":" + minutes;
-    timeValue += (hours >= 12) ? " PM" : " AM";
-    return timeValue;
-}
-
-// referenced https://stackoverflow.com/questions/47575119/how-to-get-month-name-from-an-html-date-input-value
-const formatDate = (inputDateTime) => {
-    const dateTime = inputDateTime;
-    const eventDate = dateTime.split('T')[0];
-    const dateSplit = eventDate.split("-");
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
-    return months[dateSplit[1]-1] + " " + dateSplit[2] + ", " + dateSplit[0];
-}
+import {useHistory} from "react-router-dom";
+import {convertMilitaryTime, formatDate} from "../../Utils/utils";
 
 const SearchResultsItem = ({result}) => {
+
+    const history = useHistory();
+    const detailsClickHandler = (resultID) => {
+        history.push(`/details/${resultID}`);
+    }
+
     return (
         <>
             <div className="row mt-3">
@@ -47,7 +24,11 @@ const SearchResultsItem = ({result}) => {
                             <div className="d-flex justify-content-center">{result.venue.name} - {result.venue.display_location}</div>
                         </div>
                         <div className="col-2 d-flex justify-content-center align-items-center">
-                            <button type="button" className="btn btn-primary mt-1 mb-1">Get Details</button>
+                            <button type="button"
+                                    className="btn btn-primary mt-1 mb-1"
+                                    onClick={()=> detailsClickHandler(result.id)}>
+                                Get Details
+                            </button>
                         </div>
                     </div>
                 </div>

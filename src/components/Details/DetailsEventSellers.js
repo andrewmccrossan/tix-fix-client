@@ -6,7 +6,7 @@ const DetailsEventSellers = () => {
             <div className="row mt-4">
                 <div className="col">
                     <div className="card">
-                        <h3 className="card-header h4">Other ticket sellers</h3>
+                        <h3 className="card-header h4">Resale Tickets </h3>
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item">
                                 <div className="row">
@@ -17,7 +17,7 @@ const DetailsEventSellers = () => {
                                         Price
                                     </div>
                                     <div className="col-3">
-                                        <button type="button" className="btn btn-primary">Buy a Ticket from this seller</button>
+                                        <button type="button" className="btn btn-primary">Buy Seller's Ticket</button>
                                     </div>
                                 </div>
                             </li>
