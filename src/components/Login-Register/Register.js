@@ -6,14 +6,6 @@ const Register = () => {
     // const dispatch = useDispatch();
     const history = useHistory();
     const [user, setUser] = useState({role: 'BUYER'});
-    // let [firstName, setFirstName] = useState('');
-    // let [lastName, setLastName] = useState('');
-    // let [username, setUsername] = useState('');
-    // let [password, setPassword] = useState('');
-    // let [email, setEmail] = useState('');
-    // let [zip, setZip] = useState('');
-    // let [artistInterest, setArtistInterest] = useState('');
-    // let [role, setRole] = useState('BUYER');
 
     const registerInfo = (userInfo) => {
         register(userInfo)

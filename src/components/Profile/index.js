@@ -2,7 +2,8 @@ import React, {useEffect, useState} from "react";
 import BuyerProfile from "./BuyerProfile";
 import './profile.css';
 import TopNavBar from "../TopNavBar";
-import {profile} from "../../services/user-service";
+import {logout, profile} from "../../services/user-service";
+import {useHistory} from "react-router-dom";
 // import {useSelector, useDispatch} from "react-redux";
 // import {getCurrentProfile} from "../../../../services/profileService";
 // import Search from "../Search";
@@ -11,34 +12,41 @@ const Profile = () => {
     // const profileData = useSelector((state) => state.profile);
     // const dispatch = useDispatch();
     // useEffect(() => getCurrentProfile(dispatch), []);
+    const history = useHistory();
     const [currentProfile, setCurrentProfile] = useState({
-        myProfile: {
-            username: 'u',
-            email: 'e',
-            lastName: 'l',
-            firstName: 'f',
-            role: 'r'
+        userProfile: {
+            username: '',
+            email: '',
+            lastName: '',
+            firstName: '',
+            role: '',
+            zip: '',
         }
                                                          });
     useEffect(() => {
         profile().then(profile => {
-            setCurrentProfile({myProfile: profile});
-            console.log(currentProfile);
-            console.log(profile);
+            setCurrentProfile({userProfile: profile});
         });
-    });
+    }, []);
+
+    const attemptLogout = () => {
+        logout()
+            .then(() => history.push('/home'))
+            .catch(error => {
+                console.log(error);
+                alert("Could not log you out. Please try again.");
+            })
+    }
 
     return (
         <>
             <TopNavBar page={"profile"}/>
             <div className="container">
-                <BuyerProfile/>
-                <h3>{currentProfile.myProfile.username}</h3>
-                <h3>{currentProfile.myProfile.email}</h3>
-                <h3>{currentProfile.myProfile.lastName}</h3>
-                <h3>{currentProfile.myProfile.firstName}</h3>
-                <h3>{currentProfile.myProfile.role}</h3>
-                <h2>HELLOOOOOOOOOOOOOOOOO</h2>
+                <BuyerProfile currentUser={currentProfile.userProfile}/>
+                <button type="submit"
+                        className="btn btn-primary mb-2 mt-3"
+                        onClick={() => attemptLogout()}
+                >Log Out</button>
             </div>
         </>
     )
