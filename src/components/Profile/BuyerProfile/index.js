@@ -8,7 +8,7 @@ import EventsInArea from "./EventsInArea";
 // import {getCurrentProfile} from "../../../../services/profileService";
 // import Search from "../Search";
 
-const BuyerProfile = () => {
+const BuyerProfile = ({currentUser}) => {
     // const profileData = useSelector((state) => state.profile);
     // const dispatch = useDispatch();
     // useEffect(() => getCurrentProfile(dispatch), []);
@@ -17,7 +17,7 @@ const BuyerProfile = () => {
         <>
             <div className="row mt-5">
                 <div className="col-4">
-                    <ProfileDetails/>
+                    <ProfileDetails currentUser={currentUser}/>
                 </div>
                 <div className="col-8">
                     <div className="row">
