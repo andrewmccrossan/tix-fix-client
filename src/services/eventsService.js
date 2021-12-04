@@ -9,23 +9,11 @@ const EVENT_API = () => {
 
 export const getSportsEvents = (dispatch) =>
     fetch(`${EVENT_API()}/sports`)
-        .then(response => response.json())
-        .then(sports => {
-            dispatch({
-                type: 'fetch-sports',
-                sports
-            })
-        });
+        .then(response => response.json());
 
 export const getConcertEvents = (dispatch) =>
     fetch(`${EVENT_API()}/concert`)
-        .then(response => response.json())
-        .then(concerts => {
-            dispatch({
-                type: 'fetch-concerts',
-                concerts
-            })
-        });
+        .then(response => response.json());
 
 export const getEventDetails = (dispatch, eventId) =>
     fetch(`${EVENT_API()}/details/${eventId}`)

@@ -9,13 +9,11 @@ import Details from "./components/Details";
 import LoginRegister from "./components/Login-Register";
 import Profile from "./components/Profile";
 import Privacy from "./components/Privacy";
-import events_concerts from "./reducers/events-concerts";
-import events_sports from "./reducers/events-sports";
 import search_results from "./reducers/search-results";
 import SearchResult from "./components/Search/SearchResult";
 import event_details from "./reducers/event-details";
 
-const reducer = combineReducers({profile, events_concerts, events_sports, search_results, event_details});
+const reducer = combineReducers({profile, search_results, event_details});
 const store = createStore(reducer);
 
 function App() {

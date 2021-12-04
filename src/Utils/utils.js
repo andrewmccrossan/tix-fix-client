@@ -29,3 +29,6 @@ export const formatDate = (inputDateTime) => {
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
     return months[dateSplit[1]-1] + " " + dateSplit[2] + ", " + dateSplit[0];
 };
+
+// referenced https://www.joshwcomeau.com/snippets/javascript/random/
+export const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
