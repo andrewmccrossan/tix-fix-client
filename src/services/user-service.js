@@ -10,8 +10,15 @@ export const register = (user) =>
                   'credentials': 'include',
               }
           }
-    )
-        .then(response => response.json())
+    ).then(response => response.json());
+
+export const profile = () =>
+    fetch(`${SERVER_API}/profile`, {
+        method: 'POST',
+        headers: {
+            'credentials': 'include',
+        }
+    }).then(response => response.json());
 
         // .then(profileData =>
         //           dispatch({

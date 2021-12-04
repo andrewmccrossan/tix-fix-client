@@ -1,9 +1,10 @@
 import React, {useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import {register} from "../../services/user-service";
 
 const Register = () => {
     // const dispatch = useDispatch();
+    const history = useHistory();
     const [user, setUser] = useState({role: 'BUYER'});
     // let [firstName, setFirstName] = useState('');
     // let [lastName, setLastName] = useState('');
@@ -16,10 +17,14 @@ const Register = () => {
 
     const registerInfo = (userInfo) => {
         register(userInfo)
-            .then(newUser => console.log(newUser))
+            .then(() => history.push('/profile'))
+            .catch(error => {
+                console.log(error);
+                alert("Username already taken. Try another one!");
+            })
     };
 
-    const setRadioRole = (event) => setUser({...user, firstName: event.currentTarget.value})
+    const setRadioRole = (event) => setUser({...user, role: event.currentTarget.value})
 
     return(
         <>
