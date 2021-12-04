@@ -33,8 +33,11 @@ const DetailsEventInfo = () => {
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item">
                                 <div className="row">
-                                    <div className="col d-grid">
+                                    <div className="col-6 d-grid">
                                         <button type="button" className="btn btn-light fw-bold">Add to Wish List</button>
+                                    </div>
+                                    <div className="col-6 d-grid">
+                                        <button type="button" className="btn btn-secondary fw-bold">Write a Review for the Venue</button>
                                     </div>
                                 </div>
                             </li>

@@ -4,6 +4,8 @@ import './profile.css';
 import TopNavBar from "../TopNavBar";
 import {logout, profile} from "../../services/user-service";
 import {useHistory} from "react-router-dom";
+import SellerProfile from "./SellerProfile";
+import ReviewerProfile from "./ReviewerProfile";
 // import {useSelector, useDispatch} from "react-redux";
 // import {getCurrentProfile} from "../../../../services/profileService";
 // import Search from "../Search";
