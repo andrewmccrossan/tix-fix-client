@@ -26,3 +26,13 @@ export const getConcertEvents = (dispatch) =>
                 concerts
             })
         });
+
+export const getEventDetails = (dispatch, eventId) =>
+    fetch(`${EVENT_API()}/details/${eventId}`)
+        .then(response => response.json())
+        .then(details => {
+            dispatch({
+                type: 'fetch-event-details',
+                details
+            })
+        });

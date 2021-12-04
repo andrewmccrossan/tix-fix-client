@@ -1,0 +1,420 @@
+[
+  {
+    "type": "concert",
+    "id": 5523270,
+    "datetime_utc": "2022-06-14T23:00:00",
+    "venue": {
+      "state": "FL",
+      "name_v2": "Raymond James Stadium",
+      "postal_code": "33607",
+      "name": "Raymond James Stadium",
+      "links": [],
+      "timezone": "America/New_York",
+      "url": "https://seatgeek.com/venues/raymond-james-stadium/tickets",
+      "score": 0.59,
+      "location": {
+        "lat": 27.9753,
+        "lon": -82.5034
+      },
+      "address": "4201 North Dale Mabry Highway",
+      "country": "US",
+      "has_upcoming_events": true,
+      "num_upcoming_events": 12,
+      "city": "Tampa",
+      "slug": "raymond-james-stadium",
+      "extended_address": "Tampa, FL 33607",
+      "id": 39,
+      "popularity": 0,
+      "access_method": {
+        "method": "QRCODE_TM",
+        "created_at": "2015-08-24T14:44:53Z",
+        "employee_only": false
+      },
+      "metro_code": 539,
+      "capacity": 65847,
+      "last_full_index_at": "2021-12-03T08:48:27Z",
+      "display_location": "Tampa, FL"
+    },
+    "datetime_tbd": false,
+    "performers": [
+      {
+        "type": "band",
+        "name": "Coldplay",
+        "image": "https://seatgeek.com/images/performers-landscape/coldplay-22f4b4/32/huge.jpg",
+        "id": 32,
+        "images": {
+          "huge": "https://seatgeek.com/images/performers-landscape/coldplay-22f4b4/32/huge.jpg"
+        },
+        "divisions": null,
+        "has_upcoming_events": true,
+        "primary": true,
+        "stats": {
+          "event_count": 15
+        },
+        "taxonomies": [
+          {
+            "id": 2000000,
+            "name": "concerts",
+            "parent_id": null,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 0,
+            "last_full_index_at": "2021-12-02T20:23:02Z"
+          }
+        ],
+        "image_attribution": "null",
+        "url": "https://seatgeek.com/coldplay-tickets",
+        "score": 0.52,
+        "slug": "coldplay",
+        "home_venue_id": null,
+        "short_name": "Coldplay",
+        "num_upcoming_events": 15,
+        "colors": null,
+        "image_license": "null",
+        "genres": [
+          {
+            "id": 456,
+            "name": "Rock",
+            "slug": "rock",
+            "primary": false,
+            "images": {
+              "1200x525": "https://seatgeek.com/images/performers-landscape/phish-effad2/1436/1200x525.jpg",
+              "1200x627": "https://seatgeek.com/images/performers-landscape/phish-8faef1/1436/1200x627.jpg",
+              "136x136": "https://seatgeek.com/images/performers-landscape/phish-04f3de/1436/136x136.jpg",
+              "500_700": "https://seatgeek.com/images/performers-landscape/phish-f4d0bb/1436/500_700.jpg",
+              "800x320": "https://seatgeek.com/images/performers-landscape/phish-edf8e2/1436/800x320.jpg",
+              "banner": "https://seatgeek.com/images/performers-landscape/phish-5bc7cd/1436/banner.jpg",
+              "block": "https://seatgeek.com/images/performers-landscape/phish-27799b/1436/block.jpg",
+              "criteo_130_160": "https://seatgeek.com/images/performers-landscape/phish-89047f/1436/criteo_130_160.jpg",
+              "criteo_170_235": "https://seatgeek.com/images/performers-landscape/phish-a1021b/1436/criteo_170_235.jpg",
+              "criteo_205_100": "https://seatgeek.com/images/performers-landscape/phish-0cf1e8/1436/criteo_205_100.jpg",
+              "criteo_400_300": "https://seatgeek.com/images/performers-landscape/phish-5d4f8a/1436/criteo_400_300.jpg",
+              "fb_100x72": "https://seatgeek.com/images/performers-landscape/phish-511f1c/1436/fb_100x72.jpg",
+              "fb_600_315": "https://seatgeek.com/images/performers-landscape/phish-9058c4/1436/fb_600_315.jpg",
+              "huge": "https://seatgeek.com/images/performers-landscape/phish-66ebcc/1436/huge.jpg",
+              "ipad_event_modal": "https://seatgeek.com/images/performers-landscape/phish-5b63b5/1436/ipad_event_modal.jpg",
+              "ipad_header": "https://seatgeek.com/images/performers-landscape/phish-8f1335/1436/ipad_header.jpg",
+              "ipad_mini_explore": "https://seatgeek.com/images/performers-landscape/phish-422406/1436/ipad_mini_explore.jpg",
+              "mongo": "https://seatgeek.com/images/performers-landscape/phish-2359bc/1436/mongo.jpg",
+              "square_mid": "https://seatgeek.com/images/performers-landscape/phish-632f21/1436/square_mid.jpg",
+              "triggit_fb_ad": "https://seatgeek.com/images/performers-landscape/phish-f3de5c/1436/triggit_fb_ad.jpg"
+            },
+            "image": "https://seatgeek.com/images/performers-landscape/phish-66ebcc/1436/huge.jpg",
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "last_full_index_at": "2021-12-03T00:22:25Z"
+          },
+          {
+            "id": 457,
+            "name": "Alternative",
+            "slug": "alternative",
+            "primary": false,
+            "images": {
+              "1200x525": "https://seatgeek.com/images/performers-landscape/h-e-r-660be5/77787/1200x525.jpg",
+              "1200x627": "https://seatgeek.com/images/performers-landscape/h-e-r-e01add/77787/1200x627.jpg",
+              "136x136": "https://seatgeek.com/images/performers-landscape/h-e-r-1899fd/77787/136x136.jpg",
+              "500_700": "https://seatgeek.com/images/performers-landscape/h-e-r-133d9b/77787/500_700.jpg",
+              "800x320": "https://seatgeek.com/images/performers-landscape/h-e-r-f954e2/77787/800x320.jpg",
+              "banner": "https://seatgeek.com/images/performers-landscape/h-e-r-593f99/77787/banner.jpg",
+              "block": "https://seatgeek.com/images/performers-landscape/h-e-r-b590ad/77787/block.jpg",
+              "criteo_130_160": "https://seatgeek.com/images/performers-landscape/h-e-r-f38e4f/77787/criteo_130_160.jpg",
+              "criteo_170_235": "https://seatgeek.com/images/performers-landscape/h-e-r-611703/77787/criteo_170_235.jpg",
+              "criteo_205_100": "https://seatgeek.com/images/performers-landscape/h-e-r-b3dba2/77787/criteo_205_100.jpg",
+              "criteo_400_300": "https://seatgeek.com/images/performers-landscape/h-e-r-8b31a5/77787/criteo_400_300.jpg",
+              "fb_100x72": "https://seatgeek.com/images/performers-landscape/h-e-r-f43303/77787/fb_100x72.jpg",
+              "fb_600_315": "https://seatgeek.com/images/performers-landscape/h-e-r-49fa2b/77787/fb_600_315.jpg",
+              "huge": "https://seatgeek.com/images/performers-landscape/h-e-r-2f1580/77787/huge.jpg",
+              "ipad_event_modal": "https://seatgeek.com/images/performers-landscape/h-e-r-91efe5/77787/ipad_event_modal.jpg",
+              "ipad_header": "https://seatgeek.com/images/performers-landscape/h-e-r-e5426d/77787/ipad_header.jpg",
+              "ipad_mini_explore": "https://seatgeek.com/images/performers-landscape/h-e-r-73254d/77787/ipad_mini_explore.jpg",
+              "mongo": "https://seatgeek.com/images/performers-landscape/h-e-r-02285e/77787/mongo.jpg",
+              "square_mid": "https://seatgeek.com/images/performers-landscape/h-e-r-ac03cc/77787/square_mid.jpg",
+              "triggit_fb_ad": "https://seatgeek.com/images/performers-landscape/h-e-r-a5ec20/77787/triggit_fb_ad.jpg"
+            },
+            "image": "https://seatgeek.com/images/performers-landscape/h-e-r-2f1580/77787/huge.jpg",
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "last_full_index_at": "2021-11-28T00:22:09Z"
+          },
+          {
+            "id": 452,
+            "name": "Pop",
+            "slug": "pop",
+            "primary": false,
+            "images": {
+              "1200x525": "https://seatgeek.com/images/performers-landscape/adele-b8cc57/141/1200x525.jpg",
+              "1200x627": "https://seatgeek.com/images/performers-landscape/adele-a8a93d/141/1200x627.jpg",
+              "136x136": "https://seatgeek.com/images/performers-landscape/adele-7cc569/141/136x136.jpg",
+              "500_700": "https://seatgeek.com/images/performers-landscape/adele-003a5c/141/500_700.jpg",
+              "800x320": "https://seatgeek.com/images/performers-landscape/adele-7c8575/141/800x320.jpg",
+              "banner": "https://seatgeek.com/images/performers-landscape/adele-9036d9/141/banner.jpg",
+              "block": "https://seatgeek.com/images/performers-landscape/adele-7b842c/141/block.jpg",
+              "criteo_130_160": "https://seatgeek.com/images/performers-landscape/adele-f438df/141/criteo_130_160.jpg",
+              "criteo_170_235": "https://seatgeek.com/images/performers-landscape/adele-6cd19f/141/criteo_170_235.jpg",
+              "criteo_205_100": "https://seatgeek.com/images/performers-landscape/adele-2a264f/141/criteo_205_100.jpg",
+              "criteo_400_300": "https://seatgeek.com/images/performers-landscape/adele-178718/141/criteo_400_300.jpg",
+              "fb_100x72": "https://seatgeek.com/images/performers-landscape/adele-3c1fb9/141/fb_100x72.jpg",
+              "fb_600_315": "https://seatgeek.com/images/performers-landscape/adele-c51dd6/141/fb_600_315.jpg",
+              "huge": "https://seatgeek.com/images/performers-landscape/adele-5f0a96/141/huge.jpg",
+              "ipad_event_modal": "https://seatgeek.com/images/performers-landscape/adele-56ffce/141/ipad_event_modal.jpg",
+              "ipad_header": "https://seatgeek.com/images/performers-landscape/adele-91a8b0/141/ipad_header.jpg",
+              "ipad_mini_explore": "https://seatgeek.com/images/performers-landscape/adele-8e4273/141/ipad_mini_explore.jpg",
+              "mongo": "https://seatgeek.com/images/performers-landscape/adele-2f4932/141/mongo.jpg",
+              "square_mid": "https://seatgeek.com/images/performers-landscape/adele-744770/141/square_mid.jpg",
+              "triggit_fb_ad": "https://seatgeek.com/images/performers-landscape/adele-481af5/141/triggit_fb_ad.jpg"
+            },
+            "image": "https://seatgeek.com/images/performers-landscape/adele-5f0a96/141/huge.jpg",
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "last_full_index_at": "2021-12-01T12:22:02Z"
+          },
+          {
+            "id": 472,
+            "name": "Classic Rock",
+            "slug": "classic-rock",
+            "primary": true,
+            "images": {
+              "1200x525": "https://seatgeek.com/images/performers-landscape/elton-john-d4cc19/681/1200x525.jpg",
+              "1200x627": "https://seatgeek.com/images/performers-landscape/elton-john-b725ad/681/1200x627.jpg",
+              "136x136": "https://seatgeek.com/images/performers-landscape/elton-john-93a69e/681/136x136.jpg",
+              "500_700": "https://seatgeek.com/images/performers-landscape/elton-john-eb0e8a/681/500_700.jpg",
+              "800x320": "https://seatgeek.com/images/performers-landscape/elton-john-f514ce/681/800x320.jpg",
+              "banner": "https://seatgeek.com/images/performers-landscape/elton-john-3d246d/681/banner.jpg",
+              "block": "https://seatgeek.com/images/performers-landscape/elton-john-1a3f51/681/block.jpg",
+              "criteo_130_160": "https://seatgeek.com/images/performers-landscape/elton-john-76b41e/681/criteo_130_160.jpg",
+              "criteo_170_235": "https://seatgeek.com/images/performers-landscape/elton-john-43bfbc/681/criteo_170_235.jpg",
+              "criteo_205_100": "https://seatgeek.com/images/performers-landscape/elton-john-1047fe/681/criteo_205_100.jpg",
+              "criteo_400_300": "https://seatgeek.com/images/performers-landscape/elton-john-e3fa92/681/criteo_400_300.jpg",
+              "fb_100x72": "https://seatgeek.com/images/performers-landscape/elton-john-25726b/681/fb_100x72.jpg",
+              "fb_600_315": "https://seatgeek.com/images/performers-landscape/elton-john-7fbfbc/681/fb_600_315.jpg",
+              "huge": "https://seatgeek.com/images/performers-landscape/elton-john-e34113/681/huge.jpg",
+              "ipad_event_modal": "https://seatgeek.com/images/performers-landscape/elton-john-06779d/681/ipad_event_modal.jpg",
+              "ipad_header": "https://seatgeek.com/images/performers-landscape/elton-john-86ec47/681/ipad_header.jpg",
+              "ipad_mini_explore": "https://seatgeek.com/images/performers-landscape/elton-john-3db576/681/ipad_mini_explore.jpg",
+              "mongo": "https://seatgeek.com/images/performers-landscape/elton-john-56d460/681/mongo.jpg",
+              "square_mid": "https://seatgeek.com/images/performers-landscape/elton-john-bf381e/681/square_mid.jpg",
+              "triggit_fb_ad": "https://seatgeek.com/images/performers-landscape/elton-john-3ad6c5/681/triggit_fb_ad.jpg"
+            },
+            "image": "https://seatgeek.com/images/performers-landscape/elton-john-e34113/681/huge.jpg",
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "last_full_index_at": "2021-11-25T12:22:07Z"
+          }
+        ],
+        "popularity": 0,
+        "location": null,
+        "last_full_index_at": "2021-12-03T08:48:54Z"
+      },
+      {
+        "type": "band",
+        "name": "H.E.R.",
+        "image": "https://seatgeek.com/images/performers-landscape/h-e-r-2f1580/77787/huge.jpg",
+        "id": 77787,
+        "images": {
+          "huge": "https://seatgeek.com/images/performers-landscape/h-e-r-2f1580/77787/huge.jpg"
+        },
+        "divisions": null,
+        "has_upcoming_events": true,
+        "stats": {
+          "event_count": 14
+        },
+        "taxonomies": [
+          {
+            "id": 2000000,
+            "name": "concerts",
+            "parent_id": null,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 0,
+            "last_full_index_at": "2021-12-02T20:23:02Z"
+          }
+        ],
+        "image_attribution": "MusicStory",
+        "url": "https://seatgeek.com/h-e-r-tickets",
+        "score": 0.5,
+        "slug": "h-e-r",
+        "home_venue_id": null,
+        "short_name": "H.E.R.",
+        "num_upcoming_events": 14,
+        "colors": null,
+        "image_license": "rightsmanaged",
+        "genres": [
+          {
+            "id": 487,
+            "name": "Rnb",
+            "slug": "rnb",
+            "primary": true,
+            "images": {
+              "1200x525": "https://seatgeek.com/images/performers-landscape/h-e-r-660be5/77787/1200x525.jpg",
+              "1200x627": "https://seatgeek.com/images/performers-landscape/h-e-r-e01add/77787/1200x627.jpg",
+              "136x136": "https://seatgeek.com/images/performers-landscape/h-e-r-1899fd/77787/136x136.jpg",
+              "500_700": "https://seatgeek.com/images/performers-landscape/h-e-r-133d9b/77787/500_700.jpg",
+              "800x320": "https://seatgeek.com/images/performers-landscape/h-e-r-f954e2/77787/800x320.jpg",
+              "banner": "https://seatgeek.com/images/performers-landscape/h-e-r-593f99/77787/banner.jpg",
+              "block": "https://seatgeek.com/images/performers-landscape/h-e-r-b590ad/77787/block.jpg",
+              "criteo_130_160": "https://seatgeek.com/images/performers-landscape/h-e-r-f38e4f/77787/criteo_130_160.jpg",
+              "criteo_170_235": "https://seatgeek.com/images/performers-landscape/h-e-r-611703/77787/criteo_170_235.jpg",
+              "criteo_205_100": "https://seatgeek.com/images/performers-landscape/h-e-r-b3dba2/77787/criteo_205_100.jpg",
+              "criteo_400_300": "https://seatgeek.com/images/performers-landscape/h-e-r-8b31a5/77787/criteo_400_300.jpg",
+              "fb_100x72": "https://seatgeek.com/images/performers-landscape/h-e-r-f43303/77787/fb_100x72.jpg",
+              "fb_600_315": "https://seatgeek.com/images/performers-landscape/h-e-r-49fa2b/77787/fb_600_315.jpg",
+              "huge": "https://seatgeek.com/images/performers-landscape/h-e-r-2f1580/77787/huge.jpg",
+              "ipad_event_modal": "https://seatgeek.com/images/performers-landscape/h-e-r-91efe5/77787/ipad_event_modal.jpg",
+              "ipad_header": "https://seatgeek.com/images/performers-landscape/h-e-r-e5426d/77787/ipad_header.jpg",
+              "ipad_mini_explore": "https://seatgeek.com/images/performers-landscape/h-e-r-73254d/77787/ipad_mini_explore.jpg",
+              "mongo": "https://seatgeek.com/images/performers-landscape/h-e-r-02285e/77787/mongo.jpg",
+              "square_mid": "https://seatgeek.com/images/performers-landscape/h-e-r-ac03cc/77787/square_mid.jpg",
+              "triggit_fb_ad": "https://seatgeek.com/images/performers-landscape/h-e-r-a5ec20/77787/triggit_fb_ad.jpg"
+            },
+            "image": "https://seatgeek.com/images/performers-landscape/h-e-r-2f1580/77787/huge.jpg",
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "last_full_index_at": "2021-11-23T12:22:02Z"
+          },
+          {
+            "id": 466,
+            "name": "Soul",
+            "slug": "soul",
+            "primary": false,
+            "images": {
+              "1200x525": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-78118c/567102/1200x525.jpg",
+              "1200x627": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-8e11dc/567102/1200x627.jpg",
+              "136x136": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-b3446b/567102/136x136.jpg",
+              "500_700": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-051164/567102/500_700.jpg",
+              "800x320": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-343b27/567102/800x320.jpg",
+              "banner": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-a7cb4c/567102/banner.jpg",
+              "block": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-3e6a2f/567102/block.jpg",
+              "criteo_130_160": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-7b2813/567102/criteo_130_160.jpg",
+              "criteo_170_235": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-ce097b/567102/criteo_170_235.jpg",
+              "criteo_205_100": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-e214ec/567102/criteo_205_100.jpg",
+              "criteo_400_300": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-64088e/567102/criteo_400_300.jpg",
+              "fb_100x72": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-a2422e/567102/fb_100x72.jpg",
+              "fb_600_315": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-a5a3a4/567102/fb_600_315.jpg",
+              "huge": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-3cfe03/567102/huge.jpg",
+              "ipad_event_modal": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-60ddf3/567102/ipad_event_modal.jpg",
+              "ipad_header": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-690a0d/567102/ipad_header.jpg",
+              "ipad_mini_explore": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-853b0d/567102/ipad_mini_explore.jpg",
+              "mongo": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-f2e064/567102/mongo.jpg",
+              "square_mid": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-e894f0/567102/square_mid.jpg",
+              "triggit_fb_ad": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-9d4ea2/567102/triggit_fb_ad.jpg"
+            },
+            "image": "https://seatgeek.com/images/performers-landscape/sabrina-claudio-3cfe03/567102/huge.jpg",
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "last_full_index_at": "2021-11-22T12:22:02Z"
+          },
+          {
+            "id": 457,
+            "name": "Alternative",
+            "slug": "alternative",
+            "primary": true,
+            "images": {
+              "1200x525": "https://seatgeek.com/images/performers-landscape/h-e-r-660be5/77787/1200x525.jpg",
+              "1200x627": "https://seatgeek.com/images/performers-landscape/h-e-r-e01add/77787/1200x627.jpg",
+              "136x136": "https://seatgeek.com/images/performers-landscape/h-e-r-1899fd/77787/136x136.jpg",
+              "500_700": "https://seatgeek.com/images/performers-landscape/h-e-r-133d9b/77787/500_700.jpg",
+              "800x320": "https://seatgeek.com/images/performers-landscape/h-e-r-f954e2/77787/800x320.jpg",
+              "banner": "https://seatgeek.com/images/performers-landscape/h-e-r-593f99/77787/banner.jpg",
+              "block": "https://seatgeek.com/images/performers-landscape/h-e-r-b590ad/77787/block.jpg",
+              "criteo_130_160": "https://seatgeek.com/images/performers-landscape/h-e-r-f38e4f/77787/criteo_130_160.jpg",
+              "criteo_170_235": "https://seatgeek.com/images/performers-landscape/h-e-r-611703/77787/criteo_170_235.jpg",
+              "criteo_205_100": "https://seatgeek.com/images/performers-landscape/h-e-r-b3dba2/77787/criteo_205_100.jpg",
+              "criteo_400_300": "https://seatgeek.com/images/performers-landscape/h-e-r-8b31a5/77787/criteo_400_300.jpg",
+              "fb_100x72": "https://seatgeek.com/images/performers-landscape/h-e-r-f43303/77787/fb_100x72.jpg",
+              "fb_600_315": "https://seatgeek.com/images/performers-landscape/h-e-r-49fa2b/77787/fb_600_315.jpg",
+              "huge": "https://seatgeek.com/images/performers-landscape/h-e-r-2f1580/77787/huge.jpg",
+              "ipad_event_modal": "https://seatgeek.com/images/performers-landscape/h-e-r-91efe5/77787/ipad_event_modal.jpg",
+              "ipad_header": "https://seatgeek.com/images/performers-landscape/h-e-r-e5426d/77787/ipad_header.jpg",
+              "ipad_mini_explore": "https://seatgeek.com/images/performers-landscape/h-e-r-73254d/77787/ipad_mini_explore.jpg",
+              "mongo": "https://seatgeek.com/images/performers-landscape/h-e-r-02285e/77787/mongo.jpg",
+              "square_mid": "https://seatgeek.com/images/performers-landscape/h-e-r-ac03cc/77787/square_mid.jpg",
+              "triggit_fb_ad": "https://seatgeek.com/images/performers-landscape/h-e-r-a5ec20/77787/triggit_fb_ad.jpg"
+            },
+            "image": "https://seatgeek.com/images/performers-landscape/h-e-r-2f1580/77787/huge.jpg",
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "last_full_index_at": "2021-11-28T00:22:09Z"
+          }
+        ],
+        "popularity": 0,
+        "location": null,
+        "last_full_index_at": "2021-12-03T08:48:55Z"
+      }
+    ],
+    "is_open": false,
+    "links": [],
+    "datetime_local": "2022-06-14T19:00:00",
+    "time_tbd": false,
+    "short_title": "Coldplay - MUSIC OF THE SPHERES WORLD TOUR",
+    "visible_until_utc": "2022-06-15T03:00:00",
+    "stats": {
+      "listing_count": 813,
+      "average_price": 351,
+      "lowest_price_good_deals": 66,
+      "lowest_price": 66,
+      "highest_price": 2650,
+      "visible_listing_count": 711,
+      "dq_bucket_counts": [
+        89,
+        291,
+        122,
+        61,
+        65,
+        92,
+        85,
+        0
+      ],
+      "median_price": 223,
+      "lowest_sg_base_price": 44,
+      "lowest_sg_base_price_good_deals": 44
+    },
+    "taxonomies": [
+      {
+        "id": 2000000,
+        "name": "concert",
+        "parent_id": null,
+        "rank": 0,
+        "last_full_index_at": "2021-12-02T20:23:02Z"
+      }
+    ],
+    "url": "https://seatgeek.com/coldplay-music-of-the-spheres-world-tour-tickets/tampa-florida-raymond-james-stadium-2022-06-14-7-pm/concert/5523270",
+    "score": 0.677,
+    "announce_date": "2021-10-14T00:00:00",
+    "created_at": "2021-10-14T13:55:01",
+    "date_tbd": false,
+    "title": "Coldplay - MUSIC OF THE SPHERES WORLD TOUR",
+    "popularity": 0.683,
+    "description": "",
+    "status": "normal",
+    "access_method": {
+      "method": "QRCODE_TM",
+      "created_at": "2015-08-24T14:44:53Z",
+      "employee_only": false
+    },
+    "event_promotion": null,
+    "announcements": {},
+    "conditional": false,
+    "enddatetime_utc": null,
+    "last_full_index_at": "2021-12-03T14:18:53Z",
+    "themes": [],
+    "domain_information": []
+  }
+]

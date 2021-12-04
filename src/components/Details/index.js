@@ -1,9 +1,18 @@
 import React from "react";
+import DetailsEventInfo from "./DetailsEventInfo";
+import TopNavBar from "../TopNavBar";
+import DetailsEventSellers from "./DetailsEventSellers";
+import DetailsEventReviews from "./DetailsEventReviews";
 
 const Details = () => {
     return (
         <>
-            <h1>Details</h1>
+            <TopNavBar page={"details"}/>
+            <div className="container">
+                <DetailsEventInfo/>
+                <DetailsEventSellers/>
+                <DetailsEventReviews/>
+            </div>
         </>
     )
 }
