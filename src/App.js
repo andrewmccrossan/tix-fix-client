@@ -13,8 +13,9 @@ import events_concerts from "./reducers/events-concerts";
 import events_sports from "./reducers/events-sports";
 import search_results from "./reducers/search-results";
 import SearchResult from "./components/Search/SearchResult";
+import event_details from "./reducers/event-details";
 
-const reducer = combineReducers({profile, events_concerts, events_sports, search_results});
+const reducer = combineReducers({profile, events_concerts, events_sports, search_results, event_details});
 const store = createStore(reducer);
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
                 <Route path="/search/results/:searchCriteria">
                     <SearchResult/>
                 </Route>
-                <Route path="/details">
+                <Route path="/details/:uniqueIdentifier">
                     <Details/>
                 </Route>
                 <Route path="/login">
