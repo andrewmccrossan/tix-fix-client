@@ -16,6 +16,7 @@ const events_sports = (state = sportsData, action) => {
                 );
             }
             break;
+
         default:
             return(state);
     }

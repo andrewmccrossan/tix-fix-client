@@ -6,5 +6,6 @@
   "bannerPicture": "../../../images/banner_pic.jpg",
   "role": "user",
   "location": "Boston, MA",
-  "dateJoined": "2021-09-20"
+  "dateJoined": "2021-09-20",
+  "zip": "02210"
 }
