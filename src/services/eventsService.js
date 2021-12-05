@@ -39,7 +39,6 @@ export const getEventDetails = (dispatch, eventId) =>
         });
 
 export const getZipCodeEvents = (dispatch, zipCode) =>
-
     fetch(`${EVENT_API()}/zipcode/${zipCode}`)
         .then(response => response.json())
         .then(events => {
