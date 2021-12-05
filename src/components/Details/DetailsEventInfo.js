@@ -23,18 +23,21 @@ const DetailsEventInfo = () => {
     return (
         <>
             <div className="row mt-5">
-                <div className="col-6">
-                    <img className="tix-profile-image img-thumbnail" src={"/images/concert.jpg"} alt="event image" />
+                <div className="col-3 d-flex justify-content-center align-items-center">
+                    <img className="tix-profile-image img-thumbnail" src={event.performers[0].image} alt="event image" />
                 </div>
 
-                <div className="col-6">
+                <div className="col-9">
                     <div className="card">
                         <h3 className="card-header h4">{event.title}</h3>
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item">
                                 <div className="row">
-                                    <div className="col d-grid">
+                                    <div className="col-6 d-grid">
                                         <button type="button" className="btn btn-light fw-bold">Add to Wish List</button>
+                                    </div>
+                                    <div className="col-6 d-grid">
+                                        <button type="button" className="btn btn-secondary fw-bold">Write a Review for the Venue</button>
                                     </div>
                                 </div>
                             </li>

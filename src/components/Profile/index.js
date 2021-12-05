@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from "react";
 import BuyerProfile from "./BuyerProfile";
+import SellerProfile from "./SellerProfile";
+import ReviewerProfile from "./ReviewerProfile";
 import './profile.css';
 import TopNavBar from "../TopNavBar";
 import {logout, profile} from "../../services/user-service";
