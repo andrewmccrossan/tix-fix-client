@@ -26,10 +26,10 @@ const EventsInArea = ({currentUser}) => {
         <>
 
             <div className="card mt-4">
-                <h3 className="card-header h4">Upcoming Events in your Area</h3>
+                <h3 className="card-header h4">Popular Events Near You</h3>
                 <ul className="list-group list-group-flush">
                     {
-                        eventsInArea.map(event => {
+                        eventsInArea.slice(0,5).map(event => {
                             return (
 
                                 <li className="list-group-item float-start">
