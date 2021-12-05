@@ -1,12 +1,12 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import EventCardItem from "../EventCardItem";
-import {useDispatch, useSelector} from "react-redux";
 import {getConcertEvents} from "../../../services/eventsService";
+import {random} from "../../../Utils/utils";
 
 const GeneralConcerts = () => {
-    const concerts = useSelector((state) => state.events_concerts);
-    const dispatch = useDispatch();
-    useEffect(() => getConcertEvents(dispatch), []);
+    const randomNum = random(0,7);
+    const [concerts, setConcerts] = useState([]);
+    useEffect(() => {getConcertEvents().then(results => {setConcerts(results.slice(randomNum, randomNum+3))})}, []);
     return(
         <>
             <div className="row">
