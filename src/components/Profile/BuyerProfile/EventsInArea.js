@@ -1,8 +1,9 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {getZipCodeEvents} from "../../../services/eventsService"
+import {getEventsInArea, getZipCodeEvents} from "../../../services/eventsService"
 import {useHistory, useParams} from "react-router-dom";
 import {convertMilitaryTime, formatDate} from "../../../Utils/utils";
+import {profile} from "../../../services/user-service";
 
 const EventsInArea = ({currentUser}) => {
 
@@ -11,10 +12,14 @@ const EventsInArea = ({currentUser}) => {
         history.push(`/details/${resultID}`);
     }
 
-    useEffect(() => getZipCodeEvents(dispatch, currentUser.zip), [currentUser]);
-
-    const events = useSelector((state) => state.events_zipcode);
-    const dispatch = useDispatch();
+    const [eventsInArea, setEventsInArea] = useState([]);
+    useEffect(() => {
+        if (currentUser.zip) {
+            getEventsInArea(currentUser.zip).then(events => {
+                setEventsInArea(events);
+            });
+        }
+    }, [currentUser.zip]);
 
     // TODO -  Extract to a component
     return (
@@ -24,7 +29,7 @@ const EventsInArea = ({currentUser}) => {
                 <h3 className="card-header h4">Upcoming Events in your Area</h3>
                 <ul className="list-group list-group-flush">
                     {
-                        events.map(event => {
+                        eventsInArea.map(event => {
                             return (
 
                                 <li className="list-group-item float-start">

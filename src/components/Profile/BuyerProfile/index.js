@@ -29,7 +29,7 @@ const BuyerProfile = ({currentUser}) => {
                         </div>
                     </div>
                     <WishList/>
-                    {/*<EventsInArea currentUser={currentUser}/>*/}
+                    <EventsInArea currentUser={currentUser}/>
                 </div>
             </div>
         </>
