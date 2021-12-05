@@ -4,9 +4,11 @@ import {useDispatch, useSelector} from "react-redux";
 import {getSportsEvents} from "../../../services/eventsService";
 
 const GeneralSports = () => {
+
     const sports = useSelector((state) => state.events_sports);
     const dispatch = useDispatch();
     useEffect(() => getSportsEvents(dispatch), []);
+
     return(
         <>
             <div className="row">

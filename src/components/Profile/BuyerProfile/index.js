@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import ProfileDetails from "./ProfileDetails";
 import AttendedEvents from "./AttendedEvents";
-import ToAttendEvents from "./ToAttendEvents";
+import UpcomingEvents from "./UpcomingEvents";
 import WishList from "./WishList";
 import EventsInArea from "./EventsInArea";
 // import {useSelector, useDispatch} from "react-redux";
@@ -25,11 +25,11 @@ const BuyerProfile = ({currentUser}) => {
                             <AttendedEvents/>
                         </div>
                         <div className="col-6">
-                            <ToAttendEvents/>
+                            <UpcomingEvents/>
                         </div>
                     </div>
                     <WishList/>
-                    <EventsInArea/>
+                    <EventsInArea currentUser={currentUser}/>
                 </div>
             </div>
         </>

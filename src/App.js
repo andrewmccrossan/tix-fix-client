@@ -14,8 +14,9 @@ import events_sports from "./reducers/events-sports";
 import search_results from "./reducers/search-results";
 import SearchResult from "./components/Search/SearchResult";
 import event_details from "./reducers/event-details";
+import events_zipcode from "./reducers/events-zipcode";
 
-const reducer = combineReducers({profile, events_concerts, events_sports, search_results, event_details});
+const reducer = combineReducers({profile, events_concerts, events_sports, search_results, event_details, events_zipcode});
 const store = createStore(reducer);
 
 function App() {
