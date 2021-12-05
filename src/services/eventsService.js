@@ -34,3 +34,7 @@ export const getZipCodeEvents = (dispatch, zipCode) =>
                 events
             })
         });
+
+export const getEventsInArea = (zipCode) =>
+    fetch(`${EVENT_API()}/zipcode/${zipCode}`)
+        .then(response => response.json());

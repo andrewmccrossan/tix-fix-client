@@ -11,9 +11,6 @@ import {useHistory} from "react-router-dom";
 // import Search from "../Search";
 
 const Profile = () => {
-    // const profileData = useSelector((state) => state.profile);
-    // const dispatch = useDispatch();
-    // useEffect(() => getCurrentProfile(dispatch), []);
     const history = useHistory();
     const [currentProfile, setCurrentProfile] = useState({
         userProfile: {
