@@ -1,6 +1,4 @@
-import searchResultsData from './data/search-results.json';
-
-const search_results = (state = searchResultsData, action) => {
+const search_results = (state = [], action) => {
     switch (action.type) {
         case 'fetch-search-results':
             return(

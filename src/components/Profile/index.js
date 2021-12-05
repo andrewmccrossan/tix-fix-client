@@ -6,9 +6,6 @@ import './profile.css';
 import TopNavBar from "../TopNavBar";
 import {logout, profile} from "../../services/user-service";
 import {useHistory} from "react-router-dom";
-// import {useSelector, useDispatch} from "react-redux";
-// import {getCurrentProfile} from "../../../../services/profileService";
-// import Search from "../Search";
 
 const Profile = () => {
     const history = useHistory();
@@ -37,11 +34,21 @@ const Profile = () => {
             })
     }
 
+    const getProfile = () => {
+        if (currentProfile.userProfile.role === 'REVIEWER') {
+            return <ReviewerProfile currentUser={currentProfile.userProfile}/>
+        } else if (currentProfile.userProfile.role === 'SELLER') {
+            return <SellerProfile currentUser={currentProfile.userProfile}/>
+        } else {
+            return <BuyerProfile currentUser={currentProfile.userProfile}/>
+        }
+    }
+
     return (
         <>
             <TopNavBar page={"profile"}/>
             <div className="container">
-                <BuyerProfile currentUser={currentProfile.userProfile}/>
+                {getProfile()}
                 <button type="submit"
                         className="btn btn-primary mb-2 mt-3"
                         onClick={() => attemptLogout()}

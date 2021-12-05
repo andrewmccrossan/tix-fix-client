@@ -15,7 +15,7 @@ const SellerProfile = ({currentUser}) => {
                 <div className="col-8">
                     <TicketsToSell/>
                     <SellerWishList/>
-                    <EventsInArea/>
+                    <EventsInArea currentUser={currentUser}/>
                 </div>
             </div>
         </>
