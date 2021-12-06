@@ -1,5 +1,4 @@
 const events_zipcode = (state = [], action) => {
-    console.log(action)
     switch (action.type) {
         case 'fetch-events-zipcode':
                 return(
