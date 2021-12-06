@@ -4,10 +4,7 @@ import {login} from "../../services/user-service";
 
 const Login = () => {
     const history = useHistory();
-    const [user, setUser] = useState({
-                                         username: '',
-                                         password: '',
-                                     });
+    const [user, setUser] = useState({username: '', password: ''});
 
     const attemptLogin = (userInfo) => {
         login(userInfo)
