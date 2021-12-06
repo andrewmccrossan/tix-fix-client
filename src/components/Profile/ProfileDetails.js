@@ -1,6 +1,18 @@
 import React from "react";
+import {logout} from "../../services/user-service";
+import {useHistory} from "react-router-dom";
 
 const ProfileDetails = ({currentUser}) => {
+
+    const history = useHistory();
+    const attemptLogout = () => {
+        logout()
+            .then(() => history.push('/home'))
+            .catch(error => {
+                console.log(error);
+                alert("Could not log you out. Please try again.");
+            })
+    }
 
     return (
         <>
@@ -17,7 +29,8 @@ const ProfileDetails = ({currentUser}) => {
                 <div className="mt-2">Zip Code: {currentUser.zip}</div>
                 <div className="mt-2">Email: {currentUser.email}</div>
             </div>
-            <button className="btn rounded-pill btn btn-secondary btn btn-primary btn-sm mt-2">Edit Profile</button>
+            <button className="btn rounded-pill btn btn-secondary btn-sm mt-2">Edit Profile</button>
+            <button type="submit" className="btn rounded-pill btn btn-danger btn-sm mt-2 ms-2" onClick={() => attemptLogout()}>Log Out</button>
         </>
     )
 }

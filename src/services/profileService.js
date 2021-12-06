@@ -10,18 +10,3 @@ export const getCurrentProfile = (dispatch) =>
                                profileData
                            })
         );
-
-// export const updateCurrentProfile = (dispatch, profileData) =>
-//     fetch(PROFILE_API, {
-//         method: 'PUT',
-//         body: JSON.stringify(profileData),
-//         headers: {
-//             'content-type': 'application/json'
-//         }
-//     })
-//         .then(response => response.json())
-//         .then(profileData =>
-//                   dispatch({
-//                                type: 'edit-profile',
-//                                profileData
-//                            }));

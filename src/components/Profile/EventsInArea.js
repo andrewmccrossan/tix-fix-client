@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {getEventsInArea, getZipCodeEvents} from "../../../services/eventsService"
+import {getEventsInArea, getZipCodeEvents} from "../../services/eventsService"
 import {useHistory, useParams} from "react-router-dom";
-import {convertMilitaryTime, formatDate} from "../../../Utils/utils";
-import {profile} from "../../../services/user-service";
+import {convertMilitaryTime, formatDate} from "../../Utils/utils";
+import {profile} from "../../services/user-service";
 
 const EventsInArea = ({currentUser}) => {
 

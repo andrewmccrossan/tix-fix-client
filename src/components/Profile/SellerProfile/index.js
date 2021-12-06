@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
-import ProfileDetails from "../BuyerProfile/ProfileDetails";
-import EventsInArea from "../BuyerProfile/EventsInArea";
+import ProfileDetails from "../ProfileDetails";
+import EventsInArea from "../EventsInArea";
 import TicketsToSell from "./TicketsToSell";
 import SellerWishList from "./SellerWishList";
 

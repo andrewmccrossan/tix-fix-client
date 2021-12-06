@@ -34,18 +34,3 @@ export const logout = () =>
         method: 'POST',
         credentials: 'include'
     });
-
-// export const updateCurrentProfile = (dispatch, profileData) =>
-//     fetch(PROFILE_API, {
-//         method: 'PUT',
-//         body: JSON.stringify(profileData),
-//         headers: {
-//             'content-type': 'application/json'
-//         }
-//     })
-//         .then(response => response.json())
-//         .then(profileData =>
-//                   dispatch({
-//                                type: 'edit-profile',
-//                                profileData
-//                            }));
