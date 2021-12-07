@@ -4,7 +4,7 @@ import SellerProfile from "./SellerProfile";
 import ReviewerProfile from "./ReviewerProfile";
 import './profile.css';
 import TopNavBar from "../TopNavBar";
-import {logout, profile} from "../../services/user-service";
+import {profile} from "../../services/user-service";
 import {useHistory} from "react-router-dom";
 
 const Profile = () => {
@@ -18,21 +18,13 @@ const Profile = () => {
             role: '',
             zip: '',
         }
-                                                         });
-    useEffect(() => {
-        profile().then(profile => {
-            setCurrentProfile({userProfile: profile});
-        });
-    }, []);
+    });
 
-    const attemptLogout = () => {
-        logout()
-            .then(() => history.push('/home'))
-            .catch(error => {
-                console.log(error);
-                alert("Could not log you out. Please try again.");
-            })
-    }
+    useEffect(() => {
+        profile()
+            .then(profile => {setCurrentProfile({userProfile: profile});})
+            .catch(() => {history.push('/login')});
+    }, []);
 
     const getProfile = () => {
         if (currentProfile.userProfile.role === 'REVIEWER') {
@@ -49,10 +41,6 @@ const Profile = () => {
             <TopNavBar page={"profile"}/>
             <div className="container">
                 {getProfile()}
-                <button type="submit"
-                        className="btn btn-primary mb-2 mt-3"
-                        onClick={() => attemptLogout()}
-                >Log Out</button>
             </div>
         </>
     )

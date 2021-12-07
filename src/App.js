@@ -1,6 +1,5 @@
 import './App.css';
 import {BrowserRouter, Route} from "react-router-dom";
-import profile from "./reducers/profile";
 import {combineReducers, createStore} from "redux";
 import {Provider} from "react-redux";
 import Home from "./components/Home";
@@ -14,7 +13,7 @@ import SearchResult from "./components/Search/SearchResult";
 import event_details from "./reducers/event-details";
 import events_zipcode from "./reducers/events-zipcode";
 
-const reducer = combineReducers({profile, search_results, event_details, events_zipcode});
+const reducer = combineReducers({search_results, event_details, events_zipcode});
 const store = createStore(reducer);
 
 function App() {

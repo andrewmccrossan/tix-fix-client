@@ -4,16 +4,12 @@ import {login} from "../../services/user-service";
 
 const Login = () => {
     const history = useHistory();
-    const [user, setUser] = useState({
-                                         username: '',
-                                         password: '',
-                                     });
+    const [user, setUser] = useState({username: '', password: ''});
 
     const attemptLogin = (userInfo) => {
         login(userInfo)
             .then(() => history.push('/profile'))
             .catch(error => {
-                console.log(error);
                 alert("That username or password is incorrect. Please try again.");
             })
     };

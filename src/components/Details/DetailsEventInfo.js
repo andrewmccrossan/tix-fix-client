@@ -1,8 +1,9 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
 import {getEventDetails} from "../../services/eventsService";
 import {convertMilitaryTime, formatDate} from "../../Utils/utils";
+import {profile} from "../../services/user-service";
 
 const displayLineup = (performersArray) => {
     let performersString = "";
@@ -20,6 +21,27 @@ const DetailsEventInfo = () => {
     const dispatch = useDispatch();
     useEffect(() => getEventDetails(dispatch, uniqueIdentifier), [uniqueIdentifier]);
 
+    const [currentProfile, setCurrentProfile] = useState({userProfile: {username: '', role:''}});
+    useEffect(() => {
+        profile()
+            .then(profile => {setCurrentProfile({userProfile: profile})})
+            .catch(() => {});
+    }, []);
+
+    const buyButton = <button className="btn btn-success fw-bold" type="button">Buy Ticket</button>
+    const sellButton = <button className="btn btn-success fw-bold" type="button">Sell Ticket</button>
+    const writeButton = <button className="btn btn-success fw-bold" type="button">Write a Review</button>
+
+    const getButton = () => {
+        if (currentProfile.userProfile.role === 'SELLER') {
+            return sellButton;
+        } else if (currentProfile.userProfile.role === 'REVIEWER') {
+            return writeButton;
+        } else {
+            return buyButton;
+        }
+    }
+
     return (
         <>
             <div className="row mt-5">
@@ -36,9 +58,7 @@ const DetailsEventInfo = () => {
                                     <div className="col-6 d-grid">
                                         <button type="button" className="btn btn-light fw-bold">Add to Wish List</button>
                                     </div>
-                                    <div className="col-6 d-grid">
-                                        <button type="button" className="btn btn-secondary fw-bold">Write a Review for the Venue</button>
-                                    </div>
+                                    <div className="col-6"/>
                                 </div>
                             </li>
                             <li className="list-group-item">
@@ -59,7 +79,7 @@ const DetailsEventInfo = () => {
                             <li className="list-group-item">
                                 <div className="row">
                                     <div className="col d-grid">
-                                        <button className="btn btn-success fw-bold" type="button">Buy Ticket</button>
+                                        {getButton()}
                                     </div>
                                 </div>
                             </li>

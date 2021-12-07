@@ -15,8 +15,8 @@ const GeneralSports = () => {
                 <div className="row mt-2">
                     {
                         sports.map(sport => {
-                            return (<div className="col-4">
-                                <EventCardItem event={sport} key={sport.id}/>
+                            return (<div key={sport.id} className="col-4">
+                                <EventCardItem event={sport}/>
                             </div>);
                         })
                     }

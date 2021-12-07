@@ -1,8 +1,8 @@
 import React, {useEffect} from "react";
-import ProfileDetails from "./ProfileDetails";
+import ProfileDetails from "../ProfileDetails";
 import UpcomingEvents from "./UpcomingEvents";
 import WishList from "./WishList";
-import EventsInArea from "./EventsInArea";
+import EventsInArea from "../EventsInArea";
 
 const BuyerProfile = ({currentUser}) => {
 
