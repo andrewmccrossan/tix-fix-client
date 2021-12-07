@@ -10,7 +10,14 @@ export const login = (user) =>
               },
               credentials: 'include'
           }
-    );
+    ) .then (response=> {
+        console.log(response)
+        if(response.ok)
+            return response.json()
+        else{
+            throw new Error()
+        }
+    });
 
 export const register = (user) =>
     fetch(`${SERVER_API}/register`, {
@@ -21,7 +28,14 @@ export const register = (user) =>
               },
               credentials: 'include'
           }
-    );
+    ) .then (response=> {
+        console.log(response)
+        if(response.ok)
+            return response.json()
+        else{
+            throw new Error()
+        }
+    });
 
 export const profile = () =>
     fetch(`${SERVER_API}/profile`, {
