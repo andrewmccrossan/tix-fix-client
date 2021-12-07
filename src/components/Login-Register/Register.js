@@ -11,7 +11,6 @@ const Register = () => {
         register(userInfo)
             .then(() => history.push('/profile'))
             .catch(error => {
-                console.log(error);
                 alert("Username already taken. Try another one!");
             })
     };

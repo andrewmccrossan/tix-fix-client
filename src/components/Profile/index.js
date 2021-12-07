@@ -19,10 +19,11 @@ const Profile = () => {
             zip: '',
         }
     });
+
     useEffect(() => {
         profile()
             .then(profile => {setCurrentProfile({userProfile: profile});})
-            .catch(() => history.push('/login'));
+            .catch(() => {history.push('/login')});
     }, []);
 
     const getProfile = () => {

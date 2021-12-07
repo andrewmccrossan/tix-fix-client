@@ -8,10 +8,6 @@ const ProfileDetails = ({currentUser}) => {
     const attemptLogout = () => {
         logout()
             .then(() => history.push('/home'))
-            .catch(error => {
-                console.log(error);
-                alert("Could not log you out. Please try again.");
-            })
     }
 
     return (

@@ -10,7 +10,6 @@ const Login = () => {
         login(userInfo)
             .then(() => history.push('/profile'))
             .catch(error => {
-                console.log(error);
                 alert("That username or password is incorrect. Please try again.");
             })
     };

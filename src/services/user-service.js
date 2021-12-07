@@ -12,9 +12,9 @@ export const login = (user) =>
           }
     ) .then (response=> {
         console.log(response)
-        if(response.ok)
+        if(response.ok) {
             return response.json()
-        else{
+        } else {
             throw new Error()
         }
     });
@@ -30,9 +30,9 @@ export const register = (user) =>
           }
     ) .then (response=> {
         console.log(response)
-        if(response.ok)
+        if(response.ok) {
             return response.json()
-        else{
+        } else {
             throw new Error()
         }
     });
