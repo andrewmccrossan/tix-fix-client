@@ -5,7 +5,7 @@ import {getEventDetails} from "../../services/eventsService";
 import {convertMilitaryTime, formatDate} from "../../Utils/utils";
 import {profile} from "../../services/user-service";
 import {postReview} from "../../services/reviewService";
-import {postSellTickets, postBoughtTickets} from "../../services/buySellService";
+import {postSellTickets, postBoughtTickets, postSellWatchList} from "../../services/buySellService";
 
 const displayLineup = (performersArray) => {
     let performersString = "";
@@ -58,8 +58,16 @@ const DetailsEventInfo = () => {
         }
     }
 
+    const addToSellWatchList = () => {
+        postSellWatchList(event.id.toString())
+            .then(() => history.push('/profile'))
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
     const buyWishList = <button className="btn btn-light fw-bold" type="button">Add to Buy Wish List</button>
-    const sellWishList = <button className="btn btn-light fw-bold" type="button">Add to Sell Watch List</button>
+    const sellWishList = <button className="btn btn-light fw-bold" onClick={addToSellWatchList} type="button">Add to Sell Watch List</button>
     const reviewWishList = <button className="btn btn-light fw-bold" type="button">Add to Review To-do List</button>
     const notLoggedWishList = <button className="btn btn-secondary fw-bold" type="button" onClick={loginClickHandler}>Login to save event</button>
 
@@ -90,7 +98,6 @@ const DetailsEventInfo = () => {
             .then(() => history.push('/profile'))
             .catch(error => {
                 console.log(error);
-                alert("Error submitting tickets for sale. Could not sell tickets");
             })
     }
 

@@ -15,7 +15,7 @@ const BUY_API = () => {
 }
 
 export const postSellTickets = (ticketsInfo) =>
-    fetch(`${SELL_API()}`, {
+    fetch(`${SELL_API()}/tickets`, {
         method: 'POST',
         body: JSON.stringify(ticketsInfo),
         headers: {
@@ -27,6 +27,21 @@ export const postSellTickets = (ticketsInfo) =>
             throw new Error()
         }
     });
+
+export const postSellWatchList = (eventID) =>
+    fetch(`${SELL_API()}/watchlist`, {
+        method: 'POST',
+        body: JSON.stringify({eventID: eventID}),
+        headers: {
+            'content-type': 'application/json',
+        },
+        credentials: 'include'
+    }).then (response=> {
+        if (!response.ok) {
+            throw new Error()
+        }
+    });
+
 
 export const postBoughtTickets = (ticketsInfo) =>
     fetch(`${BUY_API}`, {
