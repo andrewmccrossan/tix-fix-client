@@ -1,46 +1,247 @@
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {useParams} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 import {getEventDetails} from "../../services/eventsService";
 import {convertMilitaryTime, formatDate} from "../../Utils/utils";
-import {profile} from "../../services/user-service";
+import {login, profile} from "../../services/user-service";
+import {postReview} from "../../services/reviewService";
+import {postSellTickets, postBoughtTickets} from "../../services/buySellService";
 
 const displayLineup = (performersArray) => {
     let performersString = "";
     performersArray.map(result => {performersString += ", " + result.name;});
     const performersSplit = performersString.split(",");
     performersSplit.shift();
-    const performers = performersSplit.join(",");
-    return performers;
+    return performersSplit.join(",");
 };
 
-const DetailsEventInfo = () => {
 
+const DetailsEventInfo = () => {
+    const history = useHistory();
     const {uniqueIdentifier} = useParams();
     const event = useSelector((state) => state.event_details[0]);
     const dispatch = useDispatch();
     useEffect(() => getEventDetails(dispatch, uniqueIdentifier), [uniqueIdentifier]);
 
     const [currentProfile, setCurrentProfile] = useState({userProfile: {username: '', role:''}});
+
+    const [showMainActionButton, setShowMainActionButton] = useState(false);
+
+    const [buyingTicketInfo, setBuyingTicketInfo] = useState({qty: 1});
+    const [sellingTicketInfo, setSellingTicketInfo] = useState({qty: 1, price: 1});
+    const [review, setReview] = useState({score: 3, text: '', date: Date.now(), revieweeType: 'VENUE'});
+
     useEffect(() => {
         profile()
             .then(profile => {setCurrentProfile({userProfile: profile})})
             .catch(() => {});
     }, []);
 
-    const buyButton = <button className="btn btn-success fw-bold" type="button">Buy Ticket</button>
-    const sellButton = <button className="btn btn-success fw-bold" type="button">Sell Ticket</button>
-    const writeButton = <button className="btn btn-success fw-bold" type="button">Write a Review</button>
+    const loginClickHandler = () => {
+        history.push(`/login`);
+    }
+
+    const buyButton = <button className="btn btn-success fw-bold" onClick={() => setShowMainActionButton(!showMainActionButton)} type="button">Buy Tickets</button>
+    const sellButton = <button className="btn btn-success fw-bold" onClick={() => setShowMainActionButton(!showMainActionButton)} type="button">Sell Your Tickets</button>
+    const writeButton = <button className="btn btn-success fw-bold" onClick={() => setShowMainActionButton(!showMainActionButton)} type="button">Write a Venue Review</button>
+    const notLoggedInButton = <button className="btn btn-success fw-bold" onClick={loginClickHandler} type="button">Sign In to Buy Ticket</button>
 
     const getButton = () => {
         if (currentProfile.userProfile.role === 'SELLER') {
             return sellButton;
         } else if (currentProfile.userProfile.role === 'REVIEWER') {
             return writeButton;
-        } else {
+        } else  if (currentProfile.userProfile.role === 'BUYER') {
             return buyButton;
+        } else {
+            return notLoggedInButton;
         }
     }
+
+    const buyWishList = <button className="btn btn-light fw-bold" type="button">Add to Buy Wish List</button>
+    const sellWishList = <button className="btn btn-light fw-bold" type="button">Add to Sell Watch List</button>
+    const reviewWishList = <button className="btn btn-light fw-bold" type="button">Add to Review To-do List</button>
+    const notLoggedWishList = <button className="btn btn-secondary fw-bold" type="button" onClick={loginClickHandler}>Login to save event</button>
+
+    const getWishList = () => {
+        if (currentProfile.userProfile.role === 'SELLER') {
+            return sellWishList;
+        } else if (currentProfile.userProfile.role === 'REVIEWER') {
+            return reviewWishList;
+        } else if (currentProfile.userProfile.role === 'BUYER') {
+            return buyWishList;
+        }else {
+            return notLoggedWishList;
+        }
+    }
+
+    const getDropDown = () => {
+        if (currentProfile.userProfile.role === 'SELLER') {
+            return sellDropDown;
+        } else if (currentProfile.userProfile.role === 'REVIEWER') {
+            return reviewDropDown;
+        } else if (currentProfile.userProfile.role === 'BUYER') {
+            return buyDropDown;
+        }
+    }
+
+    const sellTickets = () => {
+        postSellTickets(sellingTicketInfo)
+            .then(() => history.push('/profile'))
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+    const sellDropDown =
+        <>
+            <div className="row">
+                <div className="col-6">
+                    <div className="form-group">
+                        <label className="col-form-label mt-4 fw-bold" htmlFor="inputDefault">Quantity</label>
+                        <input type="number"
+                               className="form-control"
+                               placeholder={sellingTicketInfo.qty}
+                               value = {sellingTicketInfo.qty}
+                               onChange={ (event) => setSellingTicketInfo({...sellingTicketInfo, qty: parseInt(event.target.value)}) }
+                               id="inputDefault"/>
+                    </div>
+                </div>
+                <div className="col-6">
+                    <div className="form-group">
+                        <label className="col-form-label mt-4 fw-bold" htmlFor="inputDefault">Price ($)</label>
+                        <input type="number"
+                               className="form-control"
+                               placeholder= {sellingTicketInfo.price}
+                               value = {sellingTicketInfo.price}
+                               onChange={ (event) => setSellingTicketInfo({...sellingTicketInfo, price: parseInt(event.target.value)}) }
+                               id="inputDefault"/>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col fw-bold me-2 mt-2 ">
+                        Total:
+                        ${ sellingTicketInfo.price * sellingTicketInfo.qty }
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-10 d-grid mt-2 ">
+                        <button className="btn btn-success fw-bold"
+                                onClick={() => {
+                                    sellTickets();
+                                    setShowMainActionButton(!showMainActionButton);
+                                }}
+                                type="button"> Sell
+                        </button>
+                    </div>
+                    <div className="col-2 d-grid mt-2">
+                        <button className="btn btn-danger fw-bold" onClick={() => setShowMainActionButton(!showMainActionButton)} type="button">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </>
+
+    const submitReview = () => {
+        setReview({...review, date: Date.now()});
+        postReview(review, event.id.toString())
+            .then(() => history.push('/profile'))
+            .catch(error => {
+                console.log('Error submitting review.');
+                console.log(error);
+            })
+    }
+
+    const reviewDropDown =
+        <>
+            <div className="row">
+                <div className="form-group">
+                    <label htmlFor="exampleTextarea"
+                           className="form-label mt-4">Review Text
+                    </label>
+                    <textarea className="form-control"
+                              id="exampleTextarea"
+                              rows="3"
+                              placeholder="Tell us what you think of this event"
+                              onChange={(event) => setReview({...review, text: event.target.value})}
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="exampleSelect1"
+                           className="form-label mt-4">Score
+                    </label>
+                    <select className="form-select"
+                            id="exampleSelect1"
+                            onChange={(event) => setReview({...review, score: parseInt(event.target.value)})}
+                    >
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div className="row">
+                    <div className="col-10 d-grid mt-2 ">
+                        <button className="btn btn-success fw-bold"
+                                onClick={() => {
+                                    submitReview();
+                                    setShowMainActionButton(!showMainActionButton);
+                                }}
+                                type="button"> Post Review
+                        </button>
+                    </div>
+                    <div className="col-2 d-grid mt-2">
+                        <button className="btn btn-danger fw-bold" onClick={() => setShowMainActionButton(!showMainActionButton)} type="button">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </>
+
+    const buyTickets = () => {
+        postBoughtTickets(buyingTicketInfo)
+            .then(() => history.push('/profile'))
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+    const buyDropDown =
+        <>
+            <div className="row">
+                <div className="col d-grid">
+                    <div className="form-group">
+                        <label className="col-form-label mt-4 fw-bold" htmlFor="inputDefault">Quantity</label>
+                        <input type="number"
+                               className="form-control"
+                               placeholder={buyingTicketInfo.qty}
+                               value={buyingTicketInfo.qty}
+                               onChange={ (event) => setBuyingTicketInfo({...buyingTicketInfo, qty: parseInt(event.target.value)}) }
+                               id="inputDefault"/>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col d-grid fw-bold me-2 mt-2 ">
+                        Total:
+                        ${ event.stats.lowest_price * buyingTicketInfo.qty }
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-10 d-grid mt-2 ">
+                        <button className="btn btn-success fw-bold"
+                                onClick={() => {
+                                    buyTickets();
+                                    setShowMainActionButton(!showMainActionButton);
+                                }}
+                                type="button"> Buy
+                        </button>
+                    </div>
+                    <div className="col-2 d-grid mt-2">
+                        <button className="btn btn-danger fw-bold" onClick={() => setShowMainActionButton(!showMainActionButton)} type="button">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </>
+
 
     return (
         <>
@@ -56,7 +257,7 @@ const DetailsEventInfo = () => {
                             <li className="list-group-item">
                                 <div className="row">
                                     <div className="col-6 d-grid">
-                                        <button type="button" className="btn btn-light fw-bold">Add to Wish List</button>
+                                        {getWishList()}
                                     </div>
                                     <div className="col-6"/>
                                 </div>
@@ -74,19 +275,19 @@ const DetailsEventInfo = () => {
                                 <span className="fw-bold me-2">Lineup:</span> {displayLineup(event.performers)}
                             </li>
                             <li className="list-group-item">
-                                <span className="fw-bold me-2">Ticket Price:</span> ${event.stats.lowest_price}
+                                <span className="fw-bold me-2">Tix-Fix Ticket Price:</span> ${event.stats.lowest_price}
                             </li>
                             <li className="list-group-item">
                                 <div className="row">
                                     <div className="col d-grid">
-                                        {getButton()}
+                                        {!showMainActionButton && getButton()}
                                     </div>
                                 </div>
+                                {showMainActionButton && getDropDown()}
                             </li>
                         </ul>
                     </div>
                 </div>
-
             </div>
         </>
     )

@@ -1,11 +1,28 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Link, useHistory} from "react-router-dom";
+import {logout, profile} from "../../services/user-service";
 
 const TopNavBar = ({page = "home"}) => {
     let [searchQuery, setSearchQuery] = useState("");
     const history = useHistory();
     const searchClickHandler = () => {
         history.push(`/search/results/${searchQuery}`);
+    }
+
+    const [currentProfile, setCurrentProfile] = useState({userProfile: {username: '', role:''}});
+    const [loggedIn, setloggedIn] = useState(false);
+    useEffect(() => {
+        profile()
+            .then(profile => {
+                setCurrentProfile({userProfile: profile});
+                setloggedIn(true);
+            })
+            .catch(() => {setloggedIn(false);});
+    }, []);
+
+    const attemptLogout = () => {
+        logout()
+            .then(() => history.push('/home'))
     }
 
     if (page === "home" || page === "search") {
@@ -16,12 +33,22 @@ const TopNavBar = ({page = "home"}) => {
                         <Link className="navbar-brand mb-0 h1" to="/home">Tix-Fix <i className="fas fa-ticket-alt"></i></Link>
 
                         <ul className="navbar-nav ms-auto">
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/profile">Profile</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/login">Login</Link>
-                            </li>
+                            {
+                                loggedIn &&
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/profile">Profile</Link>
+                                </li>
+                            }
+                            {
+                                !loggedIn &&
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/login">Login</Link>
+                                </li>
+                            }
+                            {
+                                loggedIn &&
+                                <button type="button" className="btn btn-outline-danger btn-sm" onClick={() => attemptLogout()}>Log Out</button>
+                            }
                         </ul>
                     </div>
                 </nav>
@@ -46,12 +73,22 @@ const TopNavBar = ({page = "home"}) => {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/home" >Home</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/profile">Profile</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/login">Login</Link>
-                            </li>
+                            {
+                                loggedIn &&
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/profile">Profile</Link>
+                                </li>
+                            }
+                            {
+                                !loggedIn &&
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/login">Login</Link>
+                                </li>
+                            }
+                            {
+                                loggedIn &&
+                                <button type="button" className="btn btn-outline-danger btn-sm" onClick={() => attemptLogout()}>Log Out</button>
+                            }
                         </ul>
                     </div>
                 </nav>
