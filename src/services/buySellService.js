@@ -14,18 +14,20 @@ const BUY_API = () => {
     }
 }
 
-// TODO - This is incomplete
 export const postSellTickets = (ticketsInfo) =>
-    fetch(`${SELL_API}`, {
+    fetch(`${SELL_API()}`, {
         method: 'POST',
         body: JSON.stringify(ticketsInfo),
         headers: {
             'content-type': 'application/json',
         },
         credentials: 'include'
-    }).then(response => response.json());
+    }).then (response=> {
+        if (!response.ok) {
+            throw new Error()
+        }
+    });
 
-// TODO - This is incomplete
 export const postBoughtTickets = (ticketsInfo) =>
     fetch(`${BUY_API}`, {
         method: 'POST',

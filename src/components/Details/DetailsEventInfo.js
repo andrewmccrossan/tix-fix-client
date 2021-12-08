@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useHistory, useParams} from "react-router-dom";
 import {getEventDetails} from "../../services/eventsService";
 import {convertMilitaryTime, formatDate} from "../../Utils/utils";
-import {login, profile} from "../../services/user-service";
+import {profile} from "../../services/user-service";
 import {postReview} from "../../services/reviewService";
 import {postSellTickets, postBoughtTickets} from "../../services/buySellService";
 
@@ -28,7 +28,7 @@ const DetailsEventInfo = () => {
     const [showMainActionButton, setShowMainActionButton] = useState(false);
 
     const [buyingTicketInfo, setBuyingTicketInfo] = useState({qty: 1});
-    const [sellingTicketInfo, setSellingTicketInfo] = useState({qty: 1, price: 1});
+    const [sellingTicketInfo, setSellingTicketInfo] = useState({eventID: event.id, qty: 1, price: 1});
     const [review, setReview] = useState({score: 3, text: '', date: Date.now(), revieweeType: 'VENUE'});
 
     useEffect(() => {
@@ -90,6 +90,7 @@ const DetailsEventInfo = () => {
             .then(() => history.push('/profile'))
             .catch(error => {
                 console.log(error);
+                alert("Error submitting tickets for sale. Could not sell tickets");
             })
     }
 
