@@ -1,15 +1,22 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {getSellerInfo} from "../../../services/sellService";
+import SellerWishListItem from "./SellerWishListItem";
 
 const SellerWishList = () => {
+
+    const [eventsWatching, setEventsWatching] = useState([]);
+    useEffect(() => {getSellerInfo().then(results => {setEventsWatching(results.eventsWatchlist)})}, []);
 
     return (
         <>
             <div className="card mt-4">
-                <h3 className="card-header h4">Events to Sell Tickets Wish List (only viewable to user)</h3>
+                <h3 className="card-header h4">Sell Watch List</h3>
                 <ul className="list-group list-group-flush">
-                    <li className="list-group-item">Event (similar to postsumary list)</li>
-                    <li className="list-group-item">Event (similar to postsumary list)</li>
-                    <li className="list-group-item">Event (similar to postsumary list)</li>
+                    {
+                        eventsWatching.map(eventID => {
+                            return (<SellerWishListItem eventID={eventID} key={eventID}/>);
+                        })
+                    }
                 </ul>
             </div>
         </>

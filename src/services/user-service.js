@@ -1,5 +1,5 @@
 require('dotenv').config();
-const SERVER_API = process.env.REACT_APP_ENVIRONMENT ? 'https://tix-fix-server.herokuapp.com/api' : 'http://localhost:4000/api'; // TODO - set to server url
+const SERVER_API = process.env.REACT_APP_ENVIRONMENT ? 'https://tix-fix-server.herokuapp.com/api' : 'http://localhost:4000/api';
 
 export const login = (user) =>
     fetch(`${SERVER_API}/login`, {
@@ -11,7 +11,6 @@ export const login = (user) =>
               credentials: 'include'
           }
     ) .then (response=> {
-        console.log(response)
         if(response.ok) {
             return response.json()
         } else {
@@ -29,7 +28,6 @@ export const register = (user) =>
               credentials: 'include'
           }
     ) .then (response=> {
-        console.log(response)
         if(response.ok) {
             return response.json()
         } else {

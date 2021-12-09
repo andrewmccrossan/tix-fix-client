@@ -3,9 +3,10 @@ import {useDispatch, useSelector} from "react-redux";
 import {useHistory, useParams} from "react-router-dom";
 import {getEventDetails} from "../../services/eventsService";
 import {convertMilitaryTime, formatDate} from "../../Utils/utils";
-import {login, profile} from "../../services/user-service";
+import {profile} from "../../services/user-service";
 import {postReview} from "../../services/reviewService";
-import {postSellTickets, postBoughtTickets} from "../../services/buySellService";
+import {postSellTickets, postSellWatchList} from "../../services/sellService";
+import {postBoughtTickets} from "../../services/buyService";
 
 const displayLineup = (performersArray) => {
     let performersString = "";
@@ -28,7 +29,7 @@ const DetailsEventInfo = () => {
     const [showMainActionButton, setShowMainActionButton] = useState(false);
 
     const [buyingTicketInfo, setBuyingTicketInfo] = useState({qty: 1});
-    const [sellingTicketInfo, setSellingTicketInfo] = useState({qty: 1, price: 1});
+    const [sellingTicketInfo, setSellingTicketInfo] = useState({eventID: event.id, qty: 1, price: 1});
     const [review, setReview] = useState({score: 3, text: '', date: Date.now(), revieweeType: 'VENUE'});
 
     useEffect(() => {
@@ -58,8 +59,16 @@ const DetailsEventInfo = () => {
         }
     }
 
+    const addToSellWatchList = () => {
+        postSellWatchList(event.id.toString())
+            .then(() => history.push('/profile'))
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
     const buyWishList = <button className="btn btn-light fw-bold" type="button">Add to Buy Wish List</button>
-    const sellWishList = <button className="btn btn-light fw-bold" type="button">Add to Sell Watch List</button>
+    const sellWishList = <button className="btn btn-light fw-bold" onClick={addToSellWatchList} type="button">Add to Sell Watch List</button>
     const reviewWishList = <button className="btn btn-light fw-bold" type="button">Add to Review To-do List</button>
     const notLoggedWishList = <button className="btn btn-secondary fw-bold" type="button" onClick={loginClickHandler}>Login to save event</button>
 
