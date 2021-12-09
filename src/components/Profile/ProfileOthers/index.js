@@ -28,13 +28,18 @@ const ProfileOthers = () => {
             .then(() => {
                 profile()
                     .then(profile =>  {setCurrentProfile({userProfile: profile});})
-                    .catch(() => {history.push('/login');})
+                    .then(() => {
+                        if (currentProfile.userProfile.username === username) {
+                            history.push('/profile');
+                        }
+                    })
+                    .catch(() => {console.log('user is not logged in.')})
             })
             .catch(() => {
                 alert('That user ID does not exist.');
                 history.push('/home');
             });
-    }, []);
+    }, [currentProfile.userProfile.username, history, username]);
 
     const getProfile = () => {
         if (otherProfile.role === 'REVIEWER') {
