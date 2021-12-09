@@ -16,8 +16,6 @@ const ProfileDetails = ({currentUser}) => {
             <div className="mt-2"><span className="fw-bold me-2">Username:</span> {currentUser.username}</div>
             <div className="mt-4"><span className="fw-bold me-2">Role:</span> {currentUser.role}</div>
             <div className="mt-4"><span className="fw-bold me-2">Can't wait to see live:</span> {currentUser.artistInterest}</div>
-            <div className="mt-4"><span className="fw-bold me-2">Followers:</span> followingCount</div>
-            <div className="mt-2"><span className="fw-bold me-2">Following:</span> followersCount</div>
             <div>
                 <div className="fw-bold mt-4">Additional Profile Details (Not show to others, just user)</div>
                 <div className="fw-bold h4 mt-2">{currentUser.firstName}</div>

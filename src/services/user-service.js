@@ -46,3 +46,7 @@ export const logout = () =>
         method: 'POST',
         credentials: 'include'
     });
+
+export const userFromUsername = (username) =>
+    fetch(`${SERVER_API}/users/${username}`)
+        .then(response => response.json());
