@@ -7,6 +7,7 @@ import Search from "./components/Search";
 import Details from "./components/Details";
 import LoginRegister from "./components/Login-Register";
 import Profile from "./components/Profile";
+import EditProfile from "./components/Profile/EditProfile";
 import Privacy from "./components/Privacy";
 import search_results from "./reducers/search-results";
 import SearchResult from "./components/Search/SearchResult";
@@ -44,6 +45,9 @@ function App() {
                 </Route>
                 <Route path="/privacy">
                     <Privacy/>
+                </Route>
+                <Route path="/edit-profile">
+                    <EditProfile/>
                 </Route>
             </BrowserRouter>
         </Provider>
