@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {logout} from "../../services/user-service";
 import {useHistory} from "react-router-dom";
 
@@ -9,6 +9,11 @@ const ProfileDetails = ({currentUser}) => {
         logout()
             .then(() => history.push('/home'))
     }
+
+    const editProfile = () => {
+        history.push('/edit-profile')
+    }
+
 
     return (
         <>
@@ -23,9 +28,17 @@ const ProfileDetails = ({currentUser}) => {
                 <div className="mt-2"><span className="fw-bold me-2">Zip Code:</span> {currentUser.zip}</div>
                 <div className="mt-2"><span className="fw-bold me-2">Email:</span> {currentUser.email}</div>
             </div>
-            <button className="btn rounded-pill btn btn-secondary btn-sm mt-2">Edit Profile</button>
-            <button type="submit" className="btn rounded-pill btn btn-danger btn-sm mt-2 ms-2" onClick={() => attemptLogout()}>Log Out</button>
+            <button className="btn rounded-pill btn btn-secondary btn-sm mt-2"
+                    onClick={ () => editProfile()}>
+                Edit Profile
+            </button>
+            <button type="submit"
+                    className="btn rounded-pill btn btn-danger btn-sm mt-2 ms-2"
+                    onClick={() => attemptLogout()}>
+                Log Out
+            </button>
         </>
     )
 }
+
 export default ProfileDetails;

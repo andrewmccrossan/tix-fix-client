@@ -50,3 +50,16 @@ export const logout = () =>
 export const userFromUsername = (username) =>
     fetch(`${SERVER_API}/users/${username}`)
         .then(response => response.json());
+
+
+export const editProfile = (user) =>
+
+    fetch(`${SERVER_API}/edit-profile`, {
+            method: 'POST',
+            body: JSON.stringify(user),
+            headers: {
+                'content-type': 'application/json',
+            },
+            credentials: 'include'
+        }
+    );
