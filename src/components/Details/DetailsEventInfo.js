@@ -5,7 +5,8 @@ import {getEventDetails} from "../../services/eventsService";
 import {convertMilitaryTime, formatDate} from "../../Utils/utils";
 import {profile} from "../../services/user-service";
 import {postReview} from "../../services/reviewService";
-import {postSellTickets, postBoughtTickets, postSellWatchList} from "../../services/buySellService";
+import {postSellTickets, postSellWatchList} from "../../services/sellService";
+import {postBoughtTickets} from "../../services/buyService";
 
 const displayLineup = (performersArray) => {
     let performersString = "";

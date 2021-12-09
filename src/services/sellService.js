@@ -6,14 +6,6 @@ const SELL_API = () => {
     }
 }
 
-const BUY_API = () => {
-    if (process.env.NODE_ENV === "development") {
-        return 'http://localhost:4000/buy';
-    } else {
-        return 'https://tix-fix-server.herokuapp.com/buy';
-    }
-}
-
 export const postSellTickets = (ticketsInfo) =>
     fetch(`${SELL_API()}/tickets`, {
         method: 'POST',
@@ -42,13 +34,8 @@ export const postSellWatchList = (eventID) =>
         }
     });
 
-
-export const postBoughtTickets = (ticketsInfo) =>
-    fetch(`${BUY_API}`, {
-        method: 'POST',
-        body: JSON.stringify(ticketsInfo),
-        headers: {
-            'content-type': 'application/json',
-        },
+export const getSellerInfo = () =>
+    fetch(`${SELL_API()}/seller`, {
+        method: 'GET',
         credentials: 'include'
     }).then(response => response.json());
