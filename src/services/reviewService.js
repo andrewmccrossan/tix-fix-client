@@ -15,3 +15,7 @@ export const postReview = (review, eventID) =>
         },
         credentials: 'include'
     });
+
+export const getReviewsForReviewer = (userID) =>
+    fetch(`${REVIEW_API()}/reviewers/${userID}`)
+        .then(response => response.json());

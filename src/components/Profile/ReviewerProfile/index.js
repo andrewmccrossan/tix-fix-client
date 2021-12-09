@@ -12,7 +12,7 @@ const ReviewerProfile = ({currentUser}) => {
                     <ProfileDetails currentUser={currentUser}/>
                 </div>
                 <div className="col-8">
-                    <Reviews/>
+                    <Reviews currentUser={currentUser}/>
                     <EventsInArea currentUser={currentUser}/>
                 </div>
             </div>
