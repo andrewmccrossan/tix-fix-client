@@ -12,6 +12,7 @@ import search_results from "./reducers/search-results";
 import SearchResult from "./components/Search/SearchResult";
 import event_details from "./reducers/event-details";
 import events_zipcode from "./reducers/events-zipcode";
+import ProfileOthers from "./components/Profile/ProfileOthers";
 
 const reducer = combineReducers({search_results, event_details, events_zipcode});
 const store = createStore(reducer);
@@ -35,8 +36,11 @@ function App() {
                 <Route path="/login">
                     <LoginRegister/>
                 </Route>
-                <Route path="/profile">
+                <Route path="/profile" exact={true}>
                     <Profile/>
+                </Route>
+                <Route path="/profile/:username">
+                    <ProfileOthers/>
                 </Route>
                 <Route path="/privacy">
                     <Privacy/>
