@@ -58,7 +58,7 @@ const ProfileDetailsOther = ({otherProfile}) => {
             {otherProfile.role === 'SELLER' && <div className="mt-2"><span className="fw-bold me-2">Average Rating: </span>{rating}</div>}
             <div className="mt-2"><span className="fw-bold me-2">Role:</span> {otherProfile.role}</div>
             <div className="mt-2"><span className="fw-bold me-2">Can't wait to see live:</span> {otherProfile.artistInterest}</div>
-            {otherProfile.role === 'SELLER' && currentUser && currentUser.username !== 'default-USER' &&
+            {otherProfile.role === 'SELLER' && currentUser && currentUser.userProfile.username !== 'default-USER' && currentUser.userProfile.role === 'REVIEWER' &&
                  <div className="mt-4">
                  <div className="row">
                      <div className="col d-grid">
