@@ -41,6 +41,13 @@ export const getBuyerInfo = () =>
     }).then(response => response.json());
 
 
+export const getOtherBuyerInfo = (buyerID) =>
+    fetch(`${BUY_API()}/${buyerID}`, {
+        method: 'GET',
+        credentials: 'include'
+    }).then(response => response.json());
+
+
 export const getBuyerEventTransaction = (eventId) =>
     fetch(`${BUY_API()}/details/${eventId}`, {
         method: 'GET',

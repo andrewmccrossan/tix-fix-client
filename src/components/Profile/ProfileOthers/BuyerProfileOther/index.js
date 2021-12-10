@@ -3,6 +3,7 @@ import WishListOther from "./WishListOther";
 import ProfileDetailsOther from "../ProfileDetailsOther";
 
 const BuyerProfileOthers = ({otherProfile}) => {
+
     return (
         <>
             <div className="row mt-5">
@@ -10,7 +11,7 @@ const BuyerProfileOthers = ({otherProfile}) => {
                     <ProfileDetailsOther otherProfile={otherProfile}/>
                 </div>
                 <div className="col-8">
-                    <WishListOther/>
+                    <WishListOther otherProfile={otherProfile}/>
                 </div>
             </div>
         </>

@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import ProfileDetails from "../ProfileDetails";
 import UpcomingEvents from "./UpcomingEvents";
-import WishList from "./WishList";
+import WishList from "./BuyerWishList";
 import EventsInArea from "../EventsInArea";
 
 const BuyerProfile = ({currentUser}) => {
