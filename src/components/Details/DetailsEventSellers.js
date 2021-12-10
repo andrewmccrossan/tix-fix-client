@@ -1,6 +1,15 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {useParams} from "react-router-dom";
+import {getEventSellers} from "../../services/sellService";
+import DetailsEventSellersItem from "./DetailsEventSellersItem";
 
 const DetailsEventSellers = () => {
+
+    const {uniqueIdentifier} = useParams();
+    const [eventSellers, setEventSellers] = useState([]);
+
+    useEffect(() => {getEventSellers(uniqueIdentifier).then(sellers => setEventSellers(sellers))}, [uniqueIdentifier]);
+
     return (
         <>
             <div className="row mt-4">
@@ -8,19 +17,12 @@ const DetailsEventSellers = () => {
                     <div className="card">
                         <h3 className="card-header h4">Resale Tickets </h3>
                         <ul className="list-group list-group-flush">
-                            <li className="list-group-item">
-                                <div className="row">
-                                    <div className="col-8">
-                                        Seller Name
-                                    </div>
-                                    <div className="col-1">
-                                        Price
-                                    </div>
-                                    <div className="col-3">
-                                        <button type="button" className="btn btn-primary">Buy Seller's Ticket</button>
-                                    </div>
-                                </div>
-                            </li>
+                            {
+                                eventSellers.length > 0 ? (eventSellers.map(eventSeller => {
+                                    console.log(eventSeller);
+                                    return (<DetailsEventSellersItem eventSeller={eventSeller} key={eventSeller._id}/>);
+                                })) : "No Resale Tickets Available"
+                            }
                         </ul>
                     </div>
                 </div>

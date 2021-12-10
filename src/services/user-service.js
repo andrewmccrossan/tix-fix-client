@@ -10,7 +10,7 @@ export const login = (user) =>
               },
               credentials: 'include'
           }
-    ) .then (response=> {
+    ).then (response=> {
         if(response.ok) {
             return response.json()
         } else {
@@ -27,7 +27,7 @@ export const register = (user) =>
               },
               credentials: 'include'
           }
-    ) .then (response=> {
+    ).then (response=> {
         if(response.ok) {
             return response.json()
         } else {
@@ -51,9 +51,7 @@ export const userFromUsername = (username) =>
     fetch(`${SERVER_API}/users/${username}`)
         .then(response => response.json());
 
-
 export const editProfile = (user) =>
-
     fetch(`${SERVER_API}/edit-profile`, {
             method: 'POST',
             body: JSON.stringify(user),
