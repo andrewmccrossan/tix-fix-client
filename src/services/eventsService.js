@@ -15,16 +15,6 @@ export const getConcertEvents = () =>
     fetch(`${EVENT_API()}/concert`)
         .then(response => response.json());
 
-export const getEventDetails = (dispatch, eventId) =>
-    fetch(`${EVENT_API()}/details/${eventId}`)
-        .then(response => response.json())
-        .then(details => {
-            dispatch({
-                type: 'fetch-event-details',
-                details
-            })
-        });
-
 export const getEventDetails2 = (eventId) =>
     fetch(`${EVENT_API()}/details/${eventId}`).then(response => response.json());
 

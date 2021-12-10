@@ -11,11 +11,10 @@ import EditProfile from "./components/Profile/EditProfile";
 import Privacy from "./components/Privacy";
 import search_results from "./reducers/search-results";
 import SearchResult from "./components/Search/SearchResult";
-import event_details from "./reducers/event-details";
 import events_zipcode from "./reducers/events-zipcode";
 import ProfileOthers from "./components/Profile/ProfileOthers";
 
-const reducer = combineReducers({search_results, event_details, events_zipcode});
+const reducer = combineReducers({search_results, events_zipcode});
 const store = createStore(reducer);
 
 function App() {
