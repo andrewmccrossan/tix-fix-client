@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import ProfileDetails from "../ProfileDetails";
 import EventsInArea from "../EventsInArea";
 import Reviews from "./Reviews";
+import ToDoList from "./ToDoList";
 
 const ReviewerProfile = ({currentUser}) => {
 
@@ -13,6 +14,7 @@ const ReviewerProfile = ({currentUser}) => {
                 </div>
                 <div className="col-8">
                     <Reviews currentUser={currentUser}/>
+                    <ToDoList currentUser={currentUser}/>
                     <EventsInArea currentUser={currentUser}/>
                 </div>
             </div>
