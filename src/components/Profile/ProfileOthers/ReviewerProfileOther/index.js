@@ -3,7 +3,7 @@ import ProfileDetailsOther from "../ProfileDetailsOther";
 import ReviewsOther from "./ReviewsOther";
 import ToDoListOther from "./ToDoListOther";
 
-const ReviewerProfileOther = ({otherProfile}, {currentUser}) => {
+const ReviewerProfileOther = ({otherProfile}) => {
     return (
         <>
             <div className="row mt-5">

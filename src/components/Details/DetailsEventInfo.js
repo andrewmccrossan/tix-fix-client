@@ -4,7 +4,7 @@ import {useHistory, useParams} from "react-router-dom";
 import {getEventDetails2} from "../../services/eventsService";
 import {convertMilitaryTime, formatDate} from "../../Utils/utils";
 import {profile} from "../../services/user-service";
-import {postReview} from "../../services/reviewService";
+import {postVenueReview} from "../../services/reviewService";
 import {postSellTickets, postSellWatchList} from "../../services/sellService";
 import {postBoughtTickets} from "../../services/buyService";
 
@@ -183,7 +183,7 @@ const DetailsEventInfo = () => {
 
     const submitReview = () => {
         setReview({...review, date: Date.now()});
-        postReview(review, event.id.toString())
+        postVenueReview(review, event.id.toString())
             .then(() => history.push('/profile'))
             .catch(error => {
                 console.log('Error submitting review.');

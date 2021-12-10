@@ -6,8 +6,18 @@ const REVIEW_API = () => {
     }
 }
 
-export const postReview = (review, eventID) =>
+export const postVenueReview = (review, eventID) =>
     fetch(`${REVIEW_API()}/events/${eventID}`, {
+        method: 'POST',
+        body: JSON.stringify(review),
+        headers: {
+            'content-type': 'application/json',
+        },
+        credentials: 'include'
+    });
+
+export const postSellerReview = (review, sellerID) =>
+    fetch(`${REVIEW_API()}/sellers/${sellerID}`, {
         method: 'POST',
         body: JSON.stringify(review),
         headers: {
@@ -18,4 +28,8 @@ export const postReview = (review, eventID) =>
 
 export const getReviewsForReviewer = (userID) =>
     fetch(`${REVIEW_API()}/reviewers/${userID}`)
+        .then(response => response.json());
+
+export const getReviewsForSeller = (sellerID) =>
+    fetch(`${REVIEW_API()}/sellers/${sellerID}`)
         .then(response => response.json());
