@@ -1,22 +1,22 @@
 import React, {useEffect, useState} from "react";
-import {useHistory, useParams} from "react-router-dom";
-import {getEventDetails2} from "../../services/eventsService";
-import {getInformativeReviewsForVenue} from "../../services/reviewService";
+import {
+    getInformativeReviewsForSeller,
+} from "../../../../services/reviewService";
+import {useHistory} from "react-router-dom";
 
-const DetailsEventReviews = () => {
-    const {uniqueIdentifier} = useParams();
-    const [reviews, setReviews] = useState([])
-
+const SellerReviewsOther = ({otherProfile}) => {
+    const [reviews, setReviews] = useState([]);
     const history = useHistory();
 
     useEffect(() => {
-        getEventDetails2(uniqueIdentifier)
-            .then(foundEvent => getInformativeReviewsForVenue(foundEvent.venue.id)
-            .then(dbReviews => {setReviews(dbReviews)}))
-    }, [uniqueIdentifier]);
+        if (otherProfile && otherProfile.role === 'SELLER') {
+            getInformativeReviewsForSeller(otherProfile._id)
+                .then(dbReviews => {setReviews(dbReviews)})
+        }
+    }, [otherProfile])
 
     return (
-        <div className="card mt-4">
+        <div className="card">
             <h3 className="card-header h4">Reviews Of This Seller</h3>
             <ul className="list-group list-group-flush">
                 {reviews.slice(0,5).map(review => {
@@ -25,9 +25,9 @@ const DetailsEventReviews = () => {
                             <div className="container">
                                 <div className="row">
                                     <div className="col-10">
-                                        <div className="row fw-bold">
-                                            {`Reviewer: ${review.reviewerName}`}
-                                        </div>
+                                         <div className="row fw-bold">
+                                             {`Reviewer: ${review.reviewerName}`}
+                                         </div>
                                         <div className="row">
                                             Rating: {review.score}
                                         </div>
@@ -35,7 +35,8 @@ const DetailsEventReviews = () => {
                                             {review.text}
                                         </div>
                                     </div>
-                                    <div className="col-2">
+                                    {review.revieweeType === 'SELLER' &&
+                                     <div className="col-2">
                                          <button type="button"
                                                  className="btn btn-primary mt-1 mb-1"
                                                  onClick={() => {
@@ -43,7 +44,8 @@ const DetailsEventReviews = () => {
                                                  }}>
                                              Go To Reviewer's Profile
                                          </button>
-                                    </div>
+                                     </div>
+                                    }
                                 </div>
                             </div>
                         </li>
@@ -53,4 +55,4 @@ const DetailsEventReviews = () => {
         </div>
     )
 }
-export default DetailsEventReviews;
+export default SellerReviewsOther;

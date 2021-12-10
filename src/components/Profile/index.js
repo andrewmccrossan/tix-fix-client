@@ -31,8 +31,10 @@ const Profile = () => {
             return <ReviewerProfile currentUser={currentProfile.userProfile}/>
         } else if (currentProfile.userProfile.role === 'SELLER') {
             return <SellerProfile currentUser={currentProfile.userProfile}/>
-        } else {
+        } else if (currentProfile.userProfile.role === 'BUYER'){
             return <BuyerProfile currentUser={currentProfile.userProfile}/>
+        }else{
+            return <div> ERROR </div>
         }
     }
 

@@ -11,7 +11,7 @@ const ReviewerProfileOther = ({otherProfile}) => {
                     <ProfileDetailsOther otherProfile={otherProfile}/>
                 </div>
                 <div className="col-8">
-                    <ReviewsOther/>
+                    <ReviewsOther otherProfile={otherProfile}/>
                     <ToDoListOther/>
                 </div>
             </div>
