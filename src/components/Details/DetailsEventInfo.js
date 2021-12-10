@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useHistory, useParams} from "react-router-dom";
-import {getEventDetails} from "../../services/eventsService";
+import {getEventDetails2} from "../../services/eventsService";
 import {convertMilitaryTime, formatDate} from "../../Utils/utils";
 import {profile} from "../../services/user-service";
 import {postReview} from "../../services/reviewService";
@@ -20,23 +20,54 @@ const displayLineup = (performersArray) => {
 const DetailsEventInfo = () => {
     const history = useHistory();
     const {uniqueIdentifier} = useParams();
-    const event = useSelector((state) => state.event_details[0]);
-    const dispatch = useDispatch();
-    useEffect(() => getEventDetails(dispatch, uniqueIdentifier), [uniqueIdentifier]);
+    const [event, setEvent] = useState({
+        id: 1,
+        stats:
+            {
+                lowest_price: 1
+            },
+        performers: [
+            {
+                image: ''
+            }
+        ],
+        title: '',
+        datetime_local: '2022-02-20T19:30:00',
+        venue: {
+            name: '',
+            address: '',
+            display_location: '',
+        }
+    });
 
-    const [currentProfile, setCurrentProfile] = useState({userProfile: {username: '', role:''}});
-
+    const [currentProfile, setCurrentProfile] = useState({
+         userProfile: {
+             username: '',
+             email: '',
+             lastName: '',
+             firstName: '',
+             role: '',
+             zip: '',
+         }
+    });
     const [showMainActionButton, setShowMainActionButton] = useState(false);
 
     const [buyingTicketInfo, setBuyingTicketInfo] = useState({qty: 1});
-    const [sellingTicketInfo, setSellingTicketInfo] = useState({eventID: event.id, qty: 1, price: 1});
+    const [sellingTicketInfo, setSellingTicketInfo] = useState({qty: 1, price: 1});
     const [review, setReview] = useState({score: 3, text: '', date: Date.now(), revieweeType: 'VENUE'});
 
     useEffect(() => {
         profile()
-            .then(profile => {setCurrentProfile({userProfile: profile})})
-            .catch(() => {});
+            .then(profile => {setCurrentProfile({userProfile: profile});})
     }, []);
+
+    useEffect(() => {
+        getEventDetails2(uniqueIdentifier)
+            .then(foundEvent => {
+                setEvent(foundEvent);
+                setSellingTicketInfo({...sellingTicketInfo, eventID: foundEvent.id});
+            })
+    }, [uniqueIdentifier]);
 
     const loginClickHandler = () => {
         history.push(`/login`);
