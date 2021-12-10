@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import WishListOther from "./WishListOther";
 import ProfileDetailsOther from "../ProfileDetailsOther";
 
-const BuyerProfileOthers = ({otherProfile}, {currentUser}) => {
+const BuyerProfileOthers = ({otherProfile}) => {
     return (
         <>
             <div className="row mt-5">

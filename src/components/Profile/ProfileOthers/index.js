@@ -9,7 +9,12 @@ import {useHistory, useParams} from "react-router-dom";
 
 const ProfileOthers = () => {
     const {username} = useParams();
-    const [otherProfile, setOtherProfile] = useState({});
+    const [otherProfile, setOtherProfile] = useState({
+        _id: '',
+        role: 'BUYER',
+        username: '',
+        artistInterest: '',
+                                                     });
     const history = useHistory();
     const [currentProfile, setCurrentProfile] = useState({
                                                              userProfile: {
@@ -35,7 +40,8 @@ const ProfileOthers = () => {
                     })
                     .catch(() => {console.log('user is not logged in.')})
             })
-            .catch(() => {
+            .catch((error) => {
+                console.log(error);
                 alert('That user ID does not exist.');
                 history.push('/home');
             });
@@ -43,11 +49,11 @@ const ProfileOthers = () => {
 
     const getProfile = () => {
         if (otherProfile.role === 'REVIEWER') {
-            return <ReviewerProfileOther otherProfile={otherProfile} currentUser={currentProfile.userProfile}/>
+            return <ReviewerProfileOther otherProfile={otherProfile}/>
         } else if (otherProfile.role === 'SELLER') {
-            return <SellerProfileOther otherProfile={otherProfile} currentUser={currentProfile.userProfile}/>
+            return <SellerProfileOther otherProfile={otherProfile}/>
         } else {
-            return <BuyerProfileOther otherProfile={otherProfile} currentUser={currentProfile.userProfile}/>
+            return <BuyerProfileOther otherProfile={otherProfile}/>
         }
     }
 
