@@ -41,3 +41,17 @@ export const getInformativeReviewsForSeller = (sellerID) =>
 export const getInformativeReviewsForVenue = (venueID) =>
     fetch(`${REVIEW_API()}/venues/${venueID}`)
         .then(response => response.json());
+
+export const postReviewToDoList = (eventID) =>
+    fetch(`${REVIEW_API()}/todolist`, {
+        method: 'POST',
+        body: JSON.stringify({eventID: eventID}),
+        headers: {
+            'content-type': 'application/json',
+        },
+        credentials: 'include'
+    }).then (response=> {
+        if (!response.ok) {
+            throw new Error()
+        }
+    });
