@@ -9,7 +9,7 @@ const TicketsToSellOther = ({otherProfile}) => {
 
     return (
         <>
-            <div className="card">
+            <div className="card mb-4">
                 <h3 className="card-header h4">Tickets Currently Selling</h3>
                 <ul className="list-group list-group-flush">
                     {

@@ -11,8 +11,8 @@ const SellerProfileOther = ({otherProfile}) => {
                     <ProfileDetailsOther otherProfile={otherProfile}/>
                 </div>
                 <div className="col-8">
-                    <SellerReviewsOther otherProfile={otherProfile}/>
                     <TicketsToSellOther otherProfile={otherProfile}/>
+                    <SellerReviewsOther otherProfile={otherProfile}/>
                 </div>
             </div>
         </>
