@@ -39,3 +39,9 @@ export const getSellerInfo = () =>
         method: 'GET',
         credentials: 'include'
     }).then(response => response.json());
+
+export const getEventSellers = (eventId) =>
+    fetch(`${SELL_API()}/sellers/${eventId}`, {
+        method: 'GET',
+        credentials: 'include'
+    }).then(response => response.json());
