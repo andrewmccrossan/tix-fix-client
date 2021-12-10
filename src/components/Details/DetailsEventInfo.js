@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useHistory, useParams} from "react-router-dom";
-import {getEventDetails, getEventDetails2} from "../../services/eventsService";
+import {getEventDetails2} from "../../services/eventsService";
 import {convertMilitaryTime, formatDate} from "../../Utils/utils";
 import {profile} from "../../services/user-service";
-import {postReview} from "../../services/reviewService";
+import {postVenueReview} from "../../services/reviewService";
 import {postSellTickets, postSellWatchList} from "../../services/sellService";
 import {postBoughtTickets, postBuyWatchList} from "../../services/buyService";
 
@@ -18,12 +18,8 @@ const displayLineup = (performersArray) => {
 
 
 const DetailsEventInfo = () => {
-
     const history = useHistory();
     const {uniqueIdentifier} = useParams();
-    // const event = useSelector((state) => state.event_details[0]);
-    // const dispatch = useDispatch();
-    // useEffect(() => getEventDetails(dispatch, uniqueIdentifier), [uniqueIdentifier]);
     const [event, setEvent] = useState({
         id: 1,
         stats:
@@ -44,28 +40,25 @@ const DetailsEventInfo = () => {
         }
     });
 
-
     const [currentProfile, setCurrentProfile] = useState({
-        userProfile: {
-            username: '',
-            email: '',
-            lastName: '',
-            firstName: '',
-            role: '',
-            zip: '',
-        }
+         userProfile: {
+             username: '',
+             email: '',
+             lastName: '',
+             firstName: '',
+             role: '',
+             zip: '',
+         }
     });
-
     const [showMainActionButton, setShowMainActionButton] = useState(false);
 
-    const [buyingTicketInfo, setBuyingTicketInfo] = useState({eventID: event.id, qty: 1, price: event.stats.lowest_price});
-    const [sellingTicketInfo, setSellingTicketInfo] = useState({eventID: event.id, qty: 1, price: 1});
+    const [buyingTicketInfo, setBuyingTicketInfo] = useState({qty: 1, price: event.stats.lowest_price});
+    const [sellingTicketInfo, setSellingTicketInfo] = useState({qty: 1, price: 1});
     const [review, setReview] = useState({score: 3, text: '', date: Date.now(), revieweeType: 'VENUE'});
 
     useEffect(() => {
         profile()
-            .then(profile => {setCurrentProfile({userProfile: profile})})
-            .catch(() => {});
+            .then(profile => {setCurrentProfile({userProfile: profile});})
     }, []);
 
     const loginClickHandler = () => {
@@ -199,7 +192,7 @@ const DetailsEventInfo = () => {
 
     const submitReview = () => {
         setReview({...review, date: Date.now()});
-        postReview(review, event.id.toString())
+        postVenueReview(review, event.id.toString())
             .then(() => history.push('/profile'))
             .catch(error => {
                 console.log('Error submitting review.');
@@ -254,7 +247,6 @@ const DetailsEventInfo = () => {
         </>
 
     const buyTickets = () => {
-        console.log(buyingTicketInfo)
         postBoughtTickets(buyingTicketInfo)
             .then(() => history.push('/profile'))
             .catch(error => {

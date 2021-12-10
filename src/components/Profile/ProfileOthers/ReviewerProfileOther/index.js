@@ -3,7 +3,7 @@ import ProfileDetailsOther from "../ProfileDetailsOther";
 import ReviewsOther from "./ReviewsOther";
 import ToDoListOther from "./ToDoListOther";
 
-const ReviewerProfileOther = ({otherProfile}, {currentUser}) => {
+const ReviewerProfileOther = ({otherProfile}) => {
     return (
         <>
             <div className="row mt-5">
@@ -11,7 +11,7 @@ const ReviewerProfileOther = ({otherProfile}, {currentUser}) => {
                     <ProfileDetailsOther otherProfile={otherProfile}/>
                 </div>
                 <div className="col-8">
-                    <ReviewsOther/>
+                    <ReviewsOther otherProfile={otherProfile}/>
                     <ToDoListOther/>
                 </div>
             </div>
