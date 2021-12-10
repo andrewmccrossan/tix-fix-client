@@ -11,10 +11,10 @@ const DetailsEventSellersItem = ({eventSeller}) => {
                             <span className="fw-bold me-2">Seller:</span>{eventSeller.sellerUsername}
                         </div>
                         <div className="col-3">
-                            <span className="fw-bold me-2">Quantity:</span>{eventSeller.ticketQuantity}
+                            <span className="fw-bold me-2">Ticket Quantity:</span>{eventSeller.ticketQuantity}
                         </div>
                         <div className="col-3">
-                            <span className="fw-bold me-2">Price:</span>${eventSeller.ticketPrice}
+                            <span className="fw-bold me-2">Price Per Ticket:</span>${eventSeller.ticketPrice}
                         </div>
                         <div className="col-3">
                             <button type="button" className="btn btn-primary btn-sm ">Buy Seller's Ticket</button>
