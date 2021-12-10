@@ -13,7 +13,7 @@ const BuyerProfile = ({currentUser}) => {
                     <ProfileDetails currentUser={currentUser}/>
                 </div>
                 <div className="col-8">
-                    <UpcomingEvents/>
+                    <UpcomingEvents currentUser={currentUser}/>
                     <WishList/>
                     <EventsInArea currentUser={currentUser}/>
                 </div>

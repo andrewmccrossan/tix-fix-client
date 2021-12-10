@@ -6,7 +6,7 @@ import {convertMilitaryTime, formatDate} from "../../Utils/utils";
 import {profile} from "../../services/user-service";
 import {postVenueReview} from "../../services/reviewService";
 import {postSellTickets, postSellWatchList} from "../../services/sellService";
-import {postBoughtTickets} from "../../services/buyService";
+import {postBoughtTickets, postBuyWatchList} from "../../services/buyService";
 
 const displayLineup = (performersArray) => {
     let performersString = "";
@@ -52,7 +52,7 @@ const DetailsEventInfo = () => {
     });
     const [showMainActionButton, setShowMainActionButton] = useState(false);
 
-    const [buyingTicketInfo, setBuyingTicketInfo] = useState({qty: 1});
+    const [buyingTicketInfo, setBuyingTicketInfo] = useState({qty: 1, price: event.stats.lowest_price});
     const [sellingTicketInfo, setSellingTicketInfo] = useState({qty: 1, price: 1});
     const [review, setReview] = useState({score: 3, text: '', date: Date.now(), revieweeType: 'VENUE'});
 
@@ -61,17 +61,18 @@ const DetailsEventInfo = () => {
             .then(profile => {setCurrentProfile({userProfile: profile});})
     }, []);
 
+    const loginClickHandler = () => {
+        history.push(`/login`);
+    }
+
     useEffect(() => {
         getEventDetails2(uniqueIdentifier)
             .then(foundEvent => {
                 setEvent(foundEvent);
                 setSellingTicketInfo({...sellingTicketInfo, eventID: foundEvent.id});
+                setBuyingTicketInfo({...buyingTicketInfo, eventID: foundEvent.id, price: foundEvent.stats.lowest_price});
             })
     }, [uniqueIdentifier]);
-
-    const loginClickHandler = () => {
-        history.push(`/login`);
-    }
 
     const buyButton = <button className="btn btn-success fw-bold" onClick={() => setShowMainActionButton(!showMainActionButton)} type="button">Buy Tickets</button>
     const sellButton = <button className="btn btn-success fw-bold" onClick={() => setShowMainActionButton(!showMainActionButton)} type="button">Sell Your Tickets</button>
@@ -98,7 +99,15 @@ const DetailsEventInfo = () => {
             })
     }
 
-    const buyWishList = <button className="btn btn-light fw-bold" type="button">Add to Buy Wish List</button>
+    const addToBuyWatchList = () => {
+        postBuyWatchList(event.id.toString())
+            .then(() => history.push('/profile'))
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+    const buyWishList = <button className="btn btn-light fw-bold" onClick={addToBuyWatchList} type="button">Add to Buy Wish List</button>
     const sellWishList = <button className="btn btn-light fw-bold" onClick={addToSellWatchList} type="button">Add to Sell Watch List</button>
     const reviewWishList = <button className="btn btn-light fw-bold" type="button">Add to Review To-do List</button>
     const notLoggedWishList = <button className="btn btn-secondary fw-bold" type="button" onClick={loginClickHandler}>Login to save event</button>
@@ -276,7 +285,9 @@ const DetailsEventInfo = () => {
                         </button>
                     </div>
                     <div className="col-2 d-grid mt-2">
-                        <button className="btn btn-danger fw-bold" onClick={() => setShowMainActionButton(!showMainActionButton)} type="button">Cancel</button>
+                        <button className="btn btn-danger fw-bold" onClick={() => {
+                            setShowMainActionButton(!showMainActionButton)
+                        }} type="button">Cancel</button>
                     </div>
                 </div>
             </div>
