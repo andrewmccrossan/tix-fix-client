@@ -40,6 +40,12 @@ export const getSellerInfo = () =>
         credentials: 'include'
     }).then(response => response.json());
 
+export const getOtherSellerInfo = (sellerID) =>
+    fetch(`${SELL_API()}/${sellerID}`, {
+        method: 'GET',
+        credentials: 'include'
+    }).then(response => response.json());
+
 export const getEventSellers = (eventId) =>
     fetch(`${SELL_API()}/sellers/${eventId}`, {
         method: 'GET',
