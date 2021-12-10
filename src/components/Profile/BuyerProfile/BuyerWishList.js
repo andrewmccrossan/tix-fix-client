@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {getSellerInfo} from "../../../services/sellService";
 import SellerWishListItem from "../SellerProfile/SellerWishListItem";
 import {getBuyerInfo} from "../../../services/buyService";
+import BuyerWishListItem from "./BuyerWishListItem";
 
 const ToAttendEvents = () => {
 
@@ -15,7 +16,7 @@ const ToAttendEvents = () => {
                 <ul className="list-group list-group-flush">
                     {
                         eventsWatching.map(eventID => {
-                            return (<SellerWishListItem eventID={eventID} key={eventID}/>);
+                            return (<BuyerWishListItem eventID={eventID} key={eventID}/>);
                         })
                     }
                 </ul>
