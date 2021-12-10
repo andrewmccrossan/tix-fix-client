@@ -1,15 +1,22 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {getOtherSellerInfo} from "../../../../services/sellService";
+import TicketsToSellOtherItem from "./TicketsToSellOtherItem";
 
-const TicketsToSellOther = () => {
+const TicketsToSellOther = ({otherProfile}) => {
+
+    const [ticketsSelling, setTicketsSelling] = useState([]);
+    useEffect(() => {getOtherSellerInfo(otherProfile._id).then(results => {setTicketsSelling(results.eventsSelling)})}, []);
 
     return (
         <>
-            <div className="card mt-4">
+            <div className="card">
                 <h3 className="card-header h4">Tickets Currently Selling</h3>
                 <ul className="list-group list-group-flush">
-                    <li className="list-group-item">Tickets being sold</li>
-                    <li className="list-group-item">Tickets being sold</li>
-                    <li className="list-group-item">Tickets being sold</li>
+                    {
+                        ticketsSelling.map(sellingItem => {
+                            return (<TicketsToSellOtherItem sellingItem={sellingItem} key={sellingItem.id}/>);
+                        })
+                    }
                 </ul>
             </div>
         </>
