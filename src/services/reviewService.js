@@ -33,3 +33,11 @@ export const getReviewsForReviewer = (userID) =>
 export const getReviewsForSeller = (sellerID) =>
     fetch(`${REVIEW_API()}/sellers/${sellerID}`)
         .then(response => response.json());
+
+export const getInformativeReviewsForSeller = (sellerID) =>
+    fetch(`${REVIEW_API()}/informativesellers/${sellerID}`)
+        .then(response => response.json());
+
+export const getInformativeReviewsForVenue = (venueID) =>
+    fetch(`${REVIEW_API()}/venues/${venueID}`)
+        .then(response => response.json());
