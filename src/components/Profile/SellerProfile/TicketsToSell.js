@@ -9,7 +9,7 @@ const TicketsToSell = () => {
 
     return (
         <>
-            <div className="card mt-4">
+            <div className="card">
                 <h3 className="card-header h4">Tickets Currently Selling</h3>
                 <ul className="list-group list-group-flush">
                     {

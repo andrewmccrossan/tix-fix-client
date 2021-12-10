@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import ProfileDetailsOther from "../ProfileDetailsOther";
 import TicketsToSellOther from "./TicketsToSellOther";
 import SellerWishListOther from "./SellerWishlistOther";
+import SellerReviewsOther from "./SellerReviewsOther";
 
 const SellerProfileOther = ({otherProfile}) => {
     return (
@@ -11,6 +12,7 @@ const SellerProfileOther = ({otherProfile}) => {
                     <ProfileDetailsOther otherProfile={otherProfile}/>
                 </div>
                 <div className="col-8">
+                    <SellerReviewsOther otherProfile={otherProfile}/>
                     <TicketsToSellOther/>
                     <SellerWishListOther/>
                 </div>

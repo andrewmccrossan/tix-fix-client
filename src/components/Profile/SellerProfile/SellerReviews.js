@@ -1,19 +1,19 @@
 import React, {useEffect, useState} from "react";
-import {useHistory, useParams} from "react-router-dom";
-import {getEventDetails2} from "../../services/eventsService";
-import {getInformativeReviewsForVenue} from "../../services/reviewService";
+import {
+    getInformativeReviewsForSeller,
+} from "../../../services/reviewService";
+import {useHistory} from "react-router-dom";
 
-const DetailsEventReviews = () => {
-    const {uniqueIdentifier} = useParams();
-    const [reviews, setReviews] = useState([])
-
+const SellerReviews = ({currentUser}) => {
+    const [reviews, setReviews] = useState([]);
     const history = useHistory();
 
     useEffect(() => {
-        getEventDetails2(uniqueIdentifier)
-            .then(foundEvent => getInformativeReviewsForVenue(foundEvent.venue.id)
-            .then(dbReviews => {setReviews(dbReviews)}))
-    }, [uniqueIdentifier]);
+        if (currentUser && currentUser.role === 'SELLER') {
+            getInformativeReviewsForSeller(currentUser._id)
+                .then(dbReviews => {setReviews(dbReviews)})
+        }
+    }, [currentUser])
 
     return (
         <div className="card mt-4">
@@ -35,7 +35,8 @@ const DetailsEventReviews = () => {
                                             {review.text}
                                         </div>
                                     </div>
-                                    <div className="col-2">
+                                    {review.revieweeType === 'SELLER' &&
+                                     <div className="col-2">
                                          <button type="button"
                                                  className="btn btn-primary mt-1 mb-1"
                                                  onClick={() => {
@@ -43,7 +44,8 @@ const DetailsEventReviews = () => {
                                                  }}>
                                              Go To Reviewer's Profile
                                          </button>
-                                    </div>
+                                     </div>
+                                    }
                                 </div>
                             </div>
                         </li>
@@ -53,4 +55,4 @@ const DetailsEventReviews = () => {
         </div>
     )
 }
-export default DetailsEventReviews;
+export default SellerReviews;
