@@ -55,6 +55,7 @@ const TopNavBar = ({page = "home"}) => {
             </>
         );
     } else {
+        // If we reach here we are already on the profile page so we will not show it here
         return(
             <>
                 <nav className="navbar navbar-expand navbar-dark bg-primary">
@@ -73,12 +74,13 @@ const TopNavBar = ({page = "home"}) => {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/home" >Home</Link>
                             </li>
-                            {
-                                loggedIn &&
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/profile">Profile</Link>
-                                </li>
-                            }
+
+                            {/*{*/}
+                            {/*    loggedIn &&*/}
+                            {/*    <li className="nav-item">*/}
+                            {/*        <Link className="nav-link" to="/profile">Profile</Link>*/}
+                            {/*    </li>*/}
+                            {/*}*/}
                             {
                                 !loggedIn &&
                                 <li className="nav-item">
