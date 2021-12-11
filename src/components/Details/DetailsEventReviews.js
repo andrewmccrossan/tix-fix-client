@@ -17,7 +17,7 @@ const DetailsEventReviews = () => {
 
     return (
         <div className="card mt-4">
-            <h3 className="card-header h4">Reviews Of This Seller</h3>
+            <h3 className="card-header h4">Reviews Of This Venue</h3>
             <ul className="list-group list-group-flush">
                 {reviews.slice(0,5).map(review => {
                     return(

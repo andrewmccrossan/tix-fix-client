@@ -4,7 +4,7 @@ import {useHistory, useParams} from "react-router-dom";
 import {getEventDetails2} from "../../services/eventsService";
 import {convertMilitaryTime, formatDate} from "../../Utils/utils";
 import {profile} from "../../services/user-service";
-import {postVenueReview} from "../../services/reviewService";
+import {postReviewToDoList, postVenueReview} from "../../services/reviewService";
 import {postSellTickets, postSellWatchList} from "../../services/sellService";
 import {postBoughtTickets, postBuyWatchList} from "../../services/buyService";
 
@@ -107,9 +107,17 @@ const DetailsEventInfo = () => {
             })
     }
 
+    const addToReviewToDoList = () => {
+        postReviewToDoList(event.id.toString())
+            .then(() => history.push('/profile'))
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
     const buyWishList = <button className="btn btn-light fw-bold" onClick={addToBuyWatchList} type="button">Add to Buy Wish List</button>
     const sellWishList = <button className="btn btn-light fw-bold" onClick={addToSellWatchList} type="button">Add to Sell Watch List</button>
-    const reviewWishList = <button className="btn btn-light fw-bold" type="button">Add to Review To-do List</button>
+    const reviewWishList = <button className="btn btn-light fw-bold" onClick={addToReviewToDoList} type="button">Add to Review To-do List</button>
     const notLoggedWishList = <button className="btn btn-secondary fw-bold" type="button" onClick={loginClickHandler}>Login to save event</button>
 
     const getWishList = () => {
