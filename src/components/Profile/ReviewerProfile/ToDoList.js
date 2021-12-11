@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import SellerWishListItem from "../SellerProfile/SellerWishListItem";
 import {getEventReviewsToDo} from "../../../services/reviewService";
 import ToDoListItem from "./ToDoListItem";
 
@@ -19,9 +18,9 @@ const ToDoList = ({currentUser}) => {
                 <h3 className="card-header h4">Review To-Do List</h3>
                 <ul className="list-group list-group-flush">
                     {
-                        eventsToDo.map(eventID => {
+                        eventsToDo.length > 0 ? (eventsToDo.map(eventID => {
                             return (<ToDoListItem eventID={eventID} key={eventID}/>);
-                        })
+                        })) : <li className="list-group-item">Nothing Currently In To-Do List</li>
                     }
                 </ul>
             </div>

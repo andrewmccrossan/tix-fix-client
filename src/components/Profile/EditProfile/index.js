@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from "react";
-import Description from "../../Home/Description";
-import MainSearchBar from "../../Home/MainSearchBar";
 import TopNavBar from "../../TopNavBar";
-import {editProfile, login, profile} from "../../../services/user-service";
+import {editProfile, profile} from "../../../services/user-service";
 import {useHistory} from "react-router-dom";
 
 const EditProfile = () => {
