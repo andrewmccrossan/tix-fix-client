@@ -60,7 +60,7 @@ const ProfileOthers = () => {
     return (
         <>
             <TopNavBar page={"other-profile"}/>
-            <div className="container">
+            <div className="container pt-5">
                 {getProfile()}
             </div>
         </>
