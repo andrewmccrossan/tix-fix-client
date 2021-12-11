@@ -8,7 +8,9 @@ const DetailsEventSellers = () => {
     const {uniqueIdentifier} = useParams();
     const [eventSellers, setEventSellers] = useState([]);
 
-    useEffect(() => {getEventSellers(uniqueIdentifier).then(sellers => setEventSellers(sellers))}, [uniqueIdentifier]);
+    useEffect(() => {
+        getEventSellers(uniqueIdentifier).then(sellers => setEventSellers(sellers))
+    }, [uniqueIdentifier]);
 
     return (
         <>
