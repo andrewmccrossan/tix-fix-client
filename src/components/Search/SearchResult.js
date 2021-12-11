@@ -16,10 +16,11 @@ const SearchResult = () => {
             <div className="container mt-5 pt-5">
                 <div className="row">
                     <h3 className="mt-2">Search results for "{searchCriteria}"</h3>
-                    {
+                    {searchResults.length > 0 ?
                         searchResults.map(result => {
                             return (<SearchResultsItem result={result} key={result.id}/>);
                         })
+                     : <div className="mt-5">Sorry, there are no events related to "{searchCriteria}". Please try another key phrase like "football".</div>
                     }
                 </div>
             </div>
