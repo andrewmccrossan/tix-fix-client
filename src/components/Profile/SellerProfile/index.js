@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import ProfileDetails from "../ProfileDetails";
 import EventsInArea from "../EventsInArea";
 import TicketsToSell from "./TicketsToSell";

@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {getEventsInArea, getZipCodeEvents} from "../../services/eventsService"
-import {useHistory, useParams} from "react-router-dom";
+import {getEventsInArea} from "../../services/eventsService"
+import {useHistory} from "react-router-dom";
 import {convertMilitaryTime, formatDate} from "../../Utils/utils";
-import {profile} from "../../services/user-service";
 
 const EventsInArea = ({currentUser}) => {
 
@@ -21,7 +19,7 @@ const EventsInArea = ({currentUser}) => {
         }
     }, [currentUser.zip]);
 
-    // TODO -  Extract to a component
+
     return (
         <>
 
@@ -29,7 +27,7 @@ const EventsInArea = ({currentUser}) => {
                 <h3 className="card-header h4">Popular Events Near You</h3>
                 <ul className="list-group list-group-flush">
                     {
-                        eventsInArea.slice(0,5).map(event => {
+                        eventsInArea.length > 0 ? (eventsInArea.slice(0,5).map(event => {
                             return (
 
                                 <li className="list-group-item float-start">
@@ -55,14 +53,14 @@ const EventsInArea = ({currentUser}) => {
                                                         onClick={()=> detailsClickHandler(event.id)}>
                                                     More Details
                                                 </button>
-                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </li>
 
                             );
 
-                        })
+                        })) : <li className="list-group-item">No Events In Your Area</li>
                     }
                 </ul>
             </div>

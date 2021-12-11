@@ -17,9 +17,9 @@ const TicketsToSellOther = ({otherProfile}) => {
                 <h3 className="card-header h4">Tickets Currently Selling</h3>
                 <ul className="list-group list-group-flush">
                     {
-                        ticketsSelling.map(sellingItem => {
+                        ticketsSelling.length > 0 ? (ticketsSelling.map(sellingItem => {
                             return (<TicketsToSellOtherItem sellingItem={sellingItem} key={sellingItem.id}/>);
-                        })
+                        })) : <li className="list-group-item">Seller Has No Tickets For Sale</li>
                     }
                 </ul>
             </div>

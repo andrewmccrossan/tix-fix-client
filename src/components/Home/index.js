@@ -3,11 +3,9 @@ import Description from "./Description";
 import MainSearchBar from "./MainSearchBar";
 import Footer from "./Footer";
 import GeneralHomeContent from "./GeneralHomeContent/index.js";
-import LoggedInHomeContent from "./LoggedInHomeContent";
 import './home.css';
 import TopNavBar from "../TopNavBar";
 import {profile} from "../../services/user-service";
-import BuyerWishList from "../Profile/BuyerProfile/BuyerWishList";
 import BuyerHomeContent from "./BuyerHomeContent";
 import SellerHomeContent from "./SellerHomeContent";
 import ReviewerHomeContent from "./ReviewerHomeContent";
@@ -50,7 +48,6 @@ const Home = () => {
             <div className="container">
                 <Description/>
                 <MainSearchBar/>
-                {/*<LoggedInHomeContent/>*/}
                 {getUserSpecificHomeContent()}
                 <GeneralHomeContent/>
                 <hr/>

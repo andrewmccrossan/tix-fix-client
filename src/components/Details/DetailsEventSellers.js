@@ -19,9 +19,8 @@ const DetailsEventSellers = () => {
                         <ul className="list-group list-group-flush">
                             {
                                 eventSellers.length > 0 ? (eventSellers.map(eventSeller => {
-                                    console.log(eventSeller);
                                     return (<DetailsEventSellersItem eventSeller={eventSeller} key={eventSeller._id}/>);
-                                })) : "No Resale Tickets Available"
+                                })) : <li className="list-group-item">No Resale Tickets Have Been Posted For This Event</li>
                             }
                         </ul>
                     </div>

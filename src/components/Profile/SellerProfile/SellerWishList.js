@@ -13,9 +13,9 @@ const SellerWishList = () => {
                 <h3 className="card-header h4">Sell Watch List</h3>
                 <ul className="list-group list-group-flush">
                     {
-                        eventsWatching.map(eventID => {
+                        eventsWatching.length > 0 ? (eventsWatching.map(eventID => {
                             return (<SellerWishListItem eventID={eventID} key={eventID}/>);
-                        })
+                        })) : <li className="list-group-item">Nothing Currently In Watch List</li>
                     }
                 </ul>
             </div>
