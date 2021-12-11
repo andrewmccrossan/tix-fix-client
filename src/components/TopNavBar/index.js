@@ -34,7 +34,7 @@ const TopNavBar = ({page = "home"}) => {
     if (page === "home" || page === "search") {
         return(
             <>
-                <nav className="navbar navbar-expand navbar-dark bg-primary">
+                <nav className="navbar navbar-expand navbar-dark bg-primary fixed-top">
                     <div className="container">
                         <Link className="navbar-brand mb-0 h1" to="/home">Tix-Fix <i className="fas fa-ticket-alt"></i></Link>
 
@@ -64,7 +64,7 @@ const TopNavBar = ({page = "home"}) => {
         // If we reach here we are already on the profile page so we will not show it here
         return(
             <>
-                <nav className="navbar navbar-expand navbar-dark bg-primary">
+                <nav className="navbar navbar-expand navbar-dark bg-primary fixed-top">
                     <div className="container">
                         <Link className="navbar-brand mb-0 h1" to="/home">Tix-Fix <i className="fas fa-ticket-alt"></i></Link>
 
@@ -105,7 +105,7 @@ const TopNavBar = ({page = "home"}) => {
     } else if (page === "other-profile" || page === "details" || page === "privacy") {
         return(
             <>
-                <nav className="navbar navbar-expand navbar-dark bg-primary">
+                <nav className="navbar navbar-expand navbar-dark bg-primary fixed-top">
                     <div className="container">
                         <Link className="navbar-brand mb-0 h1" to="/home">Tix-Fix <i className="fas fa-ticket-alt"></i></Link>
 
@@ -145,7 +145,7 @@ const TopNavBar = ({page = "home"}) => {
     } else if (page === "login") {
         return(
             <>
-                <nav className="navbar navbar-expand navbar-dark bg-primary">
+                <nav className="navbar navbar-expand navbar-dark bg-primary fixed-top">
                     <div className="container">
                         <Link className="navbar-brand mb-0 h1" to="/home">Tix-Fix <i className="fas fa-ticket-alt"></i></Link>
 
@@ -179,7 +179,7 @@ const TopNavBar = ({page = "home"}) => {
     } else {
         return(
             <>
-                <nav className="navbar navbar-expand navbar-dark bg-primary">
+                <nav className="navbar navbar-expand navbar-dark bg-primary fixed-top">
                     <div className="container">
                         <Link className="navbar-brand mb-0 h1" to="/home">Tix-Fix <i className="fas fa-ticket-alt"></i></Link>
 

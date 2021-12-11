@@ -41,8 +41,8 @@ const Profile = () => {
     return (
         <>
             <TopNavBar page={"profile"}/>
-            <div className="container">
-                {getProfile()}
+            <div className="container pt-5">
+                    {getProfile()}
             </div>
         </>
     )

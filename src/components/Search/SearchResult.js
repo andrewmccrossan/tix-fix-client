@@ -13,7 +13,7 @@ const SearchResult = () => {
     return(
         <>
             <TopNavBar page={"results"}/>
-            <div className="container mt-3">
+            <div className="container mt-5 pt-5">
                 <div className="row">
                     <h3 className="mt-2">Search results for "{searchCriteria}"</h3>
                     {

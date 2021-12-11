@@ -8,7 +8,7 @@ const Details = () => {
     return (
         <>
             <TopNavBar page={"details"}/>
-            <div className="container">
+            <div className="container pt-5">
                 <DetailsEventInfo/>
                 <DetailsEventSellers/>
                 <DetailsEventReviews/>
