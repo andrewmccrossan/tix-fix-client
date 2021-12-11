@@ -53,3 +53,9 @@ export const getBuyerEventTransaction = (eventId) =>
         method: 'GET',
         credentials: 'include'
     }).then(response => response.json());
+
+export const deleteBuyerWishListEvent = (eventId) =>
+    fetch(`${BUY_API()}/wishlist/${eventId}`, {
+        method: 'POST',
+        credentials: 'include'
+    }).then(response => response.json());

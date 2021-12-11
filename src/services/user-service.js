@@ -45,6 +45,12 @@ export const logout = () =>
     fetch(`${SERVER_API}/logout`, {
         method: 'POST',
         credentials: 'include'
+    }).then (response=> {
+        if (response.ok) {
+            return response
+        } else {
+            throw new Error()
+        }
     });
 
 export const userFromUsername = (username) =>
