@@ -14,7 +14,7 @@ const WishListOther = ( { otherProfile } ) => {
 
     return (
         <>
-            <div className="card mt-4">
+            <div className="card">
                 <h3 className="card-header h4">Buyer Wish List</h3>
                 <ul className="list-group list-group-flush">
                     {
