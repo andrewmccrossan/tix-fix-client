@@ -10,6 +10,7 @@ import {profile} from "../../services/user-service";
 import BuyerWishList from "../Profile/BuyerProfile/BuyerWishList";
 import BuyerHomeContent from "./BuyerHomeContent";
 import SellerHomeContent from "./SellerHomeContent";
+import ReviewerHomeContent from "./ReviewerHomeContent";
 
 const Home = () => {
 
@@ -35,7 +36,7 @@ const Home = () => {
         }else if (currentProfile.userProfile.role === 'SELLER'){
             return <SellerHomeContent/>
         }else if (currentProfile.userProfile.role === 'REVIEWER'){
-            return <></>
+            return <ReviewerHomeContent currentUser={currentProfile.userProfile}/>
         }else{
             return <></>
         }
