@@ -9,7 +9,7 @@ const SellerReviews = ({currentUser}) => {
     const history = useHistory();
 
     useEffect(() => {
-        if (currentUser && currentUser.role === 'SELLER') {
+        if (currentUser && currentUser._id && currentUser.role === 'SELLER') {
             getInformativeReviewsForSeller(currentUser._id)
                 .then(dbReviews => {setReviews(dbReviews)})
         }

@@ -3,11 +3,15 @@ import {getOtherBuyerInfo} from "../../../../services/buyService";
 import OtherBuyerWishListItem from "./OtherBuyerWishListItem";
 
 
-const ToAttendEvents = ( { otherProfile } ) => {
-
-
+const WishListOther = ( { otherProfile } ) => {
     const [eventsWatching, setEventsWatching] = useState([]);
-    useEffect(() => {getOtherBuyerInfo(otherProfile._id).then(results => {setEventsWatching(results.eventsWishlist)})}, [otherProfile]);
+    useEffect(() => {
+        if (otherProfile && otherProfile._id) {
+            getOtherBuyerInfo(otherProfile._id).then(results => {
+                setEventsWatching(results.eventsWishlist)
+            });
+        }
+    }, [otherProfile]);
 
     return (
         <>
@@ -24,4 +28,4 @@ const ToAttendEvents = ( { otherProfile } ) => {
         </>
     )
 }
-export default ToAttendEvents;
+export default WishListOther;

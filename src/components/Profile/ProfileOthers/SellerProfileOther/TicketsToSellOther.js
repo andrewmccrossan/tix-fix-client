@@ -5,7 +5,11 @@ import TicketsToSellOtherItem from "./TicketsToSellOtherItem";
 const TicketsToSellOther = ({otherProfile}) => {
 
     const [ticketsSelling, setTicketsSelling] = useState([]);
-    useEffect(() => {getOtherSellerInfo(otherProfile._id).then(results => {setTicketsSelling(results.eventsSelling)})}, []);
+    useEffect(() => {
+        if (otherProfile && otherProfile._id) {
+            getOtherSellerInfo(otherProfile._id).then(results => {setTicketsSelling(results.eventsSelling)});
+        }
+    }, [otherProfile]);
 
     return (
         <>

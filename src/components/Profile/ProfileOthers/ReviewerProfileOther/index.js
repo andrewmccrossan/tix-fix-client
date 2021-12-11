@@ -1,7 +1,6 @@
 import React, {useEffect} from "react";
 import ProfileDetailsOther from "../ProfileDetailsOther";
 import ReviewsOther from "./ReviewsOther";
-import ToDoListOther from "./ToDoListOther";
 
 const ReviewerProfileOther = ({otherProfile}) => {
     return (
@@ -12,7 +11,6 @@ const ReviewerProfileOther = ({otherProfile}) => {
                 </div>
                 <div className="col-8">
                     <ReviewsOther otherProfile={otherProfile}/>
-                    <ToDoListOther/>
                 </div>
             </div>
         </>

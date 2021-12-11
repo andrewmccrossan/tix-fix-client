@@ -10,7 +10,7 @@ const Reviews = ({currentUser}) => {
     }
 
     useEffect(() => {
-        if (currentUser) {
+        if (currentUser && currentUser._id) {
             getReviewsForReviewer(currentUser._id).then(dbReviews => {
                 setReviews(dbReviews);
             });

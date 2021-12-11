@@ -4,7 +4,7 @@ import {useHistory, useParams} from "react-router-dom";
 import {getEventDetails2} from "../../services/eventsService";
 import {convertMilitaryTime, formatDate} from "../../Utils/utils";
 import {profile} from "../../services/user-service";
-import {postVenueReview} from "../../services/reviewService";
+import {postReviewToDoList, postVenueReview} from "../../services/reviewService";
 import {postSellTickets, postSellWatchList} from "../../services/sellService";
 import {postBoughtTickets, postBuyWatchList} from "../../services/buyService";
 

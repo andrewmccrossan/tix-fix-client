@@ -4,11 +4,12 @@ import {useHistory} from "react-router-dom";
 import {getBuyerEventTransaction} from "../../../services/buyService";
 
 const UpcomingTicketPurchase = ({ currentUser, eventBought}) => {
-
-    console.log(eventBought)
-
     const [event, setEvent] = useState({});
-    useEffect( () => getEventDetails2(eventBought).then(results => {setEvent(results)}), [])
+    useEffect( () => {
+        if (eventBought) {
+            getEventDetails2(eventBought).then(results => {setEvent(results)});
+        }
+    }, [eventBought])
 
     const history = useHistory();
     const detailsClickHandler = (resultID) => {
@@ -16,7 +17,11 @@ const UpcomingTicketPurchase = ({ currentUser, eventBought}) => {
     }
 
     const [purchaseDetails, setPurchaseDetails] = useState({});
-    useEffect( () =>  getBuyerEventTransaction(eventBought).then(results => {setPurchaseDetails(results)}), [])
+    useEffect( () =>  {
+        if (eventBought) {
+            getBuyerEventTransaction(eventBought).then(results => {setPurchaseDetails(results)});
+        }
+    }, [eventBought])
 
     return (
         <>

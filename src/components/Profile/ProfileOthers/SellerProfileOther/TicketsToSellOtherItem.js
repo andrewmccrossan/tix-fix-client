@@ -5,7 +5,11 @@ import {useHistory} from "react-router-dom";
 const TicketsToSellOtherItem = ({sellingItem}) => {
 
     const [event, setEvent] = useState({});
-    useEffect(() => getEventDetails2(sellingItem.eventID).then(results => {setEvent(results)}), [])
+    useEffect(() => {
+        if (sellingItem && sellingItem.eventID) {
+            getEventDetails2(sellingItem.eventID).then(results => {setEvent(results)});
+        }
+    }, [sellingItem])
 
     const history = useHistory();
     const detailsClickHandler = (resultID) => {

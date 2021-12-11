@@ -55,3 +55,9 @@ export const postReviewToDoList = (eventID) =>
             throw new Error()
         }
     });
+
+export const getEventReviewsToDo = (reviewerID) =>
+    fetch(`${REVIEW_API()}/${reviewerID}`, {
+        method: 'GET',
+        credentials: 'include'
+    }).then(response => response.json());

@@ -5,7 +5,11 @@ import {useHistory} from "react-router-dom";
 const OtherBuyerWishListItem = ({eventID}) => {
 
     const [event, setEvent] = useState({});
-    useEffect(() => getEventDetails2(eventID).then(results => {setEvent(results)}), [eventID])
+    useEffect(() => {
+        if (eventID) {
+            getEventDetails2(eventID).then(results => {setEvent(results)});
+        }
+    }, [eventID])
 
     const history = useHistory();
     const detailsClickHandler = (resultID) => {
