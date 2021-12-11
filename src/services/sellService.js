@@ -53,7 +53,17 @@ export const getEventSellers = (eventId) =>
     }).then(response => response.json());
 
 export const deleteSellerWatchListEvent = (eventId) =>
-    fetch(`${SELL_API()}/watchlist/${eventId}`, {
+    fetch(`${SELL_API()}/delete/watchlist/${eventId}`, {
         method: 'POST',
         credentials: 'include'
     }).then(response => response.json());
+
+export const buyTicket = (eventSellerTicketInfo, eventId) =>
+    fetch(`${SELL_API()}/ticketSold/${eventId}`, {
+        method: 'POST',
+        body: JSON.stringify(eventSellerTicketInfo),
+        headers: {
+            'content-type': 'application/json',
+        },
+        credentials: 'include'
+    });
