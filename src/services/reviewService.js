@@ -61,3 +61,9 @@ export const getEventReviewsToDo = (reviewerID) =>
         method: 'GET',
         credentials: 'include'
     }).then(response => response.json());
+
+export const deleteReviewToDoListEvent = (eventId) =>
+    fetch(`${REVIEW_API()}/todolist/${eventId}`, {
+        method: 'DELETE',
+        credentials: 'include'
+    });
