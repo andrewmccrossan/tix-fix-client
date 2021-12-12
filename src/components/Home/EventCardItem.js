@@ -12,7 +12,7 @@ const EventCardItem = ({event}) => {
     return (
         <>
             <div className="card mb-3">
-                <div className="card-body">
+                <div className="card-body" style={ {minHeight: "100px" }}>
                     <h5 className="card-title">{event.short_title}</h5>
                 </div>
                 <div>
@@ -27,7 +27,7 @@ const EventCardItem = ({event}) => {
                 </ul>
                 <div className="card-body">
                     <button type="button"
-                            className="btn btn-info btn-sm"
+                            className="btn  btn-info btn-sm w-100"
                             onClick={()=> detailsClickHandler(event.id)}>
                         More Details
                     </button>

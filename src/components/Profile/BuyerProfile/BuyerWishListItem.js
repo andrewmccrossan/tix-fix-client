@@ -34,7 +34,7 @@ const BuyerWishListItem = ({eventID}) => {
             <li className="list-group-item">
                 <div className="container">
                     <div className="row">
-                        <div className="col-9">
+                        <div className="col-9 align-self-center">
                             <div className="row fw-bold">
                                 {event.short_title}
                             </div>
@@ -44,14 +44,14 @@ const BuyerWishListItem = ({eventID}) => {
                                 <div className="row">
                                     <div className="col align-self-center">
                                         <button type="button"
-                                                className="btn btn-info btn-sm align-self-center mt-3"
+                                                className="btn btn-info btn-sm align-self-center"
                                                 onClick={()=> detailsClickHandler(event.id)}>
                                             Event Details
                                         </button>
                                     </div>
                                     <div className="col align-self-end">
                                         <button type="button"
-                                                className="btn btn-danger btn-sm align-self-end mt-3"
+                                                className="btn btn-danger btn-sm align-self-end"
                                                 onClick={()=> deleteEvent(event.id)}>
                                             Remove Event
                                         </button>
