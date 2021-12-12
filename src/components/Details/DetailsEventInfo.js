@@ -115,10 +115,10 @@ const DetailsEventInfo = () => {
             })
     }
 
-    const buyWishList = <button className="btn btn-light fw-bold" onClick={addToBuyWatchList} type="button">Add to Buy Wish List</button>
-    const sellWishList = <button className="btn btn-light fw-bold" onClick={addToSellWatchList} type="button">Add to Sell Watch List</button>
-    const reviewWishList = <button className="btn btn-light fw-bold" onClick={addToReviewToDoList} type="button">Add to Review To-do List</button>
-    const notLoggedWishList = <button className="btn btn-secondary fw-bold" type="button" onClick={loginClickHandler}>Login to save event</button>
+    const buyWishList = <button className="btn btn-light fw-bold w-100" onClick={addToBuyWatchList} type="button">Add to Buy Wish List</button>
+    const sellWishList = <button className="btn btn-light fw-bold w-100" onClick={addToSellWatchList} type="button">Add to Sell Watch List</button>
+    const reviewWishList = <button className="btn btn-light fw-bold w-100" onClick={addToReviewToDoList} type="button">Add to Review To-do List</button>
+    const notLoggedWishList = <button className="btn btn-secondary fw-bold w-100" type="button" onClick={loginClickHandler}>Login to save event</button>
 
     const getWishList = () => {
         if (currentProfile.userProfile.role === 'SELLER') {
@@ -315,7 +315,7 @@ const DetailsEventInfo = () => {
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item">
                                 <div className="row">
-                                    <div className="col-6 d-grid">
+                                    <div className="col-12 d-grid">
                                         {getWishList()}
                                     </div>
                                     <div className="col-6"/>

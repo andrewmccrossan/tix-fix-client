@@ -43,7 +43,7 @@ const TicketsToSellItem = ({sellingItem}) => {
                                 Price per ticket: ${sellingItem.price}
                             </div>
                         </div>
-                        <div className="col-3">
+                        <div className="col-3 align-self-center">
                             {<div className="d-grid">
                                 <div className="row">
                                     <div className="col align-self-center">

@@ -25,7 +25,7 @@ const DetailsEventReviews = () => {
                                 <li className="list-group-item">
                                     <div className="container">
                                         <div className="row">
-                                            <div className="col-10">
+                                            <div className="col-10 align-self-center">
                                                 <div className="row fw-bold">
                                                     {`Reviewer: ${review.reviewerName}`}
                                                 </div>
@@ -36,13 +36,13 @@ const DetailsEventReviews = () => {
                                                     {review.text}
                                                 </div>
                                             </div>
-                                            <div className="col-2">
+                                            <div className="col-2 align-self-center">
                                                 <button type="button"
                                                         className="btn btn-primary mt-1 mb-1"
                                                         onClick={() => {
                                                             history.push(`/profile/${review.reviewerName}`)
                                                         }}>
-                                                    Go To Reviewer's Profile
+                                                    Reviewer's Profile
                                                 </button>
                                             </div>
                                         </div>
