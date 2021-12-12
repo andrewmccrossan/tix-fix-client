@@ -14,8 +14,8 @@ const LoginRegister = () => {
             <div className="d-none d-xxl-block fa-2x">XXL</div>*/}
 
             <TopNavBar page={"login"}/>
-            <div className="container">
-                <div className="row mt-5">
+            <div className="container mt-5 pt-5">
+                <div className="row">
                     <div className="col-6">
                         <Login/>
                     </div>

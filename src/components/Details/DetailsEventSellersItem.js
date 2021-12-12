@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from "react";
 import {buyTicket} from "../../services/sellService";
-import {useParams} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 
 const DetailsEventSellersItem = ({eventSeller}) => {
 
     const {uniqueIdentifier} = useParams();
     const [eventID, setEventID] = useState('');
+
+    const history = useHistory();
 
     useEffect(() => {setEventID(uniqueIdentifier)}, [uniqueIdentifier]);
 
@@ -18,8 +20,7 @@ const DetailsEventSellersItem = ({eventSeller}) => {
                     if (!status.ok) {
                         throw new Error('Failed to buy ticket');
                     } else {
-                        alert('Congrats! Your purchase was successful!');
-                        window.location.reload(false);
+                        history.push("/profile");
                     }
                 })
                 .catch (error => console.log(error));
@@ -44,7 +45,9 @@ const DetailsEventSellersItem = ({eventSeller}) => {
                         </div>
                         <div className="col-2 align-self-center">
                             <button type="button"
-                                    className="btn btn-primary"
+
+                                    className="btn btn-success fw-bold btn-sm"
+
                                     onClick={() => handleBuyTicket()}
                             >Buy Seller's Ticket</button>
                         </div>

@@ -5,7 +5,7 @@ const Privacy = () => {
     return (
         <>
             <TopNavBar page={"privacy"}/>
-            <div className="container">
+            <div className="container mt-5 pt-5">
                 <h1>Privacy</h1>
             </div>
         </>

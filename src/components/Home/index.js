@@ -45,7 +45,7 @@ const Home = () => {
         <>
 
             <TopNavBar page={"home"}/>
-            <div className="container">
+            <div className="container mt-5">
                 <Description/>
                 <MainSearchBar/>
                 {getUserSpecificHomeContent()}
