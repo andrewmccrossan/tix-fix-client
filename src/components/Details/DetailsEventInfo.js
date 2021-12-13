@@ -304,11 +304,11 @@ const DetailsEventInfo = () => {
     return (
         <>
             <div className="row mt-5">
-                <div className="col-3 d-flex justify-content-center align-items-center">
-                    <img className="tix-profile-image img-thumbnail" src={event.performers[0].image} alt="event image" />
+                <div className="col-lg-4 d-flex justify-content-center align-content-center mb-md-3 mb-sm-3">
+                    <img className="tix-profile-image img-fluid img-thumbnail" src={event.performers[0].image} alt="event image" />
                 </div>
 
-                <div className="col-9">
+                <div className="col-12 col-lg-8">
                     <div className="card">
                         <h3 className="card-header h4">{event.title}</h3>
                         <ul className="list-group list-group-flush">
