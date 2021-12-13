@@ -29,8 +29,7 @@ const EventsInArea = ({currentUser}) => {
                     {
                         eventsInArea.length > 0 ? (eventsInArea.slice(0,5).map(event => {
                             return (
-
-                                <li className="list-group-item float-start">
+                                <li key={event.id} className="list-group-item float-start">
                                     <div className="container">
                                         <div className="row">
                                             <div className="col-7 col-lg-9 align-self-center">

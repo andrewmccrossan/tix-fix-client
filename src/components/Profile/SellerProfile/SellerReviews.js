@@ -21,7 +21,7 @@ const SellerReviews = ({currentUser}) => {
                 {
                     reviews.length > 0 ? (reviews.slice(0,5).map(review => {
                         return(
-                            <li className="list-group-item">
+                            <li key={review.text} className="list-group-item">
                                 <div className="container">
                                     <div className="row">
                                         <div className="col-6 col-lg-7 col-xl-8 align-self-center">
