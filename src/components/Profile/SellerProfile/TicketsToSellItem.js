@@ -45,19 +45,21 @@ const TicketsToSellItem = ({sellingItem}) => {
                         </div>
                         <div className="col-5 col-lg-3 align-self-center">
                             <div className="row d-grid gap-2">
-                                <div className="align-self-center d-flex justify-content-end">
+                                <div className="btn-group-justified">
+                                <div className=" btn-group align-self-center d-flex justify-content-end pb-3">
                                     <button type="button"
                                             className="btn btn-info btn-sm "
                                             onClick={()=> detailsClickHandler(event.id)}>
                                         More Details
                                     </button>
                                 </div>
-                                <div className="align-self-center d-flex justify-content-end">
+                                <div className=" btn-group align-self-center d-flex justify-content-end">
                                     <button type="button"
                                             className="btn btn-danger btn-sm "
                                             onClick={()=> deleteEvent(sellingItem._id)}>
                                         Remove Event
                                     </button>
+                                </div>
                                 </div>
                             </div>
                         </div>

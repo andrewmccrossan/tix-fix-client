@@ -37,7 +37,7 @@ const SellerReviewsOther = ({otherProfile}) => {
                                         {review.revieweeType === 'SELLER' &&
                                         <div className="col-6 col-lg-5 align-self-center">
                                             <button type="button"
-                                                    className="btn btn-info btn-sm float-end mt-3"
+                                                    className="btn btn-info btn-sm float-end"
                                                     onClick={() => {
                                                         history.push(`/profile/${review.reviewerName}`)
                                                     }}>
