@@ -20,6 +20,10 @@ const DetailsEventSellersItem = ({eventSeller}) => {
 
     const history = useHistory();
 
+    const loginClickHandler = () => {
+        history.push(`/login`);
+    }
+
     useEffect(() => {setEventID(uniqueIdentifier)}, [uniqueIdentifier]);
     useEffect(() => {
         profile()
@@ -44,11 +48,16 @@ const DetailsEventSellersItem = ({eventSeller}) => {
 
     const buyButton = <button type="button" className="btn btn-success fw-bold btn-sm"
                               onClick={() => handleBuyTicket()}>Buy Seller's Ticket</button>
+    const notLoggedInButton = <button className="btn btn-success fw-bold btn-sm" onClick={loginClickHandler} type="button">Sign In To Buy</button>
 
     const getBuyButton = () => {
         if (currentProfile.userProfile.role === 'BUYER') {
             return buyButton;
-        } else {}
+        } else if (currentProfile.userProfile.role === 'REVIEWER' || currentProfile.userProfile.role === 'SELLER') {
+
+        } else {
+            return notLoggedInButton;
+        }
     }
 
     return (
