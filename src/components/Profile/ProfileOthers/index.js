@@ -6,6 +6,7 @@ import '../profile.css';
 import TopNavBar from "../../TopNavBar";
 import {profile, userFromUsername} from "../../../services/user-service";
 import {useHistory, useParams} from "react-router-dom";
+import Footer from "../../Home/Footer";
 
 const ProfileOthers = () => {
     const {username} = useParams();
@@ -62,6 +63,8 @@ const ProfileOthers = () => {
             <TopNavBar page={"other-profile"}/>
             <div className="container pt-5">
                 {getProfile()}
+                <hr/>
+                <Footer/>
             </div>
         </>
     )

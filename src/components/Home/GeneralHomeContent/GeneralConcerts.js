@@ -14,7 +14,7 @@ const GeneralConcerts = () => {
                 <div className="row mt-2">
                     {
                         concerts.map(concert => {
-                            return (<div key={concert.id} className="col-4">
+                            return (<div key={concert.id} className="col-md-4">
                                 <EventCardItem event={concert}/>
                             </div>);
                         })

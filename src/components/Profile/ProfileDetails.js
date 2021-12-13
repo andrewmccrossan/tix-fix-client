@@ -42,12 +42,12 @@ const ProfileDetails = ({currentUser}) => {
                 <div className="mt-2"><span className="fw-bold me-2">Zip Code:</span> {currentUser.zip}</div>
                 <div className="mt-2"><span className="fw-bold me-2">Email:</span> {currentUser.email}</div>
             </div>
-            <button className="btn rounded-pill btn btn-secondary btn-sm mt-2"
+            <button className="btn rounded-pill btn btn-secondary btn-sm mt-2 mb-4"
                     onClick={ () => editProfile()}>
                 Edit Profile
             </button>
             <button type="submit"
-                    className="btn rounded-pill btn btn-danger btn-sm mt-2 ms-2"
+                    className="btn rounded-pill btn btn-danger btn-sm mt-2 ms-2 mb-4"
                     onClick={() => attemptLogout()}>
                 Log Out
             </button>

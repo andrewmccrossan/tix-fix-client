@@ -4,6 +4,7 @@ import SearchResultsItem from "./SearchResultsItem";
 import TopNavBar from "../TopNavBar";
 import {getSearchResults} from "../../services/searchService";
 import {useParams} from "react-router-dom";
+import Footer from "../Home/Footer";
 
 const SearchResult = () => {
     const {searchCriteria} = useParams();
@@ -23,6 +24,8 @@ const SearchResult = () => {
                      : <div className="mt-5">Sorry, there are no events related to "{searchCriteria}". Please try another key phrase like "football".</div>
                     }
                 </div>
+                <hr/>
+                <Footer/>
             </div>
         </>
     );

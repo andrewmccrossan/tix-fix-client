@@ -24,7 +24,7 @@ const SellerReviews = ({currentUser}) => {
                             <li className="list-group-item">
                                 <div className="container">
                                     <div className="row">
-                                        <div className="col-9">
+                                        <div className="col-6 col-lg-8 align-self-center">
                                             <div className="row fw-bold">
                                                 {`Reviewer: ${review.reviewerName}`}
                                             </div>
@@ -36,7 +36,7 @@ const SellerReviews = ({currentUser}) => {
                                             </div>
                                         </div>
                                         {review.revieweeType === 'SELLER' &&
-                                        <div className="col-3">
+                                        <div className="col-6 col-lg-4 align-self-center">
                                             <button type="button"
                                                     className="btn btn-info btn-sm float-end mt-3"
                                                     onClick={() => {

@@ -40,7 +40,7 @@ const Login = () => {
                         className="btn btn-primary mb-2"
                         onClick={() => attemptLogin(user)}
                 >Log In</button>
-                <div id="privacy" className="form-text">By signing in, you agree to and understand our <Link className="text-info" to="/privacy" >privacy policy</Link>.</div>
+                <div id="privacy" className="form-text mb-4">By signing in, you agree to and understand our <Link className="text-info" to="/privacy" >privacy policy</Link>.</div>
             </div>
         </>
     );

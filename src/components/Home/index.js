@@ -41,9 +41,7 @@ const Home = () => {
     }
 
     return (
-
         <>
-
             <TopNavBar page={"home"}/>
             <div className="container mt-5">
                 <Description/>

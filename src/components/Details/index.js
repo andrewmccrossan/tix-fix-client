@@ -3,6 +3,7 @@ import DetailsEventInfo from "./DetailsEventInfo";
 import TopNavBar from "../TopNavBar";
 import DetailsEventSellers from "./DetailsEventSellers";
 import DetailsEventReviews from "./DetailsEventReviews";
+import Footer from "../Home/Footer";
 
 const Details = () => {
     return (
@@ -12,6 +13,8 @@ const Details = () => {
                 <DetailsEventInfo/>
                 <DetailsEventSellers/>
                 <DetailsEventReviews/>
+                <hr/>
+                <Footer/>
             </div>
         </>
     )

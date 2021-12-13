@@ -3,7 +3,6 @@ import {Link, useHistory} from "react-router-dom";
 import {register} from "../../services/user-service";
 
 const Register = () => {
-    // const dispatch = useDispatch();
     const history = useHistory();
     const [user, setUser] = useState({role: 'BUYER'});
 
@@ -95,7 +94,7 @@ const Register = () => {
                            className="ms-1 form-check-input"
                            onChange={setRadioRole}
                     />
-                    <label htmlFor="user-buyer" className="form-check-label">I am a ticket buyer</label><br/>
+                    <label htmlFor="user-buyer" className="form-check-label ms-2">I am a ticket buyer</label><br/>
                     <input type="radio"
                            value="SELLER"
                            name="user-role"
@@ -103,7 +102,7 @@ const Register = () => {
                            className="ms-1 form-check-input"
                            onChange={setRadioRole}
                     />
-                    <label htmlFor="user-seller" className="form-check-label">I am a ticket seller</label><br/>
+                    <label htmlFor="user-seller" className="form-check-label ms-2">I am a ticket seller</label><br/>
                     <input type="radio"
                            value="REVIEWER"
                            name="user-role"
@@ -111,7 +110,7 @@ const Register = () => {
                            className="ms-1 form-check-input"
                            onChange={setRadioRole}
                     />
-                    <label htmlFor="user-reviewer" className="form-check-label">I am a reviewer</label><br/>
+                    <label htmlFor="user-reviewer" className="form-check-label ms-2">I am a reviewer</label><br/>
                 </div>
                 <button type="submit"
                         className="btn btn-primary mb-2"
