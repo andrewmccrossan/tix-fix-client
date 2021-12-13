@@ -38,11 +38,11 @@ const DetailsEventReviews = () => {
                                         </div>
                                         <div className="col-5 col-lg-3 align-self-center d-flex justify-content-end">
                                             <button type="button"
-                                                    className="btn btn-info mt-1 mb-1"
+                                                    className="btn btn-info mt-1 mb-1 btn-sm"
                                                     onClick={() => {
                                                         history.push(`/profile/${review.reviewerName}`)
                                                     }}>
-                                                Go to Reviewer's Profile
+                                                See Reviewer's Profile
                                             </button>
                                         </div>
                                     </div>
