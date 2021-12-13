@@ -34,7 +34,7 @@ const UpcomingTicketPurchase = ({ currentUser, eventBought, purchaseDetails}) =>
                         <div className="col-5 col-lg-3 align-self-center">
                             <div className="row d-grid gap-2">
                                 <div className="btn-group-justified">
-                                    <div className=" btn-group align-self-center d-flex justify-content-end pb-3">
+                                    <div className=" btn-group align-self-center d-flex justify-content-end">
                                         <button type="button"
                                                 className="btn btn-info btn-sm float-end"
                                                 onClick={()=> detailsClickHandler(event.id)}>
