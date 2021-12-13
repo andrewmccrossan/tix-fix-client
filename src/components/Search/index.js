@@ -1,6 +1,7 @@
 import React from "react";
 import TopNavBar from "../TopNavBar";
 import MainSearchBar from "../Home/MainSearchBar";
+import Footer from "../Home/Footer";
 
 const Search = () => {
     return (
@@ -13,6 +14,8 @@ const Search = () => {
                     </div>
                 </div>
                 <MainSearchBar/>
+                <hr/>
+                <Footer/>
             </div>
         </>
     )
