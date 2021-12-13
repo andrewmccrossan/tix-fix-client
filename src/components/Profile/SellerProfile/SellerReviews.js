@@ -37,13 +37,13 @@ const SellerReviews = ({currentUser}) => {
                                         </div>
                                         {review.revieweeType === 'SELLER' &&
                                         <div className="col-6 col-lg-4 align-self-center">
-                                            <button type="button"
-                                                    className="btn btn-info btn-sm float-end mt-3"
-                                                    onClick={() => {
-                                                        history.push(`/profile/${review.reviewerName}`)
-                                                    }}>
-                                                Go To Reviewer's Profile
-                                            </button>
+                                                    <button type="button"
+                                                            className="btn btn-info btn-sm float-end"
+                                                            onClick={() => {
+                                                                history.push(`/profile/${review.reviewerName}`)
+                                                            }}>
+                                                        Go To Reviewer's Profile
+                                                    </button>
                                         </div>
                                         }
                                     </div>

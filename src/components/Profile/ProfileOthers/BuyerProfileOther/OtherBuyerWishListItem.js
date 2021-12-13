@@ -20,7 +20,7 @@ const OtherBuyerWishListItem = ({eventID}) => {
         <>
             <li className="list-group-item">
                 <div className="container">
-                    <div className="row ">
+                    <div className="row">
                         <div className="col-7 col-lg-9 align-self-center">
                             <div className="row fw-bold">
                                 {event.short_title}
@@ -28,9 +28,9 @@ const OtherBuyerWishListItem = ({eventID}) => {
                         </div>
                         <div className="col-5 col-lg-3 align-self-center">
                             <button type="button"
-                                    className="btn btn-info btn-sm float-end mt-3 d-flex justify-content-end"
+                                    className="btn btn-info btn-sm float-end d-flex justify-content-end"
                                     onClick={()=> detailsClickHandler(event.id)}>
-                                Event Details
+                                More Details
                             </button>
                         </div>
                     </div>
