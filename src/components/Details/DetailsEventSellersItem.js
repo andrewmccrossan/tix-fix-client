@@ -1,20 +1,33 @@
 import React, {useEffect, useState} from "react";
 import {buyTicket} from "../../services/sellService";
 import {useHistory, useParams} from "react-router-dom";
+import {profile} from "../../services/user-service";
 
 const DetailsEventSellersItem = ({eventSeller}) => {
 
     const {uniqueIdentifier} = useParams();
     const [eventID, setEventID] = useState('');
+    const [currentProfile, setCurrentProfile] = useState({
+        userProfile: {
+            username: '',
+            email: '',
+            lastName: '',
+            firstName: '',
+            role: '',
+            zip: '',
+        }
+    });
 
     const history = useHistory();
 
     useEffect(() => {setEventID(uniqueIdentifier)}, [uniqueIdentifier]);
+    useEffect(() => {
+        profile()
+            .then(profile => {setCurrentProfile({userProfile: profile});})
+    }, []);
 
     const handleBuyTicket = () => {
         if (eventID) {
-            console.log(eventID);
-            console.log(typeof eventID);
             buyTicket(eventSeller, eventID)
                 .then((status) => {
                     if (!status.ok) {
@@ -29,12 +42,21 @@ const DetailsEventSellersItem = ({eventSeller}) => {
         }
     }
 
+    const buyButton = <button type="button" className="btn btn-success fw-bold btn-sm"
+                              onClick={() => handleBuyTicket()}>Buy Seller's Ticket</button>
+
+    const getBuyButton = () => {
+        if (currentProfile.userProfile.role === 'BUYER') {
+            return buyButton;
+        } else {}
+    }
+
     return (
         <>
             <li className="list-group-item">
                 <div className="container">
                     <div className="row">
-                        <div className="col-4 align-self-center">
+                        <div className="col-3 align-self-center">
                             <span className="fw-bold me-2">Seller:</span>{eventSeller.sellerUsername}
                         </div>
                         <div className="col-3 align-self-center">
@@ -43,13 +65,20 @@ const DetailsEventSellersItem = ({eventSeller}) => {
                         <div className="col-3 align-self-center">
                             <span className="fw-bold me-2">Price Per Ticket:</span>${eventSeller.ticketPrice}
                         </div>
-                        <div className="col-2 align-self-center">
-                            <button type="button"
-
-                                    className="btn btn-success fw-bold btn-sm"
-
-                                    onClick={() => handleBuyTicket()}
-                            >Buy Seller's Ticket</button>
+                        <div className="col-3 align-self-center">
+                            <div className="row d-grid gap-2">
+                                <div className="align-self-center d-flex justify-content-end">
+                                    {getBuyButton()}
+                                </div>
+                                <div className="align-self-center d-flex justify-content-end">
+                                    <button type="button"
+                                            className="btn btn-info fw-bold btn-sm"
+                                            onClick={() => {
+                                                history.push(`/profile/${eventSeller.sellerUsername}`)
+                                            }}>
+                                    See Seller's Profile</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

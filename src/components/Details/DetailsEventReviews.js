@@ -21,37 +21,36 @@ const DetailsEventReviews = () => {
             <ul className="list-group list-group-flush">
                 {
                     reviews.length > 0 ? (reviews.slice(0,5).map(review => {
-                            return(
-                                <li className="list-group-item">
-                                    <div className="container">
-                                        <div className="row">
-                                            <div className="col-10 align-self-center">
-                                                <div className="row fw-bold">
-                                                    {`Reviewer: ${review.reviewerName}`}
-                                                </div>
-                                                <div className="row">
-                                                    Rating: {review.score}
-                                                </div>
-                                                <div className="row">
-                                                    {review.text}
-                                                </div>
+                        return(
+                            <li className="list-group-item">
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col-7 col-lg-9 align-self-center">
+                                            <div className="row fw-bold">
+                                                {`Reviewer: ${review.reviewerName}`}
                                             </div>
-                                            <div className="col-2 align-self-center">
-                                                <button type="button"
-                                                        className="btn btn-primary mt-1 mb-1"
-                                                        onClick={() => {
-                                                            history.push(`/profile/${review.reviewerName}`)
-                                                        }}>
-                                                    Reviewer's Profile
-                                                </button>
+                                            <div className="row">
+                                                Rating: {review.score}
+                                            </div>
+                                            <div className="row">
+                                                {review.text}
                                             </div>
                                         </div>
+                                        <div className="col-5 col-lg-3 align-self-center d-flex justify-content-end">
+                                            <button type="button"
+                                                    className="btn btn-info mt-1 mb-1"
+                                                    onClick={() => {
+                                                        history.push(`/profile/${review.reviewerName}`)
+                                                    }}>
+                                                Go to Reviewer's Profile
+                                            </button>
+                                        </div>
                                     </div>
-                                </li>
-                            )
-                        })) : <li className="list-group-item">No Reviews Have Been Posted For This Venue Yet</li>
+                                </div>
+                            </li>
+                        )
+                    })) : <li className="list-group-item">No Reviews Have Been Posted For This Venue Yet</li>
                 }
-
             </ul>
         </div>
     )
