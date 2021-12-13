@@ -9,10 +9,10 @@ const BuyerProfile = ({currentUser}) => {
     return (
         <>
             <div className="row mt-5">
-                <div className="col-4">
+                <div className="col-md-4">
                     <ProfileDetails currentUser={currentUser}/>
                 </div>
-                <div className="col-8">
+                <div className="col-md-8">
                     <UpcomingEvents currentUser={currentUser}/>
                     <WishList/>
                     <EventsInArea currentUser={currentUser}/>

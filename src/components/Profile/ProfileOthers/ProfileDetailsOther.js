@@ -57,9 +57,9 @@ const ProfileDetailsOther = ({otherProfile}) => {
             <div className="mt-2"><span className="fw-bold me-2">Username:</span> {otherProfile.username}</div>
             {otherProfile.role === 'SELLER' && <div className="mt-2"><span className="fw-bold me-2">Average Rating: </span>{rating}</div>}
             <div className="mt-2"><span className="fw-bold me-2">Role:</span> {otherProfile.role}</div>
-            <div className="mt-2"><span className="fw-bold me-2">Can't wait to see live:</span> {otherProfile.artistInterest}</div>
+            <div className="mt-2 mb-4"><span className="fw-bold me-2">Can't wait to see live:</span> {otherProfile.artistInterest}</div>
             {otherProfile.role === 'SELLER' && currentUser && currentUser.userProfile.username !== 'default-USER' && currentUser.userProfile.role === 'REVIEWER' &&
-                 <div className="mt-4">
+                 <div className="mt-4 mb-4">
                  <div className="row">
                      <div className="col d-grid">
                          {!showMainActionButton && <button className="btn btn-success fw-bold" onClick={() => setShowMainActionButton(!showMainActionButton)} type="button">Write a Seller Review</button>}
