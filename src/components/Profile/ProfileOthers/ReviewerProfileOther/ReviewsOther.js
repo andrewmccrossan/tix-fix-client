@@ -28,7 +28,7 @@ const ReviewsOther = ({otherProfile}) => {
                                 <li className="list-group-item">
                                     <div className="container">
                                         <div className="row">
-                                            <div className="col-9">
+                                            <div className="col-6 col-lg-8 align-self-center">
                                                 {review.revieweeType === 'SELLER' &&
                                                 <div className="row fw-bold">
                                                     {`Seller: ${review.revieweeName}`}
@@ -47,7 +47,7 @@ const ReviewsOther = ({otherProfile}) => {
                                                 </div>
                                             </div>
                                             {review.revieweeType === 'SELLER' &&
-                                            <div className="col-3">
+                                            <div className="col-6 col-lg-4 align-self-center">
                                                 <button type="button"
                                                         className="btn btn-info btn-sm float-end mt-3"
                                                         onClick={() => profileClickHandler(review.revieweeName)}>

@@ -1,12 +1,10 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import ProfileDetails from "../ProfileDetails";
 import UpcomingEvents from "./UpcomingEvents";
 import WishList from "./BuyerWishList";
 import EventsInArea from "../EventsInArea";
-import {getAllBuyerTransactions} from "../../../services/buyService";
 
 const BuyerProfile = ({currentUser}) => {
-
 
     return (
         <>
