@@ -30,7 +30,7 @@ const OtherBuyerWishListItem = ({eventID}) => {
                             <button type="button"
                                     className="btn btn-info btn-sm float-end d-flex justify-content-end"
                                     onClick={()=> detailsClickHandler(event.id)}>
-                                Event Details
+                                More Details
                             </button>
                         </div>
                     </div>
