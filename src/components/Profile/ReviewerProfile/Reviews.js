@@ -47,13 +47,13 @@ const Reviews = ({currentUser}) => {
                                                 </div>
                                             </div>
                                             {review.revieweeType === 'SELLER' &&
-                                            <div className="col-6 col-lg-4 align-self-center">
-                                                <button type="button"
-                                                        className="btn btn-info btn-sm float-end"
-                                                        onClick={() => profileClickHandler(review.revieweeName)}>
-                                                    Go To Seller's Profile
-                                                </button>
-                                            </div>
+                                                <div className="col-6 col-lg-4 align-self-center">
+                                                    <button type="button"
+                                                            className="btn btn-info btn-sm float-end"
+                                                            onClick={() => profileClickHandler(review.revieweeName)}>
+                                                        See Seller's Profile
+                                                    </button>
+                                                </div>
                                             }
                                         </div>
                                     </div>
