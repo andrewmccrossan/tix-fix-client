@@ -33,7 +33,7 @@ const EventsInArea = ({currentUser}) => {
                                 <li className="list-group-item float-start">
                                     <div className="container">
                                         <div className="row">
-                                            <div className="col align-self-center">
+                                            <div className="col-7 col-lg-9 align-self-center">
                                                 <div className="row fw-bold">
                                                     {event.short_title}
                                                 </div>
@@ -46,7 +46,7 @@ const EventsInArea = ({currentUser}) => {
                                                     {event.venue.city.concat(", ", event.venue.state)}
                                                 </div>
                                             </div>
-                                            <div className="col align-self-center ">
+                                            <div className="col-5 col-lg-3 align-self-center ">
                                                 <button type="button"
                                                         className="btn btn-info btn-sm float-end"
                                                         onClick={()=> detailsClickHandler(event.id)}>

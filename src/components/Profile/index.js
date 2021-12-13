@@ -6,6 +6,7 @@ import './profile.css';
 import TopNavBar from "../TopNavBar";
 import {profile} from "../../services/user-service";
 import {useHistory} from "react-router-dom";
+import Footer from "../Home/Footer";
 
 const Profile = () => {
     const history = useHistory();
@@ -42,7 +43,9 @@ const Profile = () => {
         <>
             <TopNavBar page={"profile"}/>
             <div className="container pt-5">
-                    {getProfile()}
+                {getProfile()}
+                <hr/>
+                <Footer/>
             </div>
         </>
     )
