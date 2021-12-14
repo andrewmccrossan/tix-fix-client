@@ -16,7 +16,7 @@ const UpcomingEvents = ( {currentUser} ) => {
                 <ul className="list-group list-group-flush">
                     {
                         buyerTransactions.length > 0 ? (buyerTransactions.map(event => {
-                            return (<UpcomingTicketPurchase currentUser={currentUser} eventBought={event.eventID} purchaseDetails={ {qty: event.qty, price:event.price} } key={Date. now()}/>);
+                            return (<UpcomingTicketPurchase currentUser={currentUser} eventBought={event.eventID} purchaseDetails={ {qty: event.qty, price:event.price} } key={event.eventID}/>);
                         })) : <li className="list-group-item">No Tickets Have Been Bought Yet</li>
                     }
                 </ul>

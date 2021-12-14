@@ -22,7 +22,7 @@ const DetailsEventReviews = () => {
                 {
                     reviews.length > 0 ? (reviews.slice(0,5).map(review => {
                         return(
-                            <li className="list-group-item">
+                            <li key={review.score + review.text + review.reviewerName} className="list-group-item">
                                 <div className="container">
                                     <div className="row">
                                         <div className="col-7 col-lg-9 align-self-center">
