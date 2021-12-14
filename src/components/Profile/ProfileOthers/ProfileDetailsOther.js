@@ -25,16 +25,19 @@ const ProfileDetailsOther = ({otherProfile}) => {
     });
 
     useEffect(() => {
-                if (otherProfile.role === 'SELLER' && otherProfile) {
-                    getReviewsForSeller(otherProfile._id)
-                        .then(dbReviews => {
-                            let totalRating = 0;
-                            dbReviews.forEach((review, index) => {
-                                totalRating += review.score;
-                            })
-                            setRating((totalRating / dbReviews.length).toFixed(2));
-                        })
-                }
+        profile()
+            .then(profile =>  {setCurrentProfile({userProfile: profile});})
+
+        if (otherProfile.role === 'SELLER' && otherProfile) {
+            getReviewsForSeller(otherProfile._id)
+                .then(dbReviews => {
+                    let totalRating = 0;
+                    dbReviews.forEach((review, index) => {
+                        totalRating += review.score;
+                    })
+                    setRating((totalRating / dbReviews.length).toFixed(2));
+                })
+        }
 
     }, [otherProfile])
 
