@@ -75,16 +75,20 @@ const DetailsEventSellersItem = ({eventSeller}) => {
                             <span className="fw-bold me-2">Price Per Ticket:</span>${eventSeller.ticketPrice}
                         </div>
                         <div className="col-4 col-lg-3 align-self-center">
-                            <div className="align-self-center d-flex justify-content-end pb-2">
-                                {getBuyButton()}
-                            </div>
-                            <div className="align-self-center d-flex justify-content-end">
-                                <button type="button"
-                                        className="btn btn-info fw-bold btn-sm"
-                                        onClick={() => {
-                                            history.push(`/profile/${eventSeller.sellerUsername}`)
-                                        }}>
-                                See Seller's Profile</button>
+                            <div className="row d-grid gap-2">
+                                <div className="btn-group-justified">
+                                    <div className=" btn-group align-self-center d-flex justify-content-end pb-3">
+                                        {getBuyButton()}
+                                    </div>
+                                    <div className=" btn-group align-self-center d-flex justify-content-end">
+                                        <button type="button"
+                                                className="btn btn-info fw-bold btn-sm"
+                                                onClick={() => {
+                                                    history.push(`/profile/${eventSeller.sellerUsername}`)
+                                                }}>
+                                            See Seller's Profile</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
