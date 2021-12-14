@@ -127,11 +127,12 @@ const Register = () => {
                     />
                     <label htmlFor="user-reviewer" className="form-check-label ms-2">I am a reviewer</label><br/>
                 </div>
+                <div id="privacy" className="text mb-2">By creating an account, you agree to our <Link className="text-info" to="/privacy" >privacy policy</Link>. Please take a few minutes to check it out!</div>
                 <button type="submit"
-                        className="btn btn-primary mb-2"
+                        className="btn btn-primary mt-2 mb-2"
                         onClick={() => registerInfo(user)}
                 >Register new account</button>
-                <div id="privacy" className="form-text">By creating an account, you agree to and understand our <Link className="text-info" to="/privacy" >privacy policy</Link>.</div>
+
             </div>
         </>
     );
