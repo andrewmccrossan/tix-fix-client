@@ -39,7 +39,7 @@ const EditProfile = () => {
                         zip: profile.zip
                     });
                 }
-            )
+            ).catch(() => {history.push('/login')});
     }, []);
 
 
