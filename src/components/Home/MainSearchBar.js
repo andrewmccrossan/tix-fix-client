@@ -11,8 +11,8 @@ const MainSearchBar = () => {
     return (
         <>
             <div className="row mt-3 mb-5">
-                <div className="col-lg-1"/>
-                <div className="col-9 col-lg-8">
+                <div className="col-lg-2"/>
+                <div className="col-9 col-lg-7">
                     <div className="row">
                         <div className="col-7 input-group input-group-lg">
                             <input className="form-control rounded-pill ps-5 me-sm-2"

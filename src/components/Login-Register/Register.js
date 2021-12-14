@@ -4,14 +4,29 @@ import {register} from "../../services/user-service";
 
 const Register = () => {
     const history = useHistory();
-    const [user, setUser] = useState({role: 'BUYER'});
+    const [user, setUser] = useState({
+        username: null,
+        password:null,
+        firstName: null,
+        lastName: null,
+        email: null,
+        zip: null,
+        artistInterest: null,
+        role: null});
 
     const registerInfo = (userInfo) => {
-        register(userInfo)
-            .then(() => history.push('/profile'))
-            .catch(error => {
-                alert("Username already taken. Try another one!");
-            })
+        const inputNotGiven = (userInfo.username === null || userInfo.password === null || userInfo.role === null
+            || userInfo.firstName === null || userInfo.lastName === null || userInfo.email === null
+            || userInfo.zip === null || userInfo.artistInterest === null)
+        if (inputNotGiven) {
+            alert("Please fill in all fields in order to create an account");
+        } else {
+            register(userInfo)
+                .then(() => history.push('/profile'))
+                .catch(error => {
+                    alert("Username already taken. Try another one!");
+                })
+        }
     };
 
     const setRadioRole = (event) => setUser({...user, role: event.currentTarget.value})
@@ -67,7 +82,7 @@ const Register = () => {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="registerZipCode" className="form-label">US Zip/Postal Code</label>
-                    <input type="tel"
+                    <input type="number"
                            pattern="[0-9]{5}"
                            max="99999"
                            placeholder="02101"
