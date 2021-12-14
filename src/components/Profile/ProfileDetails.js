@@ -10,7 +10,7 @@ const ProfileDetails = ({currentUser}) => {
             .then(() => history.push('/home'))
     }
 
-    const [rating, setRating] = useState(4.22);
+    const [rating, setRating] = useState(Number.NaN);
     useEffect(() => {
         if (currentUser && currentUser.role === 'SELLER') {
             getReviewsForSeller(currentUser._id)
