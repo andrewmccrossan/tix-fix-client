@@ -9,7 +9,7 @@ import {profile} from "../../../services/user-service";
 
 const ProfileDetailsOther = ({otherProfile}) => {
     const history = useHistory();
-    const [rating, setRating] = useState(4.22);
+    const [rating, setRating] = useState(Number.NaN);
     const [showMainActionButton, setShowMainActionButton] = useState(false);
     const [review, setReview] = useState({score: 3, text: '', date: Date.now(), revieweeType: 'SELLER'});
 
@@ -25,20 +25,20 @@ const ProfileDetailsOther = ({otherProfile}) => {
     });
 
     useEffect(() => {
-        profile()
-            .then(profile =>  {setCurrentProfile({userProfile: profile});})
-            .then(() => {
-                if (otherProfile.role === 'SELLER' && otherProfile) {
-                    getReviewsForSeller(otherProfile._id)
-                        .then(dbReviews => {
-                            let totalRating = 0;
-                            dbReviews.forEach((review, index) => {
-                                totalRating += review.score;
-                            })
-                            setRating((totalRating / dbReviews.length).toFixed(2));
-                        })
-                }
-            })
+        if (otherProfile.role === 'SELLER' && otherProfile) {
+            getReviewsForSeller(otherProfile._id)
+                .then(dbReviews => {
+                    let totalRating = 0;
+                    dbReviews.forEach((review, index) => {
+                        totalRating += review.score;
+                    })
+                    setRating((totalRating / dbReviews.length).toFixed(2));
+                })
+                .then(() => profile().then(profile =>  {setCurrentProfile({userProfile: profile});}))
+        } else {
+            profile()
+                .then(profile =>  {setCurrentProfile({userProfile: profile});})
+        }
     }, [otherProfile])
 
     const submitReview = () => {
