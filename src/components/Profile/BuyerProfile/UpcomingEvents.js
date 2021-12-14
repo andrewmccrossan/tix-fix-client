@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {getBuyerInfo} from "../../../services/buyService";
 import UpcomingTicketPurchase from "./UpcomingTicketPurchase";
-import {useParams} from "react-router-dom";
 import {getAllBuyerTransactions} from "../../../services/transactionService"
 
 const UpcomingEvents = ( {currentUser} ) => {
@@ -16,7 +14,7 @@ const UpcomingEvents = ( {currentUser} ) => {
                 <ul className="list-group list-group-flush">
                     {
                         buyerTransactions.length > 0 ? (buyerTransactions.map(event => {
-                            return (<UpcomingTicketPurchase currentUser={currentUser} eventBought={event.eventID} purchaseDetails={ {qty: event.qty, price:event.price} } key={event.eventID}/>);
+                            return (<UpcomingTicketPurchase currentUser={currentUser} eventBought={event.eventID} purchaseDetails={ {qty: event.qty, price:event.price} } key={buyerTransactions._id}/>);
                         })) : <li className="list-group-item">No Tickets Have Been Bought Yet</li>
                     }
                 </ul>
