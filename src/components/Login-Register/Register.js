@@ -17,7 +17,7 @@ const Register = () => {
     const registerInfo = (userInfo) => {
         const inputNotGiven = (userInfo.username === null || userInfo.password === null || userInfo.role === null
             || userInfo.firstName === null || userInfo.lastName === null || userInfo.email === null
-            || userInfo.zip === null || userInfo.artistInterest === null)
+            || userInfo.zip === null || userInfo.artistInterest === null);
         if (inputNotGiven) {
             alert("Please fill in all fields in order to create an account");
         } else {
