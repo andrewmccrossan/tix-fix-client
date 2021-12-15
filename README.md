@@ -1,7 +1,7 @@
-# Tix-Fix -- Get your event tickets fix at Tix-Fix
+# Tix-Fix
 ## CS5610 Web Development Final Project
 
-
+## The two privacy assignments and UML diagram are in the directory "PRIVACY_AND_UML" in the root directory.
 
 
 
